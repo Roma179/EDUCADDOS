@@ -1,5 +1,5 @@
 @extends('menu')
-@section('title','Etapa 2:Curso de inducción')
+@section('title','Pre-inscripcion')
 @section('content')
 
 <link href="{{ asset('css/style.css')}}" rel="stylesheet" />
