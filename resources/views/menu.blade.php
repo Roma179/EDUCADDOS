@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Inicio </title>
+<title>@yield('title',"Inicio")</title>
     <meta charset="utf-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,7 +24,7 @@
 </head>
 <body>
 <div class="bs-example">
-    <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
     <img style="width: 280px; height: 70px; padding-top: 10px;" src="{{asset('img/logotipoCDMX.svg')}}" alt="Imagenes">
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -48,7 +48,7 @@
           Convocatoria 2020
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
-            <a class="dropdown-item" href="{{ url('/inicio/convocatoria2020/etapa1-pre-registro') }}">Etapa 1. Pre-Inscripcióan</a>
+            <a class="dropdown-item" href="{{ url('/inicio/convocatoria2020/etapa1-pre-registro') }}">Etapa 1. Pre-Inscripción</a>
             <a class="dropdown-item" href="{{ url('/inicio/convocatoria2020/curso-induccion') }}">Etapa 2. Curso de Inducción</a>
             <a class="dropdown-item" href="{{ url('/inicio/convocatoria2020/Inscripción') }}">Etapa 3. Inscripción</a>
           </div>

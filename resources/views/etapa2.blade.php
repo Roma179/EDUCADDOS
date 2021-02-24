@@ -1,6 +1,11 @@
 @extends('menu')
-@section('title','Etapa 2:Curso de inducción')
+@section('title','Etapa 2: Curso de inducción')
 @section('content')
+<style>
+p{
+    text-align: justify;
+}
+</style>
 <div class="container mt-5">
 <center><h1>Curso de Inducción</h1></center>
 <p><b>Propósito</b></p>

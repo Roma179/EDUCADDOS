@@ -22,5 +22,10 @@ class CMenu extends Controller
     public function contacto(){
         return view('contacto');
     }
+
+    public function preinscripcion(){
+        return view('Infpreinscripcion');
+
+    }
     
 }

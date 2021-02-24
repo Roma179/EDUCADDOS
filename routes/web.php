@@ -23,6 +23,8 @@ Route::get('inicio', function () {
 //Rutas
 Route::get('/inicio/convocatoria2020', 'CMenu@convocatoria');
 Route::get('/inicio/convocatoria2020/etapa1-pre-registro', 'CMenu@etapa1');
+Route::post('/inicio/convocatoria2020/etapa1-pre-registro/informacion', 'CMenu@preinscripcion');
+
 Route::get('/inicio/convocatoria2020/curso-induccion', 'CMenu@etapa2');
 Route::get('/inicio/convocatoria2020/Inscripción', 'CMenu@etapa3');
 Route::get('/inicio/convocatoria2020/contacto', 'CMenu@contacto');
