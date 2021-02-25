@@ -38,9 +38,9 @@
           Oferta Educativa
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-            <a class="dropdown-item" href="#">Media Superior</a>
-            <a class="dropdown-item" href="#">Licenciatura o Ingeniería</a>
-            <a class="dropdown-item" href="#">Maestría</a>
+            <a class="dropdown-item" href="{{url('media_superior')}}">Media Superior</a>
+            <a class="dropdown-item" href="{{url('licenciatura_ingenieria')}}">Licenciatura e Ingeniería</a>
+            <a class="dropdown-item" href="{{url('maestria')}}">Maestría</a>
           </div>
         </li>
         <li class="nav-item dropdown">

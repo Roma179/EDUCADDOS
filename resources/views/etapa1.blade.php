@@ -40,6 +40,12 @@
   }
 </style>
 <div class="container mt-5">
+  @if (session('status'))
+  <div class="alert alert-success">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+      {{ session('status') }}
+  </div>
+@endif  
 <center><h3>Pre-registro</h3></center>
 <p>En esta etapa se validará, a través de diversos documentos, que cumplas con los requisitos laborales y académicos según el nivel de estudios
  en el que te gustaría inscribirte.</p>
@@ -88,7 +94,7 @@ el uso de mi correo electrónico y número de teléfono para el envío de inform
  <label style="color:#777777; font-size: 25px; text-align: left;">RFC</label>
     <p><input type="text" id="rfc" placeholder="RFC de la persona trabajadora" oninput="this.className = ''" maxlength="13" name="RFC" required></p>
   {{-- <label style="color:#000; font-size: 25px; text-align: left;">Token</label>  --}}
-    <p><input id="tokenId" placeholder="Token" oninput="this.className = ''" name="tokenId" ></p><br>
+    <p><input id="tokenId" placeholder="Token" oninput="this.className = ''" name="tokenId" value="9bfd05bae5bd34b31d4de369393c7e5c" hidden></p><br>
     <button type="submit">Validar RFC</button>
 </form>    
 
