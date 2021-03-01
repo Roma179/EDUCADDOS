@@ -74,10 +74,10 @@
     <div class=" row" style="margin-top:3rem; margin-left: 16rem;">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/UohKyEeCLV8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
-    <div class="row" style=" margin-top: 40px; margin-bottom: 40px; margin-left:32em;">
+    <div class="row" style=" margin-top: 40px; margin-bottom: 40px; margin-left:28rem;">
         <div
                                 style="background-color: rgba(7,174,85,1); color: rgba(0,0,0,1); font-size: 12pt; border-radius: 9px; border-style:solid;">
-                                <a href="{{url('pre_registro')}}" style="text-decoration: none; color: #000;">
+                                <a href="{{url('/inicio/convocatoria2020/etapa1-pre-registro')}}" style="text-decoration: none; color: #000;">
                                     <div style="padding-left: 12px;
         padding-right: 12px; text-align: center;
         width: 100%; margin-top:5px;">
