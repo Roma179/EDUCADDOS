@@ -48,13 +48,13 @@
           Convocatoria 2020
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
-            <a class="dropdown-item" href="{{ url('/inicio/convocatoria2020/etapa1-pre-registro') }}">Etapa 1. Pre-Inscripción</a>
-            <a class="dropdown-item" href="{{ url('/inicio/convocatoria2020/curso-induccion') }}">Etapa 2. Curso de Inducción</a>
-            <a class="dropdown-item" href="{{ url('/inicio/convocatoria2020/Inscripción') }}">Etapa 3. Inscripción</a>
+            <a class="dropdown-item" href="{{ url('/pre-registro') }}">Etapa 1. Pre-Inscripción</a>
+            <a class="dropdown-item" href="{{ url('/curso-induccion') }}">Etapa 2. Curso de Inducción</a>
+            <a class="dropdown-item" href="{{ url('/Inscripción') }}">Etapa 3. Inscripción</a>
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ url('/inicio/convocatoria2020/contacto') }}">Contacto</a>
+          <a class="nav-link" href="{{ url('/contacto') }}">Contacto</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{url('login')}}">Iniciar Sesión</a>
@@ -80,7 +80,7 @@ const showClass = "show";
 
 $("#navbarDropdown3").on('click',function(){
   //redirecciono a una url
-  window.location.href='/EDUCAD/public/inicio/convocatoria2020';
+  window.location.href='/EDUCAD/public/convocatoria2020';
 });
 
 $(window).on("load resize", function() {

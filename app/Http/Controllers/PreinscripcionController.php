@@ -19,7 +19,7 @@ class PreinscripcionController extends Controller
      */
     public function index()
     {
-        /* return view('inscripcion_validar_rfc'); */
+         return view('validar_rfc_etapa1'); 
     }
 
     /**
@@ -34,13 +34,15 @@ class PreinscripcionController extends Controller
 
     public function getwebservice(Request $request)
     {
+        //dd('web');
         try {
-            $RFC = $request->RFC;
-            $tokenId = $request->tokenId;
+            $RFC = $_POST["RFC"];
+            $tokenId = "SistemaDeRpueba4as4x4vdlsad";
+            //dd('bueno');
 
             $ch = curl_init();
             curl_setopt_array($ch, array(
-                CURLOPT_URL => "10.1.126.4/fut_2020/adip/donativos_gen_linea_ws_server.php?wsdl",
+                CURLOPT_URL => "10.1.181.9:9003/usuarios/loadUserCASI",
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => "",
                 CURLOPT_MAXREDIRS => 10,
@@ -48,27 +50,26 @@ class PreinscripcionController extends Controller
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => "POST",
-                CURLOPT_POSTFIELDS => "{\n \"data\":\n {\n \"usuario\":\"$RFC\"\n , \n \"password\":\"$tokenId\"\n}\n \n}",
+                CURLOPT_POSTFIELDS => "{\n \"security\":\n {\n \"tokenId\":\"$tokenId\"\n },\n \"data\":\n {\n \"RFC\":\"$RFC\"\n }\n \n}",
                 CURLOPT_HTTPHEADER => array("Content-Type:application/json"),
 
             ));
             $response = curl_exec($ch);
             curl_close($ch);
+           // dd($response);
 
             $array = json_decode($response, true);
-            print_r($array);
+            $array = json_decode($response, true);
             foreach ($array['data'] as $key => &$value) {
                 if ($value === "0" || is_null($value)) {
                     $value = "DATO NO ENCONTRADO";
                 }
             }
             $data['user'] = $array['data'];
+           // dd($data['user']);
 
-            /* return response()->json($data); */
-            return view('prueba', compact('data'));
-            //return redirect('/formulario_inscripcion')->with('data', $data);
+            return view('Infpreinscripcion', compact('data'));
         } catch (\Throwable $th) {
-            /* dd($th); */
             return redirect('/inscripcion_from')->withErrors(['error' => 'RFC no se encuentra en nuestros registros']);
         }
     }

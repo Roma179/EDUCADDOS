@@ -34,14 +34,19 @@ Route::get('/login', function () {
 });
 
 //Rutas
-Route::get('/inicio/convocatoria2020', 'CMenu@convocatoria');
-Route::get('/inicio/convocatoria2020/etapa1-pre-registro', 'CMenu@etapa1')->name('preins');
-Route::post('/inicio/convocatoria2020/etapa1-pre-registro/informacion', 'CMenu@preinscripcion');
+Route::get('/convocatoria2020', 'CMenu@convocatoria');
+//pre-registro
+Route::get('/pre-registro', 'PreinscripcionController@index')->name('pre-registro');
+Route::post('guardar_pre-registro', 'PreinscripcionController@getwebservice')->name('guardar_pre-registro');
+
+//Codigo Postal
+Route::post('webservicecp', 'WebServicesCP@getCP')->name('webservicecp');
+//-------------------------------------------//
 Route::post('guardar_preinscripcion', 'PreinscripcionController@guardar')->name('guardar_preinscripcion');
 
-Route::get('/inicio/convocatoria2020/curso-induccion', 'CMenu@etapa2');
-Route::get('/inicio/convocatoria2020/Inscripción', 'CMenu@etapa3');
-Route::get('/inicio/convocatoria2020/contacto', 'CMenu@contacto');
+Route::get('/curso-induccion', 'CMenu@etapa2');
+Route::get('/Inscripción', 'CMenu@etapa3');
+Route::get('/contacto', 'CMenu@contacto');
 
 //rutas para superusuarios
 Route::group(['middleware' => ['nocache','permission:view_users|edit_users|delete_users|create_users']], function() {
