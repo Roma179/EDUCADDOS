@@ -70,7 +70,7 @@ class PreinscripcionController extends Controller
 
             return view('Infpreinscripcion', compact('data'));
         } catch (\Throwable $th) {
-            return redirect('/inscripcion_from')->withErrors(['error' => 'RFC no se encuentra en nuestros registros']);
+            return redirect('/pre-registro')->withErrors(['error' => 'RFC no se encuentra en nuestros registros']);
         }
     }
 
@@ -84,7 +84,7 @@ class PreinscripcionController extends Controller
     {
         /* dd($request->all()); */
         Preinscripcion::create($request->all());
-        return redirect(route('preins'))->with('status', '¡Preinscripcion Exitosa!');;
+        return redirect(route('pre-registro'))->with('status', '¡Preinscripcion Exitosa!');;
     }
 
 

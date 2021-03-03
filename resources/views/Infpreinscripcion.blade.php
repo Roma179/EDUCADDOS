@@ -9,9 +9,9 @@
 <link href="{{ asset('css/style.css')}}" rel="stylesheet" />
 
 <div class="container">
-    <form id="regForm" action="{{route('guardar_pre-registro')}}" method="POST" enctype="multipart/form-data">
+    <form id="regForm" action="{{route('guardar_preinscripcion')}}" method="POST" enctype="multipart/form-data">
         @csrf
-        <h1 style="color: #054a41;">Preinscripción a los Centros de Atención y Cuidado Infantil</h1>
+        <h1 style="color: #054a41;">Preinscripción a EDUCAD</h1>
         <?php
        // echo var_dump($data);       
         ?>
