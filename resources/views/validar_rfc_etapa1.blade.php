@@ -70,10 +70,10 @@ Ciudad de México y demás relativas y aplicables.</font></p>
 <p align="justify"><font size=2><b>Autorizo a la Dirección de Desarrollo de la Competencia Laboral, Igualdad Sustantiva y Derechos Humanos así como al Prestador de los Servicios Educativos, 
 el uso de mi correo electrónico y número de teléfono para el envío de información relativo al Programa </font></b><font color="red"> * </font></p>
 <div class="form-group col-md-2">
-<select name="select" class="form-control">
+<select id="select" name="select" class="form-control">
 <option value="value1">Elige</option>
-  <option value="value1">Acepto</option>
-  <option value="value3">No Acepto</option>
+  <option value='0'>Acepto</option>
+  <option value='1'>No Acepto</option>
 </select>
 </div>
 
@@ -87,7 +87,7 @@ el uso de mi correo electrónico y número de teléfono para el envío de inform
   </div>
 </div>
 @endif
-<form id="regForm" action="{{route('guardar_pre-registro')}}" method="POST" enctype="multipart/form-data">
+<form id="regForm" action="{{route('guardar_pre-registro')}}" method="POST" enctype="multipart/form-data" style="display:none;">
  <label style="color:#777777; font-size: 40px; text-align: left; ">Preinscripción</label>
     @csrf
  <label style="color:#054a41; font-size: 24px; text-align: center;">Para iniciar el proceso de preinscripción, proporciona el siguiente dato</label>
@@ -118,6 +118,28 @@ el uso de mi correo electrónico y número de teléfono para el envío de inform
 
 </div>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<!--Desglozar div para el RFC -->
+<script>
+$(document).ready(function(){
+    $('#select').on('change',function(){
+    var selectValor = ''+$(this).val();
+    //alert (selectValor);
+
+   if(selectValor == 0){
+       // alert ('entrando al if');
+        //$('#pruebass').show();
+        $("#regForm").css('display', 'block');
+    }else{
+        alert('Debe aceptar el aviso de privacidad para continuar con el proceso');
+        $('#regForm').css('display', 'none');
+    }
+    
+    }); 
+    
+});
+</script>
+<!--END-->
+
 <script>
   var currentTab = 0; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the current tab
