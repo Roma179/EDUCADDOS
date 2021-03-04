@@ -360,6 +360,30 @@ function nextPrev(n) {
     form_data.append("alcaldia", $("#alcaldia").val());
     form_data.append("codigo_postal", $("#codigo_postal").val());
 
+    /*----------------------*/
+    form_data.append("nombre", $("#nombre").val());
+    form_data.append("ape_paterno", $("#ape_paterno").val());
+    form_data.append("ape_materno", $("#ape_materno").val());
+    form_data.append("id_empleado", $("#id_empleado").val());
+    form_data.append("universo_nominal", $("#universo_nominal").val());
+    form_data.append("id_unidad_administrativa", $("#id_unidad_administrativa").val());
+    form_data.append("unidad_administrativa", $("#unidad_administrativa").val());
+    form_data.append("id_sector", $("#id_sector").val());
+    form_data.append("sector", $("#sector").val());
+    form_data.append("sector_pago", $("#sector_pago").val());
+    form_data.append("calle", $("#calle").val());
+    form_data.append("numero_ext", $("#numero_ext").val());
+    form_data.append("numero_int", $("#numero_int").val());
+    form_data.append("codigo_postal", $("#codigo_postal").val());
+    form_data.append("colonia", $("#colonia").val());
+    form_data.append("alcaldia", $("#alcaldia").val());
+    form_data.append("estado", $("#estado").val());
+    form_data.append("pais", $("#pais").val());
+    form_data.append("correo_electro", $("#correo_electro").val());
+    form_data.append("telefono_tres", $("#telefono_tres").val());
+    form_data.append("extension", $("#extension").val());
+    
+    
     form_data.append("tipo_nomina", $("#tipo_nomina").val());
     form_data.append("num_empleado", $("#num_empleado").val());
     form_data.append("num_plaza", $("#num_plaza").val());
