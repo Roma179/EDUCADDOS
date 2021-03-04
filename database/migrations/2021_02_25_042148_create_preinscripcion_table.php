@@ -48,7 +48,6 @@ class CreatePreinscripcionTable extends Migration
 
             $table->timestamps();
             
-            
             /*$table->string('curp',50);
             $table->string('hora_entrada',50);
             $table->string('hora_salida',50);*/
