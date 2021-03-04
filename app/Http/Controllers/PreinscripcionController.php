@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Model\Preinscripcion;
+use App\Model\Documentos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
@@ -82,10 +83,62 @@ class PreinscripcionController extends Controller
      */
     public function guardar(Request $request)
     {
-       // dd('entrooo a guardar');
         // dd($request->all()); 
-        Preinscripcion::create($request->all());
-        return redirect(route('pre-registro'))->with('status', '¡Preinscripcion Exitosa!');;
+        DB::beginTransaction();
+        try {
+            Preinscripcion::create($request->all());
+            //obtiene id de preinscripcion
+            $id_preins = Preinscripcion::select('id')->orderByDesc('id')->get()->first();
+            $id = $id_preins->id;
+            $filename_prueba = $request->file('filename_prueba');
+            $array_files = array(array($filename_prueba, "Documento de prueba"));
+
+            $preinscripcionController = new PreinscripcionController;
+
+            if ($preinscripcionController->setDoc($array_files, $id)) {
+                DB::commit();
+                return response()->json(['ok' => true, 'result' => 'Preinscripción con éxito', 'menor' => $request->nombre]);
+                //return redirect('inicio')->with('mensaje', "Menor reinscrito con exito");
+            } else {
+                return response()->json(['ok' => false, 'result' => 'Error Preinscripción', 'err_valid_docs' => true]);
+            }
+            /* return redirect(route('pre-registro'))->with('status', '¡Preinscripcion Exitosa!');; */
+        } catch (\Throwable $th) {
+            DB::rollback();
+            return response()->json(['ok' => false, 'result' => 'No se pudo realizar la Preinscripción']);
+        }
+    }
+
+    public static function setDoc($uploadedFile, $id_reins)
+    {
+        $data = [];
+        if ($uploadedFile) {
+            //recorre los arreglos hijos
+            foreach ($uploadedFile as $value) {
+                //recorre los valor del arreglo hijo
+                foreach ($value as $valueNombreTramite) {
+                    //procesa el archivo
+                    if (!is_string($valueNombreTramite)) {
+                        //dd($valueNombreTramite);
+                        $filename = time() . ' ' . $valueNombreTramite->getClientOriginalName();
+                        //guarda en sistema de archivos
+                        $valueNombreTramite->move('uploads/documentos', $filename);
+                        //inserta en la bd
+                        $data['nombre'] = $filename;
+                    } else {
+                        //procesa el nombre del tramite
+                        //dd($valueNombreTramite);
+                        $data['tipo_documento'] = $valueNombreTramite;
+                        $data['preinscripcion_id'] = $id_reins;
+                        $data['created_at'] = now();
+                        Documentos::create($data);
+                    }
+                }
+            }
+            return true;
+        } else {
+            return false;
+        }
     }
 
 

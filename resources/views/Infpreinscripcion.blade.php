@@ -11,7 +11,8 @@
 
 <body>
 <div class="container">
-    <form id="regForm" action="{{route('guardar_preinscripcion')}}" method="POST" enctype="multipart/form-data">
+    {{--  <form id="regForm" action="{{route('guardar_preinscripcion')}}" method="POST" enctype="multipart/form-data">  --}}
+      <form id="regForm" method="POST" enctype="multipart/form-data">
         @csrf
         <h1 style="color: #054a41;">Preinscripción a EDUCAD</h1>
         <?php
@@ -106,11 +107,14 @@
                     oninput="this.className = ''" name="telefono_tres" maxlength="10" pattern="[0-9]{10}"></p>
                 <p>Ext.:<input id="extension" type="text" placeholder="Extensión" title="Ext"
                     oninput="this.className = ''" name="extension"></p>
+                    
+                    <h5 style="font-size: 15px; font-family: Arial, Helvetica; color:#777777;">Archivo de prueba.</h5>
+                    <input type="file" id="filename_prueba" name="filename_prueba" accept="application/msword, application/pdf" required>
                        
                 </div>
             </div>
         </div>
-        <button style="float:right" id="valida_curp" type="submit">Enviar</button>
+        <button style="margin-top: 30px; float:right" id="valida_curp" type="button" onclick="preinscripcion()">Enviar</button>
     </form>
 </div>
 
