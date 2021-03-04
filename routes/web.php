@@ -89,3 +89,7 @@ Route::get('/logout', 'HomeController@logout')->name('logout');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home'); */
+
+//export excel
+
+Route::get('/export-excel', 'ExportExcelController@excel')->name('export-excel');

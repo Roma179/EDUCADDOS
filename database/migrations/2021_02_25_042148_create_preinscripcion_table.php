@@ -21,9 +21,9 @@ class CreatePreinscripcionTable extends Migration
             $table->string('tipo_nomina',150);
             $table->string('universo',20);
             $table->string('numero_empleado',100);
-            $table->integer('id_unidad_administrativa',100);
-            $table->integer('id_sector',20);
-            $table->string('sector',30);
+            $table->string('id_unidad_administrativa',100);
+            $table->string('id_sector',50);
+            $table->string('sector',100);
             $table->string('clave_dependencia',50);
             $table->string('nivel_salarial',50);
             $table->string('seccion_sindical',100);
