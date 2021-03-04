@@ -48,6 +48,7 @@ Route::get('/curso-induccion', 'CMenu@etapa2');
 Route::get('/Inscripción', 'CMenu@etapa3');
 Route::get('/contacto', 'CMenu@contacto');
 
+Route::get('/prueba', 'CMenu@pruebass');
 //rutas para superusuarios
 Route::group(['middleware' => ['nocache','permission:view_users|edit_users|delete_users|create_users']], function() {
     Route::resource('users','UserController');

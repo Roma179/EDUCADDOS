@@ -27,5 +27,9 @@ class CMenu extends Controller
         return view('Infpreinscripcion');
 
     }
+    public function pruebass(){
+        return view('archivo');
+
+    }
     
 }
