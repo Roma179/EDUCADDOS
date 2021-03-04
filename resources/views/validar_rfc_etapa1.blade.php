@@ -114,9 +114,9 @@ el uso de mi correo electrónico y número de teléfono para el envío de inform
 <p><b>3. Envía tu expediente digital al correo electrónico<a href="mailto:inscripcionescncicdmx@gmail.com"><font color="#000000"> <u>inscripcionescncicdmx@gmail.com</u></font></b></a> En el ASUNTO del correo electrónico escribe tu <i> ID Empleado</i>.</p><br><br>
 <p><b>4. Recibirás un correo electrónico en el que se te informará el dictamen.</b></p>
 
-<div class="pane-header">
+{{--  <div class="pane-header">
         <a href="{{ url('/prueba') }}">Entrar a la entrega de documentos</a>  
-    </div>
+    </div>  --}}
 
 
 

@@ -83,26 +83,33 @@ class PreinscripcionController extends Controller
      */
     public function guardar(Request $request)
     {
-        // dd($request->all()); 
+        /* dd($request->all());  */
         DB::beginTransaction();
         try {
             Preinscripcion::create($request->all());
             //obtiene id de preinscripcion
             $id_preins = Preinscripcion::select('id')->orderByDesc('id')->get()->first();
             $id = $id_preins->id;
-            $filename_prueba = $request->file('filename_prueba');
-            $array_files = array(array($filename_prueba, "Documento de prueba"));
+            
+            $filename_certif_estudio = $request->file('filename_certif_estudio');
+            $filename_acta_nacimiento = $request->file('filename_acta_nacimiento');
+            $filename_curp = $request->file('filename_curp');
+            $filename_comprobante_domicilio = $request->file('filename_comprobante_domicilio');
+            $filename_ine = $request->file('filename_ine');
+            $filename_recibo_nomina = $request->file('filename_recibo_nomina');
+
+            $array_files = array(array($filename_certif_estudio, "Certicado de Estudios"),array($filename_acta_nacimiento, "Acta de Nacimiento"),
+            array($filename_curp, "Curp"),array($filename_comprobante_domicilio, "Comprobante de Domicilio"),
+            array($filename_ine, "INE"),array($filename_recibo_nomina, "Nomina"));
 
             $preinscripcionController = new PreinscripcionController;
 
             if ($preinscripcionController->setDoc($array_files, $id)) {
                 DB::commit();
                 return response()->json(['ok' => true, 'result' => 'Preinscripción con éxito', 'menor' => $request->nombre]);
-                //return redirect('inicio')->with('mensaje', "Menor reinscrito con exito");
             } else {
                 return response()->json(['ok' => false, 'result' => 'Error Preinscripción', 'err_valid_docs' => true]);
-            }
-            /* return redirect(route('pre-registro'))->with('status', '¡Preinscripcion Exitosa!');; */
+            }            
         } catch (\Throwable $th) {
             DB::rollback();
             return response()->json(['ok' => false, 'result' => 'No se pudo realizar la Preinscripción']);

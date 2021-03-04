@@ -31,9 +31,30 @@ function preinscripcion() {
     form_data.append("telefono_tres", $("#telefono_tres").val());
     form_data.append("extension", $("#extension").val());
     
-    var dato_archivo_act = $('#filename_prueba').prop("files")[0];
+    var dato_archivo_act = $('#filename_acta_nacimiento').prop("files")[0];
+    var dato_archivo_curp = $('#filename_curp').prop("files")[0];
+    var dato_archivo_comp_dom = $('#filename_comprobante_domicilio').prop("files")[0];
+    var dato_archivo_ine = $('#filename_ine').prop("files")[0];
+    var dato_archivo_nomi = $('#filename_recibo_nomina').prop("files")[0];
+    var dato_archivo_cert_secu = $('#filename_certificado_secundaria').prop("files")[0];
+    var dato_archivo_cert_bachi = $('#filename_certificado_bachi').prop("files")[0];
+    var dato_archivo_cert_maestria = $('#filename_certificado_maestria').prop("files")[0];
+
+    if (dato_archivo_cert_secu !== undefined) {
+        form_data.append("filename_certif_estudio", dato_archivo_cert_secu);
+    }
+    if (dato_archivo_cert_bachi !== undefined) {
+        form_data.append("filename_certif_estudio", dato_archivo_cert_bachi);
+    }
+    if (dato_archivo_cert_maestria !== undefined) {
+        form_data.append("filename_certif_estudio", dato_archivo_cert_maestria);
+    }
     
-    form_data.append("filename_prueba", dato_archivo_act);
+    form_data.append("filename_acta_nacimiento", dato_archivo_act);
+    form_data.append("filename_curp", dato_archivo_curp);
+    form_data.append("filename_comprobante_domicilio", dato_archivo_comp_dom);
+    form_data.append("filename_ine", dato_archivo_ine);
+    form_data.append("filename_recibo_nomina", dato_archivo_nomi);
 
     $.ajax({
         type: 'POST',
