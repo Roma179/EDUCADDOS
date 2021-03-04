@@ -150,30 +150,30 @@
                 <div class="col">
                   <h6>Acta de Nacimiento</h6>
                   <input type="file" id="filename_acta_nacimiento" name="filename_acta_nacimiento"
-                    accept="application/msword, application/pdf">
+                    accept="application/msword, application/pdf" required>
                 </div>
                 <div class="col">
                   <h6>Clave Única de Registro de Población (CURP)</h6>
                   <input type="file" id="filename_curp" name="filename_curp"
-                    accept="application/msword, application/pdf">
+                    accept="application/msword, application/pdf" required>
                 </div>
               </div><br>
               <div class="row mt-2">
                 <div class="col">
                   <h6>Comprobante de Domicilio</h6>
                   <input type="file" id="filename_comprobante_domicilio" name="filename_comprobante_domicilio"
-                    accept="application/msword, application/pdf">
+                    accept="application/msword, application/pdf" required>
                 </div>
                 <div class="col">
                   <h6>Identificación Oficial</h6>
-                  <input type="file" id="filename_ine" name="filename_ine" accept="application/msword, application/pdf">
+                  <input type="file" id="filename_ine" name="filename_ine" accept="application/msword, application/pdf" required>
                 </div>
               </div><br>
               <div class="row mt-2">
                 <div class="col">
                   <h6>Último recibo de nómina:</h6>
                   <input type="file" id="filename_recibo_nomina" name="filename_recibo_nomina"
-                    accept="application/msword, application/pdf">
+                    accept="application/msword, application/pdf" required>
                 </div>
 
               </div>
@@ -300,9 +300,88 @@
     }); 
     
 });
+
+
+
 </script>
+
 <script>
-  var currentTab = 0; // Current tab is set to be the first tab (0)
+var currentTab = 0; // Current tab is set to be the first tab (0)
+  
+ $(document).ready(function(){
+    $('#filename_acta_nacimiento').on('change',function(){
+      //alert('hola');
+    const tamanioArchivoPermitido = 2000000;
+    var dato_archivo_act = $('#filename_acta_nacimiento').prop("files")[0];
+    if(dato_archivo_act.size > tamanioArchivoPermitido){
+      alert('El tamaño del archivo no debe de exceder los 2 Mb, Por favor seleccione un archivo que no exceda el tamaño permitido');
+    }
+    });
+
+    $('#filename_curp').on('change',function(){
+      //alert('hola');
+    const tamanioArchivoPermitido = 2000000;
+    var dato_archivo_act = $('#filename_curp').prop("files")[0];
+    if(dato_archivo_act.size > tamanioArchivoPermitido){
+      alert('El tamaño del archivo no debe de exceder los 2 Mb, Por favor seleccione un archivo que no exceda el tamaño permitido');
+    }
+    });
+    
+    $('#filename_comprobante_domicilio').on('change',function(){
+      //alert('hola');
+    const tamanioArchivoPermitido = 2000000;
+    var dato_archivo_act = $('#filename_comprobante_domicilio').prop("files")[0];
+    if(dato_archivo_act.size > tamanioArchivoPermitido){
+      alert('El tamaño del archivo no debe de exceder los 2 Mb, Por favor seleccione un archivo que no exceda el tamaño permitido');
+    }
+    });
+    $('#filename_ine').on('change',function(){
+      //alert('hola');
+    const tamanioArchivoPermitido = 2000000;
+    var dato_archivo_act = $('#filename_ine').prop("files")[0];
+    if(dato_archivo_act.size > tamanioArchivoPermitido){
+      alert('El tamaño del archivo no debe de exceder los 2 Mb, Por favor seleccione un archivo que no exceda el tamaño permitido');
+    }
+    });
+    $('#filename_recibo_nomina').on('change',function(){
+      //alert('hola');
+    const tamanioArchivoPermitido = 2000000;
+    var dato_archivo_act = $('#filename_recibo_nomina').prop("files")[0];
+    if(dato_archivo_act.size > tamanioArchivoPermitido){
+      alert('El tamaño del archivo no debe de exceder los 2 Mb, Por favor seleccione un archivo que no exceda el tamaño permitido');
+    }
+    });
+    $('#filename_certificado_secundaria').on('change',function(){
+      //alert('hola');
+    const tamanioArchivoPermitido = 2000000;
+    var dato_archivo_act = $('#filename_certificado_secundaria').prop("files")[0];
+    if(dato_archivo_act.size > tamanioArchivoPermitido){
+      alert('El tamaño del archivo no debe de exceder los 2 Mb, Por favor seleccione un archivo que no exceda el tamaño permitido');
+    }
+    });
+    $('#filename_certificado_bachi').on('change',function(){
+      //alert('hola');
+    const tamanioArchivoPermitido = 2000000;
+    var dato_archivo_act = $('#filename_certificado_bachi').prop("files")[0];
+    if(dato_archivo_act.size > tamanioArchivoPermitido){
+      alert('El tamaño del archivo no debe de exceder los 2 Mb, Por favor seleccione un archivo que no exceda el tamaño permitido');
+    }
+    });
+    $('#filename_certificado_maestria').on('change',function(){
+      //alert('hola');
+    const tamanioArchivoPermitido = 2000000;
+    var dato_archivo_act = $('#filename_certificado_maestria').prop("files")[0];
+    if(dato_archivo_act.size > tamanioArchivoPermitido){
+      alert('El tamaño del archivo no debe de exceder los 2 Mb, Por favor seleccione un archivo que no exceda el tamaño permitido');
+      
+    }
+    });
+ });
+</script>
+
+
+<script>
+var currentTab = 0; // Current tab is set to be the first tab (0)
   
 showTab(currentTab); // Display the current tab
 function showTab(n) {
@@ -338,7 +417,7 @@ function nextPrev(n) {
   // This function will figure out which tab to display
   var x = document.getElementsByClassName("tab");
   // Exit the function if any field in the current tab is invalid:
-  //if (n == 1 && !validateForm()) return false;
+ // if (n == 1 && !validateForm()) return false;
   // Hide the current tab:
   x[currentTab].style.display = "none";
   // Increase or decrease the current tab by 1:
@@ -411,4 +490,9 @@ function fixStepIndicator(n) {
 </script>  --}}
 
 
+
+
+
 @endsection
+
+
