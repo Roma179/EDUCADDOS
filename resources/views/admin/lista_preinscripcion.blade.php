@@ -69,53 +69,63 @@
                 <thead class="flip-content">
                     <tr>
                         <th>Nombre</th>
+                        <th>id_empleado</th>
                         <th>tipo_nomina</th>
-                        <th>universo</th>
-                        <th>numero_empleado</th>
+                        <th>universo_nominal</th>
                         <th>id_unidad_administrativa</th>
+                        <th>unidad_administrativa</th>
                         <th>id_sector</th>
                         <th>sector</th>
-                        <th>clave_dependencia</th>
+                        <th>sector_pago</th>
                         <th>nivel_salarial</th>
                         <th>seccion_sindical</th>
-                        <th>curp</th>
-                        <th>hora_entrada</th>
-                        <th>hora_salida</th>
                         <th>calle</th>
-                        <th>numero</th>
+                        <th>numero_ext</th>
+                        <th>numero_int</th>
                         <th>codigo_postal</th>
                         <th>colonia</th>
                         <th>alcaldia</th>
-                        <th>created_at</th>
+                        <th>estado</th>
+                        <th>pais</th>
+                        <th>correo_electro</th>
+                        <th>telefono_uno</th>
+                        <th>telefono_dos</th>
+                        <th>telefono_tres</th>
+                        <th>extension</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($lista_preins as $caci)
                     <tr>
                         <td>{{$caci['nombre']}} {{$caci['ape_paterno']}} {{$caci['ape_materno']}}</td>
+                        <td>{{$caci['id_empleado']}}</td>
                         <td>{{$caci['tipo_nomina']}}</td>
-                        <td>{{$caci['universo']}}</td>
-                        <td>{{$caci['numero_empleado']}}</td>
+                        <td>{{$caci['universo_nominal']}}</td>
                         <td>{{$caci['id_unidad_administrativa']}}</td>
+                        <td>{{$caci['unidad_administrativa']}}</td>
                         <td>{{$caci['id_sector']}}</td>
                         <td>{{$caci['sector']}}</td>
-                        <td>{{$caci['clave_dependencia']}}</td>
+                        <td>{{$caci['sector_pago']}}</td>
                         <td>{{$caci['nivel_salarial']}}</td>
                         <td>{{$caci['seccion_sindical']}}</td>
-                        <td>{{$caci['curp']}}</td>
-                        <td>{{$caci['hora_entrada']}}</td>
-                        <td>{{$caci['hora_salida']}}</td>
                         <td>{{$caci['calle']}}</td>
-                        <td>{{$caci['numero']}}</td>
+                        <td>{{$caci['numero_ext']}}</td>
+                        <td>{{$caci['numero_int']}}</td>
                         <td>{{$caci['codigo_postal']}}</td>
                         <td>{{$caci['colonia']}}</td>
                         <td>{{$caci['alcaldia']}}</td>
-                        <td>{{$caci['created_at']}}</td>
+                        <td>{{$caci['estado']}}</td>
+                        <td>{{$caci['pais']}}</td>
+                        <td>{{$caci['correo_electro']}}</td>
+                        <td>{{$caci['telefono_uno']}}</td>
+                        <td>{{$caci['telefono_dos']}}</td>
+                        <td>{{$caci['telefono_tres']}}</td>
+                        <td>{{$caci['extension']}}</td>
                         <td>
                             <span class="float-right">
-                                <button class="btn btn-md btn-outline-success"
-                                onclick="" title="Actualizar EDUCAD"><i
-                                class="fa fa-recycle"></i></button>
+                                <a class="btn btn-md btn-outline-primary"
+                                    href="{{route('lista_documentos_inscr',$caci['id'])}}"
+                                    title="Ver lista de documentos"><i class="fa fa-eye"></i></a>
                             </span>
                         </td>
                     </tr>

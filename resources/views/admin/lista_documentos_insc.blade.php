@@ -1,9 +1,9 @@
 @extends('users.users_inicio')
 @section('title','Bienvenidos Plataforma CACI')
-@section('scripts')
+{{--  @section('scripts')
     <script src="{{URL::asset('js/send_email.js')}}" type="text/javascript"> </script> 
-@endsection
-@section('mycontent')
+@endsection  --}}
+@section('content')
 <style>
     .card-uno {
         margin: 0px 10px 50px 70px;
@@ -64,56 +64,52 @@
 <div class="container">
     <div class="card mt50">
         <div class="card-header">
-            <input id="email_caci" value="{{$emailCaci}}" hidden>
-            @foreach ($lista_inscripcion as $reinsc)
-            <input id="id" value="{{$reinsc->id}}" hidden>
-            <input id="nombre_tutor" value="{{$reinsc->nombre_tutor_madres}}" hidden>
-            <input id="ape_paterno" value="{{$reinsc->apellido_paterno_tutor}}" hidden>
-            <input id="email" value="{{$reinsc->email_correo}}" hidden>
-            <span class="float-right">
-                <button type="button" id="envia_email" title="Notifica Información Recibida" name="envia_email" onclick="envia_email_recib_inscri()" 
-                        class="btn btn-lg btn-primary"><i class="fa fa-envelope"></i></button>
-                {{--  <a class="btn btn-lg btn-dark"
-                    href="{{route('email_lista_espera',[$reinsc->nombre_tutor_madres,$reinsc->apellido_paterno_tutor,$reinsc->email_correo])}}"
-                    title="Notifica Lista en Espera"><i class="fa fa-envelope"></i></a>  --}}
-            </span>
-            @endforeach
-            <h1><i class="fa fa-file"></i> Valida Inscripci&oacute;n Solicitante</h1>
+            {{--  <input id="email_caci" value="{{$emailCaci}}" hidden>
+            @foreach ($lista_inscripcion as $preinsc)
+            <input id="id" value="{{$preinsc->id}}" hidden>
+            <input id="nombre_tutor" value="{{$preinsc->nombre_tutor_madres}}" hidden>
+            <input id="ape_paterno" value="{{$preinsc->apellido_paterno_tutor}}" hidden>
+            <input id="email" value="{{$preinsc->email_correo}}" hidden>
+            @endforeach  --}}
+            <h1><i class="fa fa-file"></i> Valida Preinscripci&oacute;n</h1>
         </div>
         <div class="card-body">
             <div class="row">
                 <div class="card mt50 card-uno col-md-5 col-lg-5 col-xl-5">
                     <div class="card-title">
-                        <h1>Datos Solicitante</h1>
+                        <h1>Datos</h1>
                     </div>
                     <div class="card-body sub-card-body">
-                        @foreach ($lista_inscripcion as $reinsc)
+                        @foreach ($lista_preinscripcion as $preinsc)
 
-                        <div class="row row-margin"><h3>Caci SAF:</h3><label class="font-label">{{$reinsc->caci}}</label></div>
-
-                        <div class="row row-margin"><h3>Nombre Menor:</h3><label class="font-label">{{$reinsc->nombre_menor_1}} {{$reinsc->apellido_paterno_1}} {{$reinsc->apellido_materno_1}}</label></div>
-                        <div class="row row-margin"><h3>Fecha de Nacimiento:</h3><label class="font-label">{{$reinsc->birthday}}</label></div>
-                        <div class="row row-margin"><h3>Edad:</h3><label class="font-label">{{$reinsc->Edad_menor}}</label></div>
-                        <div class="row row-margin"><h3>Curp:</h3><label class="font-label">{{$reinsc->curp_num}}</label></div>
-
-                        <div class="row row-margin"><h3>Nombre Tutor:</h3><label class="font-label">{{$reinsc->nombre_tutor_madres}} {{$reinsc->apellido_paterno_tutor}} {{$reinsc->apellido_materno_tutor}}</label></div>
+                        <div class="row row-margin"><h3>Nombre Tutor:</h3><label class="font-label">{{$preinsc->nombre}} {{$preinsc->ape_paterno}} {{$preinsc->ape_materno}}</label></div>
                         
-                        <div class="row row-margin"><h3>Calle:</h3><label class="font-label">{{$reinsc->calle}}</label></div>
-                        <div class="row row-margin"><h3>N&uacute;mero:</h3><label class="font-label">{{$reinsc->numero_domicilio}}</label></div>
-                        <div class="row row-margin"><h3>Colonia:</h3><label class="font-label">{{$reinsc->colonia}}</label></div>
-                        <div class="row row-margin"><h3>Alcald&iacute;a:</h3><label class="font-label">{{$reinsc->alcaldia}}</label></div>
-                        <div class="row row-margin"><h3>C&oacute;digo Postal:</h3><label class="font-label">{{$reinsc->codigo_postal}}</label></div>
+                        <div class="row row-margin"><h3>id_empleado:</h3><label class="font-label">{{$preinsc->id_empleado}}</label></div>
+                        <div class="row row-margin"><h3>tipo_nomina:</h3><label class="font-label">{{$preinsc->tipo_nomina}}</label></div>
+                        <div class="row row-margin"><h3>universo_nominal:</h3><label class="font-label">{{$preinsc->universo_nominal}}</label></div>
+                        <div class="row row-margin"><h3>id_unidad_administrativa:</h3><label class="font-label">{{$preinsc->id_unidad_administrativa}}</label></div>
+                        <div class="row row-margin"><h3>unidad_administrativa:</h3><label class="font-label">{{$preinsc->unidad_administrativa}}</label></div>
                         
-                        <div class="row row-margin"><h3>Tipo N&oacute;mina:</h3><label class="font-label">{{$reinsc->tipo_nomina_1}}</label></div>
-                        <div class="row row-margin"><h3>N&uacute;mero Empleado:</h3><label class="font-label">{{$reinsc->num_empleado_1}}</label></div>
-                        <div class="row row-margin"><h3>N&uacute;mero Plaza:</h3><label class="font-label">{{$reinsc->num_plaza_1}}</label></div>
-                        <div class="row row-margin"><h3>Clave Dependencia:</h3><label class="font-label">{{$reinsc->clave_dependencia_1}}</label></div>
-                        <div class="row row-margin"><h3>Nivel Salarial:</h3><label class="font-label">{{$reinsc->nivel_salarial_1}}</label></div>
-                        <div class="row row-margin"><h3>Secci&oacute;n Sindical:</h3><label class="font-label">{{$reinsc->seccion_sindical_1}}</label></div>
+                        <div class="row row-margin"><h3>id_sector:</h3><label class="font-label">{{$preinsc->id_sector}}</label></div>
+                        <div class="row row-margin"><h3>sector:</h3><label class="font-label">{{$preinsc->sector}}</label></div>
+                        <div class="row row-margin"><h3>sector_pago:</h3><label class="font-label">{{$preinsc->sector_pago}}</label></div>
+                        <div class="row row-margin"><h3>nivel_salarial:</h3><label class="font-label">{{$preinsc->nivel_salarial}}</label></div>
+                        <div class="row row-margin"><h3>seccion_sindical:</h3><label class="font-label">{{$preinsc->seccion_sindical}}</label></div>
+                        <div class="row row-margin"><h3>calle:</h3><label class="font-label">{{$preinsc->calle}}</label></div>
 
-                        <div class="row row-margin"><h3>Email:</h3><label class="font-label">{{$reinsc->email_correo}}</label></div>
-                        <div class="row row-margin"><h3>Telefono Uno:</h3><label class="font-label">{{$reinsc->telefono_celular}}</label></div>
-                        <div class="row row-margin"><h3>Telefono Dos:</h3><label class="font-label">{{$reinsc->telefono_3}}</label></div>
+                        <div class="row row-margin"><h3>numero_ext:</h3><label class="font-label">{{$preinsc->numero_ext}}</label></div>
+                        <div class="row row-margin"><h3>numero_int:</h3><label class="font-label">{{$preinsc->numero_int}}</label></div>
+                        <div class="row row-margin"><h3>codigo_postal:</h3><label class="font-label">{{$preinsc->codigo_postal}}</label></div>
+
+                        <div class="row row-margin"><h3>colonia:</h3><label class="font-label">{{$preinsc->colonia}}</label></div>
+                        <div class="row row-margin"><h3>alcaldia:</h3><label class="font-label">{{$preinsc->alcaldia}}</label></div>
+                        <div class="row row-margin"><h3>estado:</h3><label class="font-label">{{$preinsc->estado}}</label></div>
+                        <div class="row row-margin"><h3>pais:</h3><label class="font-label">{{$preinsc->pais}}</label></div>
+                        <div class="row row-margin"><h3>correo_electro:</h3><label class="font-label">{{$preinsc->correo_electro}}</label></div>
+                        <div class="row row-margin"><h3>telefono_uno:</h3><label class="font-label">{{$preinsc->telefono_uno}}</label></div>
+                        <div class="row row-margin"><h3>telefono_dos:</h3><label class="font-label">{{$preinsc->telefono_dos}}</label></div>
+                        <div class="row row-margin"><h3>telefono_tres:</h3><label class="font-label">{{$preinsc->telefono_tres}}</label></div>
+                        <div class="row row-margin"><h3>extension:</h3><label class="font-label">{{$preinsc->extension}}</label></div>
                         @endforeach
                     </div>
                 </div>
@@ -133,7 +129,7 @@
                             <tbody>
                                 @foreach ($data as $doc)
                                 <tr>
-                                    <td>{{$doc->nombre_tramite}}</td>
+                                    <td>{{$doc->tipo_documento}}</td>
                                     <td>{{$doc->created_at}}</td>
                                     <td class="actions">
                                         <span class="float-right">
@@ -153,7 +149,7 @@
         </div>
         <div>
             <span class="float-right btn-regresar">
-                <a class="btn btn-lg btn-primary" href="{{route('lista_inscripcion')}}"
+                <a class="btn btn-lg btn-primary" href="{{route('lista_preinscripcion')}}"
                     title="Regresar"><i class="fa fa-backward"></i> Regresar</a>
             </span>
         </div>

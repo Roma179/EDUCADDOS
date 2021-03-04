@@ -25,31 +25,61 @@ class ExportExcelController extends Controller
 
 		$menor_array[] = array(
 			'nombre', 'ape_paterno', 'ape_materno',
-			'tipo_nomina', 'universo', 'numero_empleado', 'id_unidad_administrativa', 'id_sector', 'sector', 'clave_dependencia', 'nivel_salarial', 'seccion_sindical', 'curp', 'hora_entrada',
-			'hora_salida', 'calle', 'numero', 'codigo_postal', 'colonia', 'alcaldia'
+			'id_empleado', 'tipo_nomina', 'universo_nominal', 'id_unidad_administrativa', 'unidad_administrativa', 'id_sector', 'sector',
+			'sector_pago','nivel_salarial','seccion_sindical','calle','numero_ext','numero_int','codigo_postal','colonia','alcaldia',
+			'estado','pais','correo_electro','telefono_uno','telefono_dos','telefono_tres','extension',
 		);
 		foreach ($data_preins as $menor) {
 			$menor_array[] = array(
 				'nombre_tutor'  => $menor->nombre,
 				'apellido_paterno_tutor'   => $menor->ape_paterno,
 				'apellido_materno_tutor'    => $menor->ape_materno,
-				'calle'  => $menor->tipo_nomina,
-				'numero_domicilio'  => $menor->universo,
-				'colonia'  => $menor->numero_empleado,
-				'alcaldia'  => $menor->id_unidad_administrativa,
-				'codigo_postal'  => $menor->id_sector,
-				'tipo_nomina'   => $menor->sector,
-				'numero_empleado'   => $menor->clave_dependencia,
-				'numero_plaza'   => $menor->nivel_salarial,
-				'clave_dependencia'   => $menor->seccion_sindical,
-				'nivel_salarial'   => $menor->curp,
-				'seccion_sindical'   => $menor->hora_entrada,
-				'horario_laboral_entrada'   => $menor->hora_salida,
-				'horario_laboral_salida'   => $menor->calle,
-				'email'   => $menor->numero,
-				'telefono_uno'   => $menor->codigo_postal,
-				'telefono_dos'   => $menor->colonia,
-				'nombre_menor'   => $menor->alcaldia
+				'id_empleado' =>
+				$menor->id_empleado,
+				'tipo_nomina' =>
+				$menor->tipo_nomina,
+				'universo_nominal' =>
+				$menor->universo_nominal,
+				'id_unidad_administrativa' =>
+				$menor->id_unidad_administrativa,
+				'unidad_administrativa' =>
+				$menor->unidad_administrativa,
+				'id_sector' =>
+				$menor->id_sector,
+				'sector' =>
+				$menor->sector,
+				'sector_pago' =>
+				$menor->sector_pago,
+				'nivel_salarial' =>
+				$menor->nivel_salarial,
+				'seccion_sindical' =>
+				$menor->seccion_sindical,
+				'calle' =>
+				$menor->calle,
+				'numero_ext' =>
+				$menor->numero_ext,
+				'numero_int' =>
+				$menor->numero_int,
+				'codigo_postal' =>
+				$menor->codigo_postal,
+				'colonia' =>
+				$menor->colonia,
+				'alcaldia' =>
+				$menor->alcaldia,
+				'estado' =>
+				$menor->estado,
+				'pais' =>
+				$menor->pais,
+				'correo_electro' =>
+				$menor->correo_electro,
+				'telefono_uno' =>
+				$menor->telefono_uno,
+				'telefono_dos' =>
+				$menor->telefono_dos,
+				'telefono_tres' =>
+				$menor->telefono_tres,
+				'extension' =>
+				$menor->extension,
 			);
 		}
 
@@ -62,6 +92,6 @@ class ExportExcelController extends Controller
 
 		$export = new PreinscripcionExport($menor_array);
 
-    	return Excel::download($export, 'Datos_Preinscripcion.xlsx');
+		return Excel::download($export, 'Datos_Preinscripcion.xlsx');
 	}
 }

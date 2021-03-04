@@ -116,7 +116,7 @@
            <!-- |<a style="color:#00b140;" href="#" title="PROTECCIÓN CIVIL">PROTECCIÓN</a>|
         <a style="color:#00b140;" href="#" title="CONTACTENOS">CONTACTENOS</a>| -->  --}}
          </p>
-          <p style="color:#33353d;">©Copyright Plataforma CACI, Todos los derechos reservados 2020 Gobierno CDMX / Email: <a style="color:#33353d;" href="mailto:caciadministracion@finanzas.cdmx.gob.mx">caciadministracion@finanzas.cdmx.gob.mx</a></p>
+          {{--  <p style="color:#33353d;">©Copyright Plataforma CACI, Todos los derechos reservados 2020 Gobierno CDMX / Email: <a style="color:#33353d;" href="mailto:caciadministracion@finanzas.cdmx.gob.mx">caciadministracion@finanzas.cdmx.gob.mx</a></p>  --}}
        </div>
         </div>
         {{-- <div class="col-md-4 col-sm-6 col-xs-12">
