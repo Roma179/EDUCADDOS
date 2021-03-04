@@ -82,6 +82,7 @@ class PreinscripcionController extends Controller
      */
     public function guardar(Request $request)
     {
+       // dd('entrooo a guardar');
         /* dd($request->all()); */
         Preinscripcion::create($request->all());
         return redirect(route('pre-registro'))->with('status', '¡Preinscripcion Exitosa!');;
