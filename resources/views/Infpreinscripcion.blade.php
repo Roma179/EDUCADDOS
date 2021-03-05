@@ -86,7 +86,7 @@
                   title="Número int." oninput="this.className = ''" name="numero_int"></p>
 
               <p>Código postal<input id="codigo_postal" placeholder="Código postal" title="NCódigo postal"
-                  oninput="this.className = ''" name="codigo_postal" maxlength="5"></p>
+                  oninput="this.className = ''" name="codigo_postal" maxlength="5" onkeypress="return solonumeros(event)" onpaste="return false"></p>
               <input id="tokenCodigoPostalId" oninput="this.className = ''" name="tokenCodigoPostalId"
                 value="SistemaDeRpueba4as4x4vdlsad" hidden>
               <p> Colonia <select style="font-size: 15px;" name="colonia" id="colonia" required></select>
@@ -105,15 +105,15 @@
 
                 <p>Teléfono domicilio a 10 dígitos:<input id="telefono_uno" type="tel" placeholder="Teléfono"
                     title="Teléfono o celular" oninput="this.className = ''" name="telefono_uno" maxlength="10"
-                    pattern="[0-9]{10}"></p>
+                    pattern="[0-9]{10}" onkeypress="return solonumeros(event)" onpaste="return false"></p>
                 <p>Teléfono celular a 10 dígitos:<input id="telefono_dos" type="tel" placeholder="Teléfono celular"
                     title="Teléfono 2" oninput="this.className = ''" name="telefono_dos" maxlength="10"
-                    pattern="[0-9]{10}"></p>
+                    pattern="[0-9]{10}" onkeypress="return solonumeros(event)" onpaste="return false"></p>
                 <p>Teléfono oficina a 10 dígitos:<input id="telefono_tres" type="tel" placeholder="Teléfono oficina"
                     title="Teléfono 3" oninput="this.className = ''" name="telefono_tres" maxlength="10"
-                    pattern="[0-9]{10}"></p>
+                    pattern="[0-9]{10}" onkeypress="return solonumeros(event)" onpaste="return false"></p>
                 <p>Ext.:<input id="extension" type="text" placeholder="Extensión" title="Ext"
-                    oninput="this.className = ''" name="extension"></p>
+                    oninput="this.className = ''" name="extension" onkeypress="return solonumeros(event)" onpaste="return false"></p>
 
                 {{--  <h5 style="font-size: 15px; font-family: Arial, Helvetica; color:#777777;">Archivo de prueba.</h5>
                 <input type="file" id="filename_prueba" name="filename_prueba"
@@ -301,6 +301,27 @@
     
 });
 
+//Input de telefono y codigo postal
+function solonumeros(e){
+            key=e.keyCode || e.which;
+            teclado=String.fromCharCode(key);
+
+            numeros="0123456789";
+            especiales="8-37-38-46";
+            teclado_especial=false;
+
+            for(var i in especiales){
+              
+              if(key==especiales[i]){
+                teclado_especial=true;
+              }
+            }
+
+            if(numeros.indexOf(teclado)==-1 && !teclado_especial){
+              return false;
+
+            }
+          }
 
 
 </script>

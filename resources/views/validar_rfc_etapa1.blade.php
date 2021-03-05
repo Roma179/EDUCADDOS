@@ -57,8 +57,8 @@
  Distancia de la Administración Pública de la Ciudad de México "EDUCAD". La información proporcionada en este formulario, será
  empleada de manera exclusiva para dicho fin.</p>
 <p><b><font color="red">*Obligatorio</font></b></p>
-<p align="justify"><b>Aviso de privacidad</b><br>
-<FONT SIZE=1>Los Datos Personales que se solicitan en el presente formulario se encuentran protegidos por la Ley de Protección de Datos Personales en 
+<p style="color:#054a41; font-size: 24px; text-align: center;"><b>Aviso de privacidad</b><br>
+<FONT SIZE=2>Los Datos Personales que se solicitan en el presente formulario se encuentran protegidos por la Ley de Protección de Datos Personales en 
 Posesión de Sujetos Obligados de la Ciudad de México, por lo que su difusión se encuentra tutelada en sus artículos 3 fracciones IX, 
 XXVIII, XXIX, XXXIV, XXXVI, 9, 16, 25, 26, 37, 41, 46, 49, 50, de dicha Ley y demás relativos y aplicables; debiendo sujetarse en su 
 caso, a las disposiciones relativas a la creación, modificación o supresión de datos personales previstos. Asimismo, deberá estarse a 
