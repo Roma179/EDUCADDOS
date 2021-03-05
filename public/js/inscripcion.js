@@ -42,12 +42,18 @@ function preinscripcion() {
 
     if (dato_archivo_cert_secu !== undefined) {
         form_data.append("filename_certif_estudio", dato_archivo_cert_secu);
+        form_data.append("nivel_escol", $("#select_nivel_escol").val());
+        form_data.append("escolaridad", '');
     }
     if (dato_archivo_cert_bachi !== undefined) {
         form_data.append("filename_certif_estudio", dato_archivo_cert_bachi);
+        form_data.append("nivel_escol", $("#select_nivel_escol").val());
+        form_data.append("escolaridad", $("#select_lic").val());
     }
     if (dato_archivo_cert_maestria !== undefined) {
         form_data.append("filename_certif_estudio", dato_archivo_cert_maestria);
+        form_data.append("nivel_escol", $("#select_nivel_escol").val());
+        form_data.append("escolaridad", $("#select_maestria").val());
     }
     
     form_data.append("filename_acta_nacimiento", dato_archivo_act);
@@ -86,7 +92,7 @@ function preinscripcion() {
                         title: 'Error Documentos, Validaciones!',
                         text: data.result,
                         showConfirmButton: false,
-                        timer: 10000,
+                        timer: 20000,
                         allowOutsideClick: false
                     }).then((result) => {
                         if (result.dismiss === Swal.DismissReason.timer) {
@@ -100,7 +106,7 @@ function preinscripcion() {
                     title: 'Error de Sistema!',
                     text: data.result,
                     showConfirmButton: false,
-                    timer: 10000,
+                    timer: 20000,
                     allowOutsideClick: false
                 }).then((result) => {
                     if (result.dismiss === Swal.DismissReason.timer) {

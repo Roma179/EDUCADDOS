@@ -119,6 +119,5 @@ $(document).ready(function () {
             //console.log($('#terminos').value);
         }
     });
-   
 });
 

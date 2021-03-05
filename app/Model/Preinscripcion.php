@@ -37,6 +37,8 @@ class Preinscripcion extends Model
          'telefono_dos',
          'telefono_tres',
          'extension',
+         'nivel_escol',
+         'escolaridad',
          'created_at',
          'updated_at'
     ];

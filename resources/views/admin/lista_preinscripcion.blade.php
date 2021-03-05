@@ -1,9 +1,9 @@
 @extends('users.users_inicio')
 @section('title','Bienvenidos Plataforma EDUCAD')
-{{-- @section('scripts')
-<script src="{{URL::asset('js/inscripcion.js')}}" type="text/javascript"> </script>
+@section('scripts')
+{{--  <script src="{{URL::asset('js/inscripcion.js')}}" type="text/javascript"> </script>  --}}
 <script src="{{ URL::asset('js/idioma.js')}}" type="text/javascript"></script>
-@endsection --}}
+@endsection
 @section('content')
 <style>
     .margin-card {
@@ -51,17 +51,6 @@
                 </form>
             </div>
         </div>
-        {{-- <h1 style="margin-left: 10px;">Bienvenido {{auth()->user()->name}}</h1> --}}
-        {{-- <div class="card-header">
-            <div class="float-right">
-                <form id="regForm" action="{{route('export-excel')}}" method="GET" enctype="multipart/form-data">
-                    @csrf
-                    <button id="valida_curp" type="submit" title="Generar Reporte" class="btn btn-lg btn-dark"><i
-                            class="fa fa-download"></i></button>
-                </form>
-            </div>
-            <h2><i class="fa fa-book" style="margin-left: 20px;"></i> Inscripci&oacute;n</h2>
-        </div> --}}
         <div class="card-body" style="overflow: auto">
             <div class="portlet-body flip-scroll">
             <table class="table table-bordered table-striped table-condensed flip-content">
@@ -92,6 +81,9 @@
                         <th>telefono_dos</th>
                         <th>telefono_tres</th>
                         <th>extension</th>
+                        <th>Nivel Estudios</th>
+                        <th>Carrera</th>
+                        <th>Acción</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -121,6 +113,12 @@
                         <td>{{$caci['telefono_dos']}}</td>
                         <td>{{$caci['telefono_tres']}}</td>
                         <td>{{$caci['extension']}}</td>
+                        <td>{{$caci['nivel_escol']}}</td>
+                        @if ($caci['escolaridad'] === null)
+                        <td>No Asignado</td>
+                        @else
+                        <td>{{$caci['escolaridad']}}</td>
+                        @endif
                         <td>
                             <span class="float-right">
                                 <a class="btn btn-md btn-outline-primary"
@@ -134,12 +132,6 @@
             </table>
         </div>
         </div>
-        {{--  <div>
-            <span class="float-right btn-regresar">
-                <a class="btn btn-lg btn-primary" href="{{url('/admin')}}"
-        title="Regresar"><i class="fa fa-backward"></i> Regresar</a>
-        </span>
-    </div> --}}
 </div>
 </div>
 

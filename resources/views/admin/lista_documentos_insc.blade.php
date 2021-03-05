@@ -30,10 +30,11 @@
         text-align: center;
         font-style: normal;
         font-size: 15px;
+        margin-top: 5px;
         margin-left: 5px;
     }
     .row-margin {
-        margin: 10px;
+        margin:10px; 
         padding: 10px;
     }
     .btn-regresar{
@@ -82,7 +83,7 @@
                     <div class="card-body sub-card-body">
                         @foreach ($lista_preinscripcion as $preinsc)
 
-                        <div class="row row-margin"><h3>Nombre Tutor:</h3><label class="font-label">{{$preinsc->nombre}} {{$preinsc->ape_paterno}} {{$preinsc->ape_materno}}</label></div>
+                        <div class="row row-margin"><h3>Nombre:</h3><label class="font-label">{{$preinsc->nombre}} {{$preinsc->ape_paterno}} {{$preinsc->ape_materno}}</label></div>
                         
                         <div class="row row-margin"><h3>id_empleado:</h3><label class="font-label">{{$preinsc->id_empleado}}</label></div>
                         <div class="row row-margin"><h3>tipo_nomina:</h3><label class="font-label">{{$preinsc->tipo_nomina}}</label></div>

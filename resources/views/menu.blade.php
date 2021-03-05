@@ -2,83 +2,88 @@
 <html lang="en">
 
 <head>
-<title>@yield('title',"Inicio")</title>
-    <meta charset="utf-8">
+  <title>@yield('title',"Inicio")</title>
+  <meta charset="utf-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<link href="{{ asset('assets/vendors/general/sweetalert2/dist/sweetalert2.css')}}" rel="stylesheet" type="text/css">
-<style>
-    .bs-example{
-        margin: 20px;
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- CSRF Token -->
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link href="{{ asset('assets/vendors/general/sweetalert2/dist/sweetalert2.css')}}" rel="stylesheet" type="text/css">
+  <style>
+    .bs-example {
+      margin: 20px;
     }
-    body{
-        padding-top: 70px;
+
+    body {
+      padding-top: 70px;
     }
-</style>
-<script type="text/javascript">
-  // var global URL
+  </style>
+  <script type="text/javascript">
+    // var global URL
 var url = '{!! URL::asset('') !!}';
-</script>
+  </script>
 </head>
-<body>
-<div class="bs-example">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-    <img style="width: 280px; height: 70px; padding-top: 10px;" src="{{asset('img/logotipoCDMX.svg')}}" alt="Imagenes">
-        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
 
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ml-auto">
-                <a href="{{ url('/inicio') }}" class="nav-item nav-link">Inicio</a>
-                <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Oferta Educativa
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-            <a class="dropdown-item" href="{{url('media_superior')}}">Media Superior</a>
-            <a class="dropdown-item" href="{{url('licenciatura_ingenieria')}}">Licenciatura e Ingeniería</a>
-            <a class="dropdown-item" href="{{url('maestria')}}">Maestría</a>
-          </div>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Convocatoria 2020
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
-            <a class="dropdown-item" href="{{ url('/pre-registro') }}">Etapa 1. Pre-Inscripción</a>
-            <a class="dropdown-item" href="{{ url('/curso-induccion') }}">Etapa 2. Curso de Inducción</a>
-            <a class="dropdown-item" href="{{ url('/Inscripción') }}">Etapa 3. Inscripción</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ url('/contacto') }}">Contacto</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{url('login')}}">Iniciar Sesión</a>
-        </li>
-        <li class="nav-item">
-              <!--  <a class="nav-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+<body>
+  <div class="bs-example">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <img style="width: 280px; height: 70px; padding-top: 10px;" src="{{asset('img/logotipoCDMX.svg')}}"
+        alt="Imagenes">
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ml-auto">
+          <a href="{{ url('/inicio') }}" class="nav-item nav-link">Inicio</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Oferta Educativa
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+              <a class="dropdown-item" href="{{url('media_superior')}}">Media Superior</a>
+              <a class="dropdown-item" href="{{url('licenciatura_ingenieria')}}">Licenciatura e Ingeniería</a>
+              <a class="dropdown-item" href="{{url('maestria')}}">Maestría</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Convocatoria 2020
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+              <a class="dropdown-item" href="{{ url('/pre-registro') }}">Etapa 1. Pre-Inscripción</a>
+              <a class="dropdown-item" href="{{ url('/curso-induccion') }}">Etapa 2. Curso de Inducción</a>
+              <a class="dropdown-item" href="{{ url('/Inscripción') }}">Etapa 3. Inscripción</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url('/contacto') }}">Contacto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{url('login')}}">Iniciar Sesión</a>
+          </li>
+          <li class="nav-item">
+            <!--  <a class="nav-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
         </svg></a>-->
-        </li>
-            </div>
+          </li>
         </div>
+      </div>
     </nav>
-    </div>
-    <div class="container">
-        @yield('content')
-    </div>
+  </div>
+  <div class="container">
+    @yield('content')
+  </div>
 </body>
 <script>
-const $dropdown = $(".dropdown");
+  const $dropdown = $(".dropdown");
 const $dropdownToggle = $(".dropdown-toggle");
 const $dropdownMenu = $(".dropdown-menu");
 const showClass = "show";
@@ -109,4 +114,5 @@ $(window).on("load resize", function() {
   }
 });
 </script>
+
 </html>

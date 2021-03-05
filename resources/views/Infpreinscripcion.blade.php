@@ -17,7 +17,7 @@
       @csrf
       <h1 style="color: #054a41;">Preinscripción a EDUCAD</h1>
       <?php
-       // echo var_dump($data);       
+        // echo var_dump($data);       
         ?>
 
       <div class="tab">
@@ -26,7 +26,7 @@
           <div class="row">
             <div class="col-sm-6">
               <p>Nombre(s):<input id="nombre" type="text" placeholder="Nombre del Padre/Madre o Tutor"
-                  title="Nombre(s) del Padre/Madre o Tutor" oninput="this.className = ''" name="nombre" value=""></p>
+                  title="Nombre(s) del Padre/Madre o Tutor" oninput="this.className = ''" name="nombre" value="<?php echo $data['user']['CH_nombres']?>"></p>
 
               <p>Primer Apellido:<input id="ape_paterno" type="text" placeholder="Apellido paterno"
                   title="Apellido paterno" oninput="this.className = ''" name="ape_paterno"
@@ -53,7 +53,7 @@
 
               <p>UA:<input id="unidad_administrativa" placeholder="Unidad administrativa" title="Unidad Administrativa"
                   oninput="this.className = ''" name="unidad_administrativa"
-                  value="<?php echo $data['user']['CH_nombres'];?>" readonly></p>
+                  value="<?php echo $data['user']['Clave_Dependencia'];?>" readonly></p>
 
               <p>ID. Sector:<input id="id_sector" placeholder="Id Sector" title="id_sector"
                   oninput="this.className = ''" name="id_sector" value="<?php  echo $data['user']['NUM_PLAZA'];?>"></p>
@@ -101,7 +101,7 @@
                 <h4 style="color: #00b140;"><b>Datos Contacto</b> </h4>
 
                 <p>Correo electrónico:<input id="correo_electro" type="email" placeholder="Correo electrónico"
-                    title="Correo Electrónico" oninput="this.className = ''" name="correo_electro"></p>
+                    title="Correo Electrónico" oninput="this.className = ''" name="correo_electro" value="<?php echo $data['user']['CH_mail'] ?>" readonly></p>
 
                 <p>Teléfono domicilio a 10 dígitos:<input id="telefono_uno" type="tel" placeholder="Teléfono"
                     title="Teléfono o celular" oninput="this.className = ''" name="telefono_uno" maxlength="10"
@@ -114,10 +114,6 @@
                     pattern="[0-9]{10}" onkeypress="return solonumeros(event)" onpaste="return false"></p>
                 <p>Ext.:<input id="extension" type="text" placeholder="Extensión" title="Ext"
                     oninput="this.className = ''" name="extension" onkeypress="return solonumeros(event)" onpaste="return false"></p>
-
-                {{--  <h5 style="font-size: 15px; font-family: Arial, Helvetica; color:#777777;">Archivo de prueba.</h5>
-                <input type="file" id="filename_prueba" name="filename_prueba"
-                  accept="application/msword, application/pdf" required>  --}}
 
             </div>
           </div>
@@ -184,7 +180,7 @@
                 <div class="row">
                   <div class="col">
                     <h4>Seleccione el nivel de estudios al que desea inscribirse:</h4>
-                    <select id="select" name="select" class="form-control">
+                    <select id="select_nivel_escol" name="select" class="form-control">
                       <option value="value1">Elige</option>
                       <option value='bachillerato'>01_Bachillerato</option>
                       <option value='licenciatura_ingenieria'>02_Licenciatura o ingeniería</option>
@@ -200,7 +196,7 @@
 
                     <div id="carreras_licenciatura_ingenieria" style="display:none;">
                       <h5>Seleccione el plan de estudios que desea cursar</h5>
-                      <select id="select" name="select" class="form-control">
+                      <select id="select_lic" name="select" class="form-control">
                         <option value="value1">Elige</option>
                         <option id="contador_public" name="contador_public">Contador Público</option>
                         <option id="adm_empresa" name="adm_empresa">Administración de Empresas</option>
@@ -230,7 +226,7 @@
 
                     <div id="maestria" style="display:none;">
                       <h5>Seleccione el plan de estudios que desea cursar</h5>
-                      <select id="select" name="select" class="form-control">
+                      <select id="select_maestria" name="select" class="form-control">
                         <option value="value1">Elige</option>
                         <option id="administracion" name="administracion">Administración</option>
                         <option id="adm_ch" name="adm_ch">Administración del Capital Humano</option>
@@ -276,7 +272,7 @@
 <script src="url('assets/vendors/general/sweetalert2/dist/sweetalert2.all.min.js')"></script>
 <script>
     $(document).ready(function(){
-    $('#select').on('change',function(){
+    $('#select_nivel_escol').on('change',function(){
     var selectValor = ''+$(this).val();
     //alert (selectValor);
 

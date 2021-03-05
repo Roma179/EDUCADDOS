@@ -88,7 +88,7 @@ el uso de mi correo electrónico y número de teléfono para el envío de inform
 </div>
 @endif
 <form id="regForm" action="{{route('guardar_pre-registro')}}" method="POST" enctype="multipart/form-data" style="display:none;">
- <label style="color:#777777; font-size: 40px; text-align: left; ">Preinscripción</label>
+ <label style="color:#777777; font-size: 40px; text-align: left; ">Pre-registro</label>
     @csrf
  <label style="color:#054a41; font-size: 24px; text-align: center;">Para iniciar el proceso de preinscripción, proporciona el siguiente dato</label>
  <label style="color:#777777; font-size: 25px; text-align: left;">RFC</label>
@@ -104,11 +104,11 @@ el uso de mi correo electrónico y número de teléfono para el envío de inform
 <p><b>2. Conforma tu expediente digital,</b> por favor, toma como base el manual que te corresponda:</p>
 <ul style= "list-style-type: square">
 
-<li>Expediente digital para <a href="https://drive.google.com/file/d/1Z66uklaXLkLV7UkDVJHDD3fQkm9lzJIo/view" target="_blank"><u><font color="#000000"> ingreso al Bachillerato</u></font></a></li>
+<li>Expediente digital para <a href="{{url('uploads/manuales/Manual_expediente digital-BACHILLERATO GENERAL.pdf')}}" target="_blank"><u><font color="#000000"> ingreso al Bachillerato</u></font></a></li>
 
-<li>Expediente digital para <a href="https://drive.google.com/file/d/1zV0PQSv7sKsMJ--qR2PIzRZYxbfoMKAx/view" target="_blank"><u><font color="#000000"> ingreso a Licenciatura</u></font></a></li>
+<li>Expediente digital para <a href="{{url('uploads/manuales/Manual_expediente digital-LICENCIATURA.pdf')}}" target="_blank"><u><font color="#000000"> ingreso a Licenciatura</u></font></a></li>
 
- <li>Expediente digital para <a href="https://drive.google.com/file/d/1SFf-1vH8szHDqKI6xMnot2ve30p4Zaob/view" target="_blank"><u><font color="#000000"> ingreso a Maestría</font></u> </a></li>
+ <li>Expediente digital para <a href="{{url('uploads/manuales/Manual_expediente digital-MAESTRIA.pdf')}}" target="_blank"><u><font color="#000000"> ingreso a Maestría</font></u> </a></li>
 </ul>
 
 <p><b>3. Envía tu expediente digital al correo electrónico<a href="mailto:inscripcionescncicdmx@gmail.com"><font color="#000000"> <u>inscripcionescncicdmx@gmail.com</u></font></b></a> En el ASUNTO del correo electrónico escribe tu <i> ID Empleado</i>.</p><br><br>
