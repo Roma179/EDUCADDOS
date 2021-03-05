@@ -88,9 +88,11 @@ el uso de mi correo electrónico y número de teléfono para el envío de inform
 </div>
 @endif
 <form id="regForm" action="{{route('guardar_pre-registro')}}" method="POST" enctype="multipart/form-data" style="display:none;">
- <label style="color:#777777; font-size: 40px; text-align: left; ">Pre-registro</label>
+ <label style="color:#777777; font-size: 40px; text-align: left; ">Preregistro</label>
     @csrf
- <label style="color:#054a41; font-size: 24px; text-align: center;">Para iniciar el proceso de preinscripción, proporciona el siguiente dato</label>
+ <label style="color:#054a41; font-size: 24px; text-align: center;">Para iniciar el proceso de preregistro, proporciona el siguiente dato. Te recomendamos
+    tener a la mano tu recibo de nómina.
+ </label>
  <label style="color:#777777; font-size: 25px; text-align: left;">RFC</label>
     <p><input type="text" id="rfc" placeholder="RFC de la persona trabajadora" oninput="this.className = ''" maxlength="13" name="RFC" required></p>
  

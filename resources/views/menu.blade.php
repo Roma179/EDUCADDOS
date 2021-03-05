@@ -53,7 +53,7 @@ var url = '{!! URL::asset('') !!}';
             </div>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown"
+            <a class="nav-link dropdown-toggle" id="" role="button" 
               aria-haspopup="true" aria-expanded="false">
               Convocatoria 2020
             </a>

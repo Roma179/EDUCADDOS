@@ -1,7 +1,16 @@
 @extends('menu')
 @section('title','Bienvenidos Plataforma EDUCAD')
 @section('content')
-
+<style>
+    .enla_inscribir {
+        background-color: #00b140;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 20px;
+        font-family: Arial;
+    }
+</style>
 <div class="container-fluid">
     {{--  <div style="position: relative;">
         <img style="margin:auto; height:300px; width:100%;" src="{{asset('img/media-superior.jpg')}}">
@@ -106,12 +115,12 @@
             allowfullscreen></iframe>
     </div>
     <div class="row" style=" margin-top: 40px; margin-bottom: 40px; margin-left:28em;">
-        <div style="background-color: rgba(7,174,85,1); color: rgba(0,0,0,1); font-size: 12pt; border-radius: 9px; border-style:solid;">
-            <a href="{{url('/inicio/convocatoria2020/etapa1-pre-registro')}}" style="text-decoration: none; color: #000;">
+        <div class="enla_inscribir">
+            <a href="{{url('/pre-registro')}}" style="text-decoration: none;">
                 <div style="padding-left: 12px;
         padding-right: 12px; text-align: center;
-        width: 100%; margin-top:5px;">
-                    <p>Quiero Inscribirme</p>
+         margin-top:10px;">
+                    <p style="color: #fff;">Quiero Inscribirme</p>
                 </div>
             </a>
         </div>
