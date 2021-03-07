@@ -35,17 +35,17 @@
               <p>Tipo de nómina<input id="tipo_nomina" placeholder="Tipo de nómina" title="Tipo de nómina"
                   oninput="this.className = ''" name="tipo_nomina" value="{{$value['TipoNomina']}}" readonly></p>
               <p>Universo nominal<input id="universo_nominal" placeholder="Universo nominal" title="Universo"
-                  oninput="this.className = ''" name="universo_nominal" value="{{$value['TipoNomina']}}"> </p>
+                  oninput="this.className = ''" name="universo_nominal" value="<?php  echo $data['user']['status'];?>"> </p>
               <p>Id UA<input id="id_unidad_administrativa" placeholder="Id UA" title="Id unidad administrativa" oninput="this.className = ''"
-                   name="id_unidad_administrativa" value="{{$value['NumEmpleado']}}" readonly></p>
+                   name="id_unidad_administrativa" value="<?php  echo $value['NUM_PLAZA'];?>" readonly></p>
               <p>UA:<input id="unidad_administrativa" placeholder="Unidad administrativa" title="Unidad Administrativa"
-                  oninput="this.className = ''" name="unidad_administrativa" value="{{$value['CH_nombres']}}" readonly></p>
+                  oninput="this.className = ''" name="unidad_administrativa" value="<?php echo $data['user']['Clave_Dependencia'];?>" readonly></p>
               <p>Id Sector<input id="id_sector" placeholder="Id Sector" title="Id sector"
-                            oninput="this.className = ''" name="id_sector" value="{{$value['NumEmpleado']}}" readonly></p>
+                            oninput="this.className = ''" name="id_sector" value="<?php  echo $data['user']['NUM_PLAZA'];?>" readonly></p>
               <p>Sector<input id="sector" placeholder="Sector" title="sector" oninput="this.className = ''"
-                            name="sector" value="{{$value['SECCION_SINDICAL']}}" readonly></p>
+                            name="sector" value="<?php  echo $data['user']['N_SECT_PRES'];?>" readonly></p>
               <p>Sector Pago:<input id="sector_pago" placeholder="Sector pago" title="Sector pago"
-                  oninput="this.className = ''" name="sector_pago" value="{{$value['SECCION_SINDICAL']}}" readonly></p>
+                  oninput="this.className = ''" name="sector_pago" value="<?php  echo $data['user']['N_SECT_PRES'];?>" readonly></p>
               <p>Nivel salarial<input id="nivel_salarial" placeholder="Nivel salarial" title="Nivel salarial"
                   oninput="this.className = ''" name="nivel_salarial" value="{{$value['NIVEL_SALARIAL']}}" readonly></p>
               <p>Sección sindical<input id="seccion_sindical" placeholder="Sección sindical" title="Sección sindical"
@@ -239,7 +239,6 @@
 </body>
 <!--<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>-->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-//<script src="sweetalert2.all.min.js"></script>
 <script>
     $(document).ready(function(){
     $('#select_nivel_escol').on('change',function(){

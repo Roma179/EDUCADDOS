@@ -31,13 +31,13 @@ function preinscripcion() {
     form_data.append("telefono_tres", $("#telefono_tres").val());
     form_data.append("extension", $("#extension").val());
     
-    var dato_archivo_act = $('#filename_acta_nacimiento').prop("files")[0];
+    var dato_archivo_act = $('#filename_act').prop("files")[0];
     var dato_archivo_curp = $('#filename_curp').prop("files")[0];
-    var dato_archivo_comp_dom = $('#filename_comprobante_domicilio').prop("files")[0];
+    var dato_archivo_comp_dom = $('#filename_domicilio').prop("files")[0];
     var dato_archivo_ine = $('#filename_ine').prop("files")[0];
-    var dato_archivo_nomi = $('#filename_recibo_nomina').prop("files")[0];
-    var dato_archivo_cert_secu = $('#filename_certificado_secundaria').prop("files")[0];
-    var dato_archivo_cert_bachi = $('#filename_certificado_bachi').prop("files")[0];
+    var dato_archivo_nomi = $('#filename_recibo').prop("files")[0];
+    var dato_archivo_cert_secu = $('#filename_secundaria').prop("files")[0];
+    var dato_archivo_cert_bachi = $('#filename_bachillerato').prop("files")[0];
     var dato_archivo_cert_maestria = $('#filename_certificado_maestria').prop("files")[0];
 
     if (dato_archivo_cert_secu !== undefined) {
