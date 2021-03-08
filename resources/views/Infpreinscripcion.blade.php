@@ -52,7 +52,7 @@
                   oninput="this.className = ''" name="seccion_sindical" value="{{$value['SECCION_SINDICAL']}}" readonly></p>
           </div><!--col-sm-6-->
           <div class="col-sm-6"><!--2 sm-6-->
-    <h5 style=" color:#777777; text-align: center;"><label>Domicilio particular</label></h5>
+    <h5 style="color: #00b140; text-align: center;"><label>Domicilio particular</label></h5>
 
               <p>Calle<input id="calle" type="text" placeholder="Calle" title="Calle" oninput="this.className = ''"
                   name="calle"></p>
@@ -100,7 +100,7 @@
 <div class="tab"><!--tab2-->
 
 <br>
-        <h4>Preinscripción a EDUCAD</h4>
+        
             <p><b>Favor de adjuntar los siguientes documentos:</b></p>
             <ul>
             <font size=3>
@@ -116,29 +116,35 @@
   <div class="col-lg-12"><!-- 12 DIV-->
       <div class="row"><!--div row 2-->
       <div class="mt-2"><!--div mt-2  col-sm-6-->
-      <h5 style="font-size: 15px; font-family: Arial, Helvetica; color:#777777;">Acta de nacimiento</h5>
-              <input type="file" id="filename_act" name="filename_act" accept="application/msword, application/pdf">
+      <h5 style="font-size: 15px; font-family: Arial, Helvetica; color:#777777;"><b>Acta de nacimiento</b></h5>
+              <input type="file" id="filename_act" name="filename_act" accept="application/msword, application/pdf"></br>
 
-              <h5 style="font-size: 15px; font-family: Arial, Helvetica; color:#777777;">Clave Única de Registro de Población (CURP)</h5>
+              <h5 style="font-size: 15px; font-family: Arial, Helvetica; color:#777777;"><b>Clave Única de Registro de Población (CURP)</b></h5>
               <input type="file" id="filename_curp" name="filename_curp" accept="application/msword, application/pdf">
       </div><!--div mt-2    col-sm-6-->
+      </div><!--div row 2-->
 
+      <div class="row"><!--row 3-->
       <div class="mt-2"><br><!-- mt-2 col-sm-6  2 -->
-      <h5 style="font-size: 15px; font-family: Arial, Helvetica; color:#777777;">Comprobante de Domicilio (no mayor a tres meses)</h5>
+      <h5 style="font-size: 15px; font-family: Arial, Helvetica; color:#777777;"><b>Comprobante de Domicilio (no mayor a tres meses)</b></h5>
               <input type="file" id="filename_domicilio" name="filename_domicilio" accept="application/msword, application/pdf">
 
-      <h5 style="font-size: 15px; font-family: Arial, Helvetica; color:#777777;">Identificación Oficial vigente (INE) ambos lados</h5>
+      <h5 style="font-size: 15px; font-family: Arial, Helvetica; color:#777777;"><b>Identificación Oficial vigente (INE) ambos lados</b></h5>
       <input type="file" id="filename_ine" name="filename_ine" accept="application/msword, application/pdf">
 
       </div><!-- mt-2 col-sm-6  2 -->
+      </div><!-- row 3-->
 
+      <div class="row"><!--row 4-->
       <div class="mt-2"><!--ultimo file-->
-      <h5 style="font-size: 15px; font-family: Arial, Helvetica; color:#777777;">Último recibo de nómina:</h5>
+      <h5 style="font-size: 15px; font-family: Arial, Helvetica; color:#777777;"><b>Último recibo de nómina:</b></h5>
               <input type="file" id="filename_recibo" name="filename_recibo" accept="application/msword, application/pdf">
       </div><!--ultimo file--><br><br>
+      </div><!--row 4-->
 
       <div><!-- los que no pide validacion-->
-      <h4>Seleccione el nivel de estudios al que desea inscribirse:</h4>
+      <h4 style="color: #054a41;">Seleccione el nivel de estudios al que desea inscribirse:</h4>
+      <div class="form-group col-md-4"><!--select-->
                     <select id="select_nivel_escol" name="select" class="form-control">
                       <option value="value1">Elige</option>
                       <option value='bachillerato'>01_Bachillerato</option>
@@ -202,7 +208,7 @@
                     </div><!--none maestría-->
 
 
-
+      </div><!--select-->
       </div><!-- los que no pide validacion-->
       
       @endforeach
@@ -211,7 +217,7 @@
 
 
 
-      </div><!--div row 2-->
+     
   </div><!-- 12 DIV-->
   <p style="color: #f5f5f0;">.</p>
 
