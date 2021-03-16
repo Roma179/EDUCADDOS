@@ -11,234 +11,292 @@
 
 <body>
 
-{{--  <form id="regForm" action="{{route('guardar_reinscripcion_bd')}}" method="POST" enctype="multipart/form-data">   --}}
+  {{--  <form id="regForm" action="{{route('guardar_reinscripcion_bd')}}" method="POST" enctype="multipart/form-data">
+  --}}
 
-    <h1  style="color: #054a41;">Preinscripción a EDUCAD</h1>
-        <br>
-        <div class="tab"><!--tab-->
-          @csrf
-          @foreach ($data as $item=>$value)
-    <div class="col-lg-12"><!--div col-lg-12-->
-              <label style="color: #00b140;">Datos de la persona trabajadora</label>
-          <div class="row"><!--row primer-->
-          <div class="col-sm-6"><!--col-sm-6-->
-              <p>Nombre(s)<input id="nombre" type="text" placeholder="Nombre(s) del Padre/Madre o Tutor"
-                  title="Nombre del Padre/Madre o Tutor" oninput="this.className = ''" name="nombre"
-                  value="{{$value['CH_nombres']}}" readonly></p>
-              <p>Apellido paterno<input id="ape_paterno" type="text" placeholder="Apellido paterno"
-                  title="Apellido paterno" oninput="this.className = ''" name="ape_paterno" value="{{$value['CH_paterno']}}" readonly></p>
-              <p>Apellido materno<input id="ape_materno" type="text" placeholder="Apellido materno"
-                  title="Apellido materno" oninput="this.className = ''" name="ape_materno"
-                  value="{{$value['CH_materno']}}" readonly></p>
-              <p>Id.Emp:<input id="id_empleado" type="text" placeholder="Id empleado" title="Id empleado"
-                  oninput="this.className = ''" name="id_empleado" value="{{$value['NumEmpleado']}}" readonly></p>
-              <p>Tipo de nómina<input id="tipo_nomina" placeholder="Tipo de nómina" title="Tipo de nómina"
-                  oninput="this.className = ''" name="tipo_nomina" value="{{$value['TipoNomina']}}" readonly></p>
-              <p>Universo nominal<input id="universo_nominal" placeholder="Universo nominal" title="Universo"
-                  oninput="this.className = ''" name="universo_nominal" value="<?php  echo $data['user']['status'];?>"> </p>
-              <p>Id UA<input id="id_unidad_administrativa" placeholder="Id UA" title="Id unidad administrativa" oninput="this.className = ''"
-                   name="id_unidad_administrativa" value="<?php  echo $value['NUM_PLAZA'];?>" readonly></p>
-              <p>UA:<input id="unidad_administrativa" placeholder="Unidad administrativa" title="Unidad Administrativa"
-                  oninput="this.className = ''" name="unidad_administrativa" value="<?php echo $data['user']['Clave_Dependencia'];?>" readonly></p>
-              <p>Id Sector<input id="id_sector" placeholder="Id Sector" title="Id sector"
-                            oninput="this.className = ''" name="id_sector" value="<?php  echo $data['user']['NUM_PLAZA'];?>" readonly></p>
-              <p>Sector<input id="sector" placeholder="Sector" title="sector" oninput="this.className = ''"
-                            name="sector" value="<?php  echo $data['user']['N_SECT_PRES'];?>" readonly></p>
-              <p>Sector Pago:<input id="sector_pago" placeholder="Sector pago" title="Sector pago"
-                  oninput="this.className = ''" name="sector_pago" value="<?php  echo $data['user']['N_SECT_PRES'];?>" readonly></p>
-              <p>Nivel salarial<input id="nivel_salarial" placeholder="Nivel salarial" title="Nivel salarial"
-                  oninput="this.className = ''" name="nivel_salarial" value="{{$value['NIVEL_SALARIAL']}}" readonly></p>
-              <p>Sección sindical<input id="seccion_sindical" placeholder="Sección sindical" title="Sección sindical"
-                  oninput="this.className = ''" name="seccion_sindical" value="{{$value['SECCION_SINDICAL']}}" readonly></p>
-          </div><!--col-sm-6-->
-          <div class="col-sm-6"><!--2 sm-6-->
-    <h5 style="color: #00b140; text-align: center;"><label>Domicilio particular</label></h5>
+  <h1 style="color: #054a41;">Preinscripción a EDUCAD</h1>
+  <br>
+        {{--  <?php 
+           echo var_dump($data);
+        ?>  --}}
+  <div class="tab">
+    <!--tab-->
+    @csrf
+    @foreach ($data as $item=>$value)
+    <div class="col-lg-12">
+      <!--div col-lg-12-->
+      <label style="color: #00b140;">Datos de la persona trabajadora</label>
+      <div class="row">
+        <!--row primer-->
+        <div class="col-sm-6">
+          <!--col-sm-6-->
+          <p>Nombre(s)<input id="nombre" type="text" placeholder="Nombre(s) del Padre/Madre o Tutor"
+              title="Nombre del Padre/Madre o Tutor" oninput="this.className = ''" name="nombre"
+              value="{{$value['CH_nombres']}}" readonly></p>
+          <p>Apellido paterno<input id="ape_paterno" type="text" placeholder="Apellido paterno" title="Apellido paterno"
+              oninput="this.className = ''" name="ape_paterno" value="{{$value['CH_paterno']}}" readonly></p>
+          <p>Apellido materno<input id="ape_materno" type="text" placeholder="Apellido materno" title="Apellido materno"
+              oninput="this.className = ''" name="ape_materno" value="{{$value['CH_materno']}}" readonly></p>
+          <p>Id.Emp:<input id="id_empleado" type="text" placeholder="Id empleado" title="Id empleado"
+              oninput="this.className = ''" name="id_empleado" value="{{$value['NumEmpleado']}}" readonly></p>
+          <p>Tipo de nómina<input id="tipo_nomina" placeholder="Tipo de nómina" title="Tipo de nómina"
+              oninput="this.className = ''" name="tipo_nomina" value="{{$value['TipoNomina']}}" readonly></p>
+          <p>Universo nominal<input id="universo_nominal" placeholder="Universo nominal" title="Universo"
+              oninput="this.className = ''" name="universo_nominal" value="<?php  echo $data['user']['Universo'];?>">
+          </p>
+          <p>Id UA<input id="id_unidad_administrativa" placeholder="Id UA" title="Id unidad administrativa"
+              oninput="this.className = ''" name="id_unidad_administrativa"
+              value="<?php  echo $value['id_unidadAdmin'];?>" readonly></p>
+          <p>UA:<input id="unidad_administrativa" placeholder="Unidad administrativa" title="Unidad Administrativa"
+              oninput="this.className = ''" name="unidad_administrativa" value="<?php echo $data['user']['UA'];?>"
+              readonly></p>
+          <p>Id Sector<input id="id_sector" placeholder="Id Sector" title="Id sector" oninput="this.className = ''"
+              name="id_sector" value="<?php  echo $data['user']['id_sector'];?>" readonly></p>
+          <p>Sector<input id="sector" placeholder="Sector" title="sector" oninput="this.className = ''" name="sector"
+              value="<?php  echo $data['user']['N_SECT_PRES'];?>" readonly></p>
+          <p>Sector Pago:<input id="sector_pago" placeholder="Sector pago" title="Sector pago"
+              oninput="this.className = ''" name="sector_pago" value="<?php  echo $data['user']['N_SECT_PRES'];?>"
+              readonly></p>
+          <p>Nivel salarial<input id="nivel_salarial" placeholder="Nivel salarial" title="Nivel salarial"
+              oninput="this.className = ''" name="nivel_salarial" value="{{$value['NIVEL_SALARIAL']}}" readonly></p>
+          <p>Sección sindical<input id="seccion_sindical" placeholder="Sección sindical" title="Sección sindical"
+              oninput="this.className = ''" name="seccion_sindical" value="{{$value['SECCION_SINDICAL']}}" readonly></p>
+          <input id="status_empleado" oninput="this.className = ''" name="status_empleado" value="{{$value['status']}}" hidden readonly></p>
+        </div>
+        <!--col-sm-6-->
+        <div class="col-sm-6">
+          <!--2 sm-6-->
+          <h5 style="color: #00b140; text-align: center;"><label>Domicilio particular</label></h5>
 
-              <p>Calle<input id="calle" type="text" placeholder="Calle" title="Calle" oninput="this.className = ''"
-                  name="calle"></p>
-              <p>Número ext.<input id="numero_ext" placeholder="Número exterior" title="Número" oninput="this.className = ''"
-                  name="numero_ext"></p>
-              <p>Número int.<input id="numero_int" placeholder="Número interior" title="Número" oninput="this.className = ''"
-                  name="numero_int"></p>
-              <p>Código postal<input id="codigo_postal" placeholder="Código postal" title="NCódigo postal"
-                  oninput="this.className = ''" name="codigo_postal" maxlength="5" onkeypress="return solonumeros(event)" onpaste="return false"></p>
-              <input id="tokenCodigoPostalId" oninput="this.className = ''" name="tokenCodigoPostalId"
-                value="SistemaDeRpueba4as4x4vdlsad" hidden>
-              <p> Colonia <select style="font-size: 15px;" name="colonia" id="colonia" required></select>
-                <!---<p style="font-size: 15px; font-family: Arial, Helvetica; color:#777777;">Colonia<input id="colonia" type="text" placeholder="Colonia" title="Colonia" oninput="this.className = ''" name="colonia" readonly></p>-->
-                <p>Alcaldía/Municipio<input id="alcaldia" type="text" placeholder="Alcaldía" title="Alcaldía"
-                    oninput="this.className = ''" name="alcaldia" readonly></p>
-                <p>Estado:<input id="estado" type="text" placeholder="Estado" title="Estado"
-                    oninput="this.className = ''" name="estado"></p>
-                <p>País:<input id="pais" type="text" placeholder="País" title="País" oninput="this.className = ''"
-                    name="pais"></p>
-                <h4 style="color: #00b140;"><b>Datos de Contacto</b> </h4>
-                <p>Correo electrónico<input id="correo_electro" type="email" placeholder="E-mail" title="E-mail"
-                    oninput="this.className = ''" name="correo_electro" value="{{$value['CH_mail']}}" readonly></p>
-                <p>Teléfono domicilio a 10 dígitos<input id="telefono_uno" type="tel" placeholder="Teléfono o celular"
-                    title="Teléfono o celular" oninput="this.className = ''" name="telefono_uno" maxlength="10"
-                    pattern="[0-9]{10}" onkeypress="return solonumeros(event)" onpaste="return false"></p>
-                <p>Teléfono celular a 10 dígitos<input id="telefono_dos" type="tel" placeholder="Teléfono 2" title="Teléfono 2"
-                    oninput="this.className = ''" name="telefono_dos" maxlength="10" pattern="[0-9]{10}"
-                    onkeypress="return solonumeros(event)" onpaste="return false"></p>
-                <p>Teléfono oficina a 10 dígitos<input id="telefono_tres" type="tel" placeholder="Teléfono 3" title="Teléfono 3"
-                    oninput="this.className = ''" name="telefono_tres" maxlength="10" pattern="[0-9]{10}" 
-                    onkeypress="return solonumeros(event)" onpaste="return false"></p>
-                <p>Ext.<input id="extension" type="tel" placeholder="Teléfono 3" title="Extensión"
-                    oninput="this.className = ''" name="extension" maxlength="10" pattern="[0-9]{10}"
-                    onkeypress="return solonumeros(event)" onpaste="return false"></p>
-                <br><br>
-    </div><!--2 sm-6-->
+          <p>Calle<input id="calle" type="text" placeholder="Calle" title="Calle" oninput="this.className = ''"
+              name="calle"></p>
+          <p>Número ext.<input id="numero_ext" placeholder="Número exterior" title="Número"
+              oninput="this.className = ''" name="numero_ext"></p>
+          <p>Número int.<input id="numero_int" placeholder="Número interior" title="Número"
+              oninput="this.className = ''" name="numero_int"></p>
+          <p>Código postal<input id="codigo_postal" placeholder="Código postal" title="NCódigo postal"
+              oninput="this.className = ''" name="codigo_postal" maxlength="5" onkeypress="return solonumeros(event)"
+              onpaste="return false"></p>
+          <input id="tokenCodigoPostalId" oninput="this.className = ''" name="tokenCodigoPostalId"
+            value="SistemaDeRpueba4as4x4vdlsad" hidden>
+          <p> Colonia <select style="font-size: 15px;" name="colonia" id="colonia" required></select>
+            <!---<p style="font-size: 15px; font-family: Arial, Helvetica; color:#777777;">Colonia<input id="colonia" type="text" placeholder="Colonia" title="Colonia" oninput="this.className = ''" name="colonia" readonly></p>-->
+            <p>Alcaldía/Municipio<input id="alcaldia" type="text" placeholder="Alcaldía" title="Alcaldía"
+                oninput="this.className = ''" name="alcaldia" readonly></p>
+            <p>Estado:<input id="estado" type="text" placeholder="Estado" title="Estado" oninput="this.className = ''"
+                name="estado"></p>
+            <p>País:<input id="pais" type="text" placeholder="País" title="País" oninput="this.className = ''"
+                name="pais"></p>
+            <h4 style="color: #00b140;"><b>Datos de Contacto</b> </h4>
+            <p>Correo electrónico<input id="correo_electro" type="email" placeholder="E-mail" title="E-mail"
+                oninput="this.className = ''" name="correo_electro" value="{{$value['CH_mail']}}" readonly></p>
+            <p>Teléfono domicilio a 10 dígitos<input id="telefono_uno" type="tel" placeholder="Teléfono o celular"
+                title="Teléfono o celular" oninput="this.className = ''" name="telefono_uno" maxlength="10"
+                pattern="[0-9]{10}" onkeypress="return solonumeros(event)" onpaste="return false"></p>
+            <p>Teléfono celular a 10 dígitos<input id="telefono_dos" type="tel" placeholder="Teléfono 2"
+                title="Teléfono 2" oninput="this.className = ''" name="telefono_dos" maxlength="10" pattern="[0-9]{10}"
+                onkeypress="return solonumeros(event)" onpaste="return false"></p>
+            <p>Teléfono oficina a 10 dígitos<input id="telefono_tres" type="tel" placeholder="Teléfono 3"
+                title="Teléfono 3" oninput="this.className = ''" name="telefono_tres" maxlength="10" pattern="[0-9]{10}"
+                onkeypress="return solonumeros(event)" onpaste="return false"></p>
+            <p>Ext.<input id="extension" type="tel" placeholder="Extensión" title="Extensión"
+                oninput="this.className = ''" name="extension" maxlength="10" pattern="[0-9]{10}"
+                onkeypress="return solonumeros(event)" onpaste="return false"></p>
+            <br><br>
+        </div>
+        <!--2 sm-6-->
 
-    </div><!--row primer-->
-      
+      </div>
+      <!--row primer-->
 
-    </div><!--div col-lg-12-->
+
+    </div>
+    <!--div col-lg-12-->
+    @endforeach
     <p style="color: #f5f5f0;">.</p>
-</div><!--tab-->
+  </div>
+  <!--tab-->
 
-<div class="tab"><!--tab2-->
+  <div class="tab">
+    <!--tab2-->
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-12">
+        <br>
 
-<br>
-        
-            <p><b>Favor de adjuntar los siguientes documentos:</b></p>
-            <ul>
-            <font size=3>
+        <p><b>Favor de adjuntar los siguientes documentos:</b></p>
+        <ul>
+          <font size=3>
             <li>Acta de Nacimiento</li>
-            <li>Clave Única de Registro de Población (CURP) lo puedes descargar desde la página <a href="https://www.gob.mx/curp">
-            <font color="#000000"><u> https://www.gob.mx/curp </u></font></a></li>
+            <li>Clave Única de Registro de Población (CURP) lo puedes descargar desde la página <a
+                href="https://www.gob.mx/curp">
+                <font color="#000000"><u> https://www.gob.mx/curp </u></font>
+              </a></li>
             <li>Comprobante de Domicilio (no mayor a tres meses)</li>
             <li>Identificación Oficial vigente (INE) ambos lados</li>
             <li>Último recibo de nómina (a la quincena vigente)</li>
-            </ul>
-            </font>
+          </font>
+        </ul>
 
-  <div class="col-lg-12"><!-- 12 DIV-->
-      <div class="row"><!--div row 2-->
-      <div class="mt-2"><!--div mt-2  col-sm-6-->
-      <h5 style="font-size: 15px; font-family: Arial, Helvetica; color:#777777;"><b>Acta de nacimiento</b></h5>
-              <input type="file" id="filename_act" name="filename_act" accept="application/msword, application/pdf"></br>
+        <div class="row">
+          <div class="col-sm-6 col-md-6 col-lg-6">
+            <!-- 12 DIV-->
+            <div class="row">
+              <!--div row 2-->
+              <div class="mt-2">
+                <!--div mt-2  col-sm-6-->
+                <h5 style="font-size: 15px; font-family: Arial, Helvetica; color:#777777;"><b>Acta de nacimiento</b>
+                </h5>
+                <input type="file" id="filename_act" name="filename_act"
+                  accept="application/msword, application/pdf"></br>
 
-              <h5 style="font-size: 15px; font-family: Arial, Helvetica; color:#777777;"><b>Clave Única de Registro de Población (CURP)</b></h5>
-              <input type="file" id="filename_curp" name="filename_curp" accept="application/msword, application/pdf">
-      </div><!--div mt-2    col-sm-6-->
-      </div><!--div row 2-->
+                <h5 style="font-size: 15px; font-family: Arial, Helvetica; color:#777777;"><b>Clave Única de Registro de
+                    Población (CURP)</b></h5>
+                <input type="file" id="filename_curp" name="filename_curp" accept="application/msword, application/pdf">
+              </div>
+              <!--div mt-2    col-sm-6-->
+            </div>
+            <!--div row 2-->
 
-      <div class="row"><!--row 3-->
-      <div class="mt-2"><br><!-- mt-2 col-sm-6  2 -->
-      <h5 style="font-size: 15px; font-family: Arial, Helvetica; color:#777777;"><b>Comprobante de Domicilio (no mayor a tres meses)</b></h5>
-              <input type="file" id="filename_domicilio" name="filename_domicilio" accept="application/msword, application/pdf">
+            <div class="row">
+              <!--row 3-->
+              <div class="mt-2"><br><!-- mt-2 col-sm-6  2 -->
+                <h5 style="font-size: 15px; font-family: Arial, Helvetica; color:#777777;"><b>Comprobante de Domicilio
+                    (no
+                    mayor a tres meses)</b></h5>
+                <input type="file" id="filename_domicilio" name="filename_domicilio"
+                  accept="application/msword, application/pdf">
+              </div>
+            </div>
+            <!--select-->
+          </div><!-- los que no pide validacion-->
+          <!-- segunda columna del formulario -->
+          <div class="col-sm-6 col-md-6 col-lg-6">
+            <div class="row">
+              <!--row 3-->
+              <div class="mt-2"><br><!-- mt-2 col-sm-6  2 -->
+                <h5 style="font-size: 15px; font-family: Arial, Helvetica; color:#777777;"><b>Identificación Oficial
+                    vigente (INE) ambos lados</b></h5>
+                <input type="file" id="filename_ine" name="filename_ine" accept="application/msword, application/pdf">
+              </div>
+            </div>
 
-      <h5 style="font-size: 15px; font-family: Arial, Helvetica; color:#777777;"><b>Identificación Oficial vigente (INE) ambos lados</b></h5>
-      <input type="file" id="filename_ine" name="filename_ine" accept="application/msword, application/pdf">
+            <div class="row">
+              <!--row 4-->
+              <div class="mt-2">
+                <!--ultimo file-->
+                <h5 style="font-size: 15px; font-family: Arial, Helvetica; color:#777777;"><b>Último recibo de
+                    nómina:</b></h5>
+                <input type="file" id="filename_recibo" name="filename_recibo"
+                  accept="application/msword, application/pdf">
+              </div>
+              <!--ultimo file--><br><br>
+            </div>
+            <!--row 4-->
 
-      </div><!-- mt-2 col-sm-6  2 -->
-      </div><!-- row 3-->
+            <div class="row">
+              <div class="mt-2">
+                <!-- los que no pide validacion-->
+                <h4 style="color: #054a41;">Seleccione el nivel de estudios al que desea inscribirse:</h4>
+                <div class="form-group col-md-4">
+                  <!--select-->
+                  <select id="select_nivel_escol" name="select" class="form-control">
+                    <option value="value1">Elige</option>
+                    <option value='bachillerato'>01_Bachillerato</option>
+                    <option value='licenciatura_ingenieria'>02_Licenciatura o ingeniería</option>
+                    <option value='maestria'>03_Maestría</option>
+                  </select>
 
-      <div class="row"><!--row 4-->
-      <div class="mt-2"><!--ultimo file-->
-      <h5 style="font-size: 15px; font-family: Arial, Helvetica; color:#777777;"><b>Último recibo de nómina:</b></h5>
-              <input type="file" id="filename_recibo" name="filename_recibo" accept="application/msword, application/pdf">
-      </div><!--ultimo file--><br><br>
-      </div><!--row 4-->
+                  <div id="bachillerato" style="display:none;">
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                    <!--div none bachillerato-->
+                    <h5>Certificado total de estudios del grado Secundaria (ambos lados)</h5>
+                    <input type="file" id="filename_secundaria" name="filename_secundaria"
+                      accept="application/msword, application/pdf">
+                    </div>
+                  </div>
+                  <!--div none bachillerato-->
 
-      <div><!-- los que no pide validacion-->
-      <h4 style="color: #054a41;">Seleccione el nivel de estudios al que desea inscribirse:</h4>
-      <div class="form-group col-md-4"><!--select-->
-                    <select id="select_nivel_escol" name="select" class="form-control">
+                  <div id="carreras_licenciatura_ingenieria" style="display:none;">
+                    <!--div none lic_ing-->
+                    <h5>Seleccione el plan de estudios que desea cursar</h5>
+                    <select id="select_lic" name="select" class="form-control">
                       <option value="value1">Elige</option>
-                      <option value='bachillerato'>01_Bachillerato</option>
-                      <option value='licenciatura_ingenieria'>02_Licenciatura o ingeniería</option>
-                      <option value='maestria'>03_Maestría</option>
+                      <option id="contador_public" name="contador_public">Contador Público</option>
+                      <option id="adm_empresa" name="adm_empresa">Administración de Empresas</option>
+                      <option id="derecho" name="derecho">Derecho</option>
+                      <option id="infor_adm" name="infor_adm">Informática Administrativa</option>
+                      <option id="rh" name="rh">Recursos Humanos</option>
+                      <option id="ciencias_educ" name="ciencias_educ">Ciencias de la Educación</option>
+                      <option id="mercadotecnia" name="mercadotecnia">Mercadotecnia</option>
+                      <option id="adm_financiera" name="adm_financiera">Administración Financiera</option>
+                      <option id="derecho_economia" name="derecho_economia">Derecho con Acentuación en
+                        Economía</option>
+                      <option id="derech_corporativo" name="derech_corporativo">Derecho Corporativo</option>
+                      <option id="derech_finanzas" name="derech_finanzas">Derecho y Finanzas</option>
+                      <option id="gestion_turistica" name="gestion_turistica">Gestión Turística</option>
+                      <option id="merc_turistica" name="merc_turistica">Mercadotecnia Turística</option>
+                      <option id="derech_lab" name="derech_lab">Derecho Laboral</option>
+                      <option disabled><b>Ingeniería en:</b></option>
+                      <option id="tec_comp" name="tec_comp">Tecnologías Computacionales</option>
+                      <option id="indus_sistemas" name="indus_sistemas">Industrial y de Sistemas</option>
+                      <option id="logistica" name="logistica">Logística</option>
+                      <option id="gestion_empresarial" name="gestion_empresarial">Gestión Empresarial</option>
+                    </select>
+                    <h5>Certificado total de estudios de Bachillerato o equivalente.</h5>
+                    <input type="file" id="filename_bachillerato" name="filename_bachillerato"
+                      accept="application/msword, application/pdf">
+                  </div>
+                  <!--div none lic_ing-->
+                  <div id="maestria" style="display:none;">
+                    <!--none maestría-->
+                    <h5>Seleccione el plan de estudios que desea cursar</h5>
+                    <select id="select_maestria" name="select" class="form-control">
+                      <option value="value1">Elige</option>
+                      <option id="administracion" name="administracion">Administración</option>
+                      <option id="adm_ch" name="adm_ch">Administración del Capital Humano</option>
+                      <option id="adm_finanzas" name="adm_finanzas">Administración y Finanzas</option>
+                      <option id="adm_mercadotecnia" name="adm_mercadotecnia">Administración y Mercadotecnia
+                      </option>
+                      <option id="edu_tecnologia" name="edu_tecnologia">Educación con Acentuación en
+                        Tecnología Educativa</option>
+                      <option id="maestria_derech" name="maestria_derech">Maestría en Derecho Laboral</option>
                     </select>
 
-                    <div id="bachillerato" style="display:none;"><!--div none bachillerato-->
-                    <h5>Certificado total de estudios del grado Secundaria (ambos lados)</h5>
-                      <input type="file" id="filename_secundaria" name="filename_secundaria"
-                        accept="application/msword, application/pdf">
-                    </div><!--div none bachillerato-->
-
-                    <div id="carreras_licenciatura_ingenieria" style="display:none;"><!--div none lic_ing-->
-                    <h5>Seleccione el plan de estudios que desea cursar</h5>
-                      <select id="select_lic" name="select" class="form-control">
-                        <option value="value1">Elige</option>
-                        <option id="contador_public" name="contador_public">Contador Público</option>
-                        <option id="adm_empresa" name="adm_empresa">Administración de Empresas</option>
-                        <option id="derecho" name="derecho">Derecho</option>
-                        <option id="infor_adm" name="infor_adm">Informática Administrativa</option>
-                        <option id="rh" name="rh">Recursos Humanos</option>
-                        <option id="ciencias_educ" name="ciencias_educ">Ciencias de la Educación</option>
-                        <option id="mercadotecnia" name="mercadotecnia">Mercadotecnia</option>
-                        <option id="adm_financiera" name="adm_financiera">Administración Financiera</option>
-                        <option id="derecho_economia" name="derecho_economia">Derecho con Acentuación en
-                          Economía</option>
-                        <option id="derech_corporativo" name="derech_corporativo">Derecho Corporativo</option>
-                        <option id="derech_finanzas" name="derech_finanzas">Derecho y Finanzas</option>
-                        <option id="gestion_turistica" name="gestion_turistica">Gestión Turística</option>
-                        <option id="merc_turistica" name="merc_turistica">Mercadotecnia Turística</option>
-                        <option id="derech_lab" name="derech_lab">Derecho Laboral</option>
-                        <option disabled><b>Ingeniería en:</b></option>
-                        <option id="tec_comp" name="tec_comp">Tecnologías Computacionales</option>
-                        <option id="indus_sistemas" name="indus_sistemas">Industrial y de Sistemas</option>
-                        <option id="logistica" name="logistica">Logística</option>
-                        <option id="gestion_empresarial" name="gestion_empresarial">Gestión Empresarial</option>
-                      </select>
-                      <h5>Certificado total de estudios de Bachillerato o equivalente.</h5>
-                      <input type="file" id="filename_bachillerato" name="filename_bachillerato"
-                        accept="application/msword, application/pdf">
-                    </div><!--div none lic_ing-->
-                    <div id="maestria" style="display:none;"><!--none maestría-->
-                    <h5>Seleccione el plan de estudios que desea cursar</h5>
-                      <select id="select_maestria" name="select" class="form-control">
-                        <option value="value1">Elige</option>
-                        <option id="administracion" name="administracion">Administración</option>
-                        <option id="adm_ch" name="adm_ch">Administración del Capital Humano</option>
-                        <option id="adm_finanzas" name="adm_finanzas">Administración y Finanzas</option>
-                        <option id="adm_mercadotecnia" name="adm_mercadotecnia">Administración y Mercadotecnia
-                        </option>
-                        <option id="edu_tecnologia" name="edu_tecnologia">Educación con Acentuación en
-                          Tecnología Educativa</option>
-                        <option id="maestria_derech" name="maestria_derech">Maestría en Derecho Laboral</option>
-                      </select>
-
-                      <h5>Título Profesional</br>
-                        Cédula Profesional de nivel superior</h5>
-                      <input type="file" id="filename_certificado_maestria" name="filename_certificado_maestria"
-                        accept="application/msword, application/pdf">
-                    </div><!--none maestría-->
-
-
-      </div><!--select-->
-      </div><!-- los que no pide validacion-->
-      
-      @endforeach
-     
-
-
-
-
-     
-  </div><!-- 12 DIV-->
-  <p style="color: #f5f5f0;">.</p>
-
-
-</div><!--tab2-->
-<div style="overflow:auto;">
-        <div style="float:right;">
-          <!-- <button type="button" id="prevBtn" onclick="nextPrev(-1)">Regresar</button> -->
-          <button type="button" id="nextBtn" onclick="nextPrev(1)">Continuar</button>
+                    <h5>Título Profesional</br>
+                      Cédula Profesional de nivel superior</h5>
+                    <input type="file" id="filename_certificado_maestria" name="filename_certificado_maestria"
+                      accept="application/msword, application/pdf">
+                  </div>
+                  <!--none maestría-->
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <!-- Circles which indicates the steps of the form: -->
-      <div style="text-align:center;margin-top:40px;">
-        <span class="step"></span>
-        <span class="step"></span>
-        <span class="step"></span>
-      </div>
+
+      </div><!-- 12 DIV-->
+      <p style="color: #f5f5f0;">.</p>
+    </div>
+
+  </div>
+
+  <!--tab2-->
+  <div style="overflow:auto;">
+    <div style="float:right;">
+      <!-- <button type="button" id="prevBtn" onclick="nextPrev(-1)">Regresar</button> -->
+      <button type="button" id="nextBtn" onclick="nextPrev(1)">Continuar</button>
+    </div>
+  </div>
+  <!-- Circles which indicates the steps of the form: -->
+  <div style="text-align:center;margin-top:40px;">
+    <span class="step"></span>
+    <span class="step"></span>
+    <span class="step"></span>
+  </div>
 
 
 
-      </form>
+  </form>
 
 
 
@@ -246,7 +304,7 @@
 <!--<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>-->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 <script>
-    $(document).ready(function(){
+  $(document).ready(function(){
     $('#select_nivel_escol').on('change',function(){
     var selectValor = ''+$(this).val();
     //alert (selectValor);
@@ -566,7 +624,7 @@ function validateForm() {
   // A loop that checks every input field in the current tab:
   for (i = 0; i < y.length; i++) {
     // If a field is empty...
-    if (y[i].value == "" && y[i].name != 'filename_secundaria' && y[i].name != 'filename_bachillerato' && y[i].name != 'filename_certificado_maestria') {
+    if (y[i].value == "" && y[i].name != 'telefono_tres' && y[i].name != 'extension' && y[i].name != 'filename_secundaria' && y[i].name != 'filename_bachillerato' && y[i].name != 'filename_certificado_maestria') {
       // add an "invalid" class to the field:
       y[i].className += " invalid";
       // and set the current valid status to false
@@ -614,5 +672,3 @@ function fixStepIndicator(n) {
 
 
 @endsection
-
-

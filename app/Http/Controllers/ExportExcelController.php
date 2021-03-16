@@ -24,10 +24,10 @@ class ExportExcelController extends Controller
 		$data_preins = DB::table('preinscripcion')->get()->toArray();
 
 		$menor_array[] = array(
-			'nombre', 'ape_paterno', 'ape_materno',
-			'id_empleado', 'tipo_nomina', 'universo_nominal', 'id_unidad_administrativa', 'unidad_administrativa', 'id_sector', 'sector',
-			'sector_pago','nivel_salarial','seccion_sindical','calle','numero_ext','numero_int','codigo_postal','colonia','alcaldia',
-			'estado','pais','correo_electro','telefono_uno','telefono_dos','telefono_tres','extension',
+			'Nombre', 'Apellido Paterno', 'Apellido Materno',
+			'Id Empleado', 'Tipo Nomina', 'Universo Nominal', 'Id Unidad Administrativa', 'Unidad Administrativa', 'Id Sector', 'Sector',
+			'Sector Pago','Nivel Salarial','Seccion Sindical','Calle','Número Exterior','Número Interior','Código Postal','Colonia','Alcaldía',
+			'Estado','País','Correo Electrónico','Telefono Uno','Telefono Dos','Telefono Tres','Extensión','Solicitud',
 		);
 		foreach ($data_preins as $menor) {
 			$menor_array[] = array(
@@ -80,6 +80,8 @@ class ExportExcelController extends Controller
 				$menor->telefono_tres,
 				'extension' =>
 				$menor->extension,
+				'solicitud' =>
+				$menor->is_solicitud_aceptada,
 			);
 		}
 

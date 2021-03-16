@@ -1,8 +1,8 @@
 @extends('users.users_inicio')
 @section('title','Bienvenidos Plataforma CACI')
-{{--  @section('scripts')
-    <script src="{{URL::asset('js/send_email.js')}}" type="text/javascript"> </script> 
-@endsection  --}}
+@section('scripts')
+    <script src="{{URL::asset('js/valida_solicitud_preinscripcion.js')}}" type="text/javascript"> </script> 
+@endsection
 @section('content')
 <style>
     .card-uno {
@@ -40,6 +40,46 @@
     .btn-regresar{
         margin: 0px 20px 40px 0px;
     }
+    .empleado_activo {
+        background-color: #0FA433;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 20px;
+        font-family: Arial;
+        border-radius: 4px;
+        width: 115px;
+    }
+    .empleado_inactivo {
+        background-color: #ED073B;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 20px;
+        font-family: Arial;
+        border-radius: 4px;
+        width: 120px;
+    }
+    .solic_aceptada {
+        background-color: #0FA433;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 15px;
+        font-family: Arial;
+        border-radius: 4px;
+        width: 200px;
+    }
+    .solic_rechazada {
+        background-color: #ED073B;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 15px;
+        font-family: Arial;
+        border-radius: 4px;
+        width: 200px;
+    }
 </style>
 <br>
 <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -65,13 +105,29 @@
 <div class="container">
     <div class="card mt50">
         <div class="card-header">
-            {{--  <input id="email_caci" value="{{$emailCaci}}" hidden>
-            @foreach ($lista_inscripcion as $preinsc)
-            <input id="id" value="{{$preinsc->id}}" hidden>
-            <input id="nombre_tutor" value="{{$preinsc->nombre_tutor_madres}}" hidden>
-            <input id="ape_paterno" value="{{$preinsc->apellido_paterno_tutor}}" hidden>
-            <input id="email" value="{{$preinsc->email_correo}}" hidden>
-            @endforeach  --}}
+            @if ($lista_preinscripcion[0]['is_solicitud_aceptada'] == 'Por Validar')
+                <div>
+                    <span class="float-right">
+                        <input id="id_empleado" value="<?php echo $lista_preinscripcion[0]['id']?>" hidden/>
+                        <button class="btn btn-lg btn-success" onclick="validar_solicitud('Aceptada')"
+                            title="Aceptar"><i class="fa fa-check-circle"></i> Aceptar</button>
+                        <button class="btn btn-lg btn-danger" onclick="validar_solicitud('Rechazada')"
+                            title="Rechazar"><i class="fa fa-times"></i> Rechazar</button>
+                    </span>
+                </div>
+            @elseif($lista_preinscripcion[0]['is_solicitud_aceptada'] == 'Aceptada')
+                <div>
+                    <span class="float-right">
+                        <div class="row solic_aceptada" style="margin-right: 2rem;"><label class="font-label" style="font-size: 15px;">Solicitud Aceptada</label></div>
+                    </span>
+                </div>
+            @elseif($lista_preinscripcion[0]['is_solicitud_aceptada'] == 'Rechazada')
+                <div>
+                    <span class="float-right">
+                        <div class="row solic_rechazada" style="margin-right: 2rem;"><label class="font-label" style="font-size: 15px;">Solicitud Rechazada</label></div>
+                    </span>
+                </div>                
+            @endif
             <h1><i class="fa fa-file"></i> Valida Preinscripci&oacute;n</h1>
         </div>
         <div class="card-body">
@@ -82,9 +138,19 @@
                     </div>
                     <div class="card-body sub-card-body">
                         @foreach ($lista_preinscripcion as $preinsc)
-
+                        @if ($preinsc->status_empleado == 'Activo')
+                            <div class="row empleado_activo" style="margin-left: 11rem;"><label class="font-label" style="font-size: 20px;">{{$preinsc->status_empleado}}</label></div>
+                        @else
+                            <div class="row empleado_inactivo" style="margin-left: 11rem;"><label class="font-label" style="font-size: 20px;">{{$preinsc->status_empleado}}</label></div>
+                        @endif
                         <div class="row row-margin"><h3>Nombre:</h3><label class="font-label">{{$preinsc->nombre}} {{$preinsc->ape_paterno}} {{$preinsc->ape_materno}}</label></div>
                         
+                        <div class="row row-margin"><h3>Nivel Escolaridad:</h3><label class="font-label">{{$preinsc->nivel_escol}}</label></div>
+                        @if ($preinsc->escolaridad == null)
+                            <div class="row row-margin"><h3>Carrera:</h3><label class="font-label">No asignada</label></div>
+                        @else
+                            <div class="row row-margin"><h3>Carrera:</h3><label class="font-label">{{$preinsc->escolaridad}}</label></div>
+                        @endif
                         <div class="row row-margin"><h3>id_empleado:</h3><label class="font-label">{{$preinsc->id_empleado}}</label></div>
                         <div class="row row-margin"><h3>tipo_nomina:</h3><label class="font-label">{{$preinsc->tipo_nomina}}</label></div>
                         <div class="row row-margin"><h3>universo_nominal:</h3><label class="font-label">{{$preinsc->universo_nominal}}</label></div>
@@ -109,8 +175,16 @@
                         <div class="row row-margin"><h3>correo_electro:</h3><label class="font-label">{{$preinsc->correo_electro}}</label></div>
                         <div class="row row-margin"><h3>telefono_uno:</h3><label class="font-label">{{$preinsc->telefono_uno}}</label></div>
                         <div class="row row-margin"><h3>telefono_dos:</h3><label class="font-label">{{$preinsc->telefono_dos}}</label></div>
-                        <div class="row row-margin"><h3>telefono_tres:</h3><label class="font-label">{{$preinsc->telefono_tres}}</label></div>
-                        <div class="row row-margin"><h3>extension:</h3><label class="font-label">{{$preinsc->extension}}</label></div>
+                        @if ($preinsc->telefono_tres == null)
+                            <div class="row row-margin"><h3>telefono_tres:</h3><label class="font-label">Ninguno</label></div>
+                        @else
+                            <div class="row row-margin"><h3>telefono_tres:</h3><label class="font-label">{{$preinsc->telefono_tres}}</label></div>
+                        @endif
+                        @if ($preinsc->extension == null)
+                            <div class="row row-margin"><h3>extension:</h3><label class="font-label">Ninguno</label></div>   
+                        @else
+                            <div class="row row-margin"><h3>extension:</h3><label class="font-label">{{$preinsc->extension}}</label></div>   
+                        @endif
                         @endforeach
                     </div>
                 </div>

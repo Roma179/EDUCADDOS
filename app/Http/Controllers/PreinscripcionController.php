@@ -57,17 +57,17 @@ class PreinscripcionController extends Controller
             ));
             $response = curl_exec($ch);
             curl_close($ch);
-           // dd($response);
+           /* dd($response); */
 
             $array = json_decode($response, true);
-            $array = json_decode($response, true);
-            foreach ($array['data'] as $key => &$value) {
+            /* $array = json_decode($response, true); */
+            foreach ($array['data_adicional'] as $key => &$value) {
                 if ($value === "0" || is_null($value)) {
                     $value = "DATO NO ENCONTRADO";
                 }
             }
-            $data['user'] = $array['data'];
-           // dd($data['user']);
+            $data['user'] = array_merge($array['data'],$array['data_adicional']);
+            /* dd($data['user']); */
 
             return view('Infpreinscripcion', compact('data'));
         } catch (\Throwable $th) {

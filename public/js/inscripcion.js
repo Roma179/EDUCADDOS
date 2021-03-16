@@ -29,6 +29,8 @@ function preinscripcion() {
     form_data.append("telefono_uno", $("#telefono_uno").val());
     form_data.append("telefono_dos", $("#telefono_dos").val());
     form_data.append("telefono_tres", $("#telefono_tres").val());
+    form_data.append("is_solicitud_aceptada", "Por Validar");
+    form_data.append("status_empleado", $("#status_empleado").val());
     form_data.append("extension", $("#extension").val());
     
     var dato_archivo_act = $('#filename_act').prop("files")[0];

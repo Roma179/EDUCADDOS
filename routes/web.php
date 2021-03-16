@@ -71,6 +71,7 @@ Route::group(['middleware' => ['permission:view_preinscripcion','nocache']], fun
     Route::get('/lista_documentos_inscr/{id}', 'Admin\DocumentosController@show_inscr')->name('lista_documentos_inscr');
     Route::post('/email_info_recibida_inscr', 'Admin\EmailController@sendEmailRecibiInscrip')->name('email_info_recibida_inscr');
     Route::post('actualizar_caci','Admin\AdminController@actualizarCaci')->name('actualizar_caci');
+    Route::post('/accept_solicitud', 'Admin\SolicitudController@acceptSolicitud')->name('accept_solicitud');
     Route::get('/email_lista_espera/{nombre_tutor}/{ap_paterno}/{email}', 'Admin\EmailController@sendEmailEspera')->name('email_lista_espera');
 });
 

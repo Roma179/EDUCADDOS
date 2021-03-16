@@ -39,6 +39,9 @@ class Preinscripcion extends Model
          'extension',
          'nivel_escol',
          'escolaridad',
+         'is_solicitud_aceptada',
+         'status_empleado',
+         'escolaridad',
          'created_at',
          'updated_at'
     ];

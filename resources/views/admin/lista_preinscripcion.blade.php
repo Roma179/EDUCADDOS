@@ -58,31 +58,32 @@
                 <thead class="flip-content">
                     <tr>
                         <th>Nombre</th>
-                        <th>id_empleado</th>
-                        <th>tipo_nomina</th>
-                        <th>universo_nominal</th>
-                        <th>id_unidad_administrativa</th>
-                        <th>unidad_administrativa</th>
-                        <th>id_sector</th>
-                        <th>sector</th>
-                        <th>sector_pago</th>
-                        <th>nivel_salarial</th>
-                        <th>seccion_sindical</th>
-                        <th>calle</th>
-                        <th>numero_ext</th>
-                        <th>numero_int</th>
-                        <th>codigo_postal</th>
-                        <th>colonia</th>
-                        <th>alcaldia</th>
-                        <th>estado</th>
-                        <th>pais</th>
-                        <th>correo_electro</th>
-                        <th>telefono_uno</th>
-                        <th>telefono_dos</th>
-                        <th>telefono_tres</th>
-                        <th>extension</th>
+                        <th>Id Empleado</th>
+                        <th>Tipo Nomina</th>
+                        <th>Universo Nominal</th>
+                        <th>Id Unidad Administrativa</th>
+                        <th>Unidad Administrativa</th>
+                        <th>Id Sector</th>
+                        <th>Sector</th>
+                        <th>Sector Pago</th>
+                        <th>Nivel Salarial</th>
+                        <th>Sección Sindical</th>
+                        <th>Calle</th>
+                        <th>Número Exterior</th>
+                        <th>Número Interior</th>
+                        <th>Código Postal</th>
+                        <th>Colonia</th>
+                        <th>Alcaldía</th>
+                        <th>Estado</th>
+                        <th>País</th>
+                        <th>Correo Electrónico</th>
+                        <th>Telefono Uno</th>
+                        <th>Telefono Dos</th>
+                        <th>Telefono Tres</th>
+                        <th>Extensión</th>
                         <th>Nivel Estudios</th>
                         <th>Carrera</th>
+                        <th>Solicitud</th>
                         <th>Acción</th>
                     </tr>
                 </thead>
@@ -111,14 +112,23 @@
                         <td>{{$caci['correo_electro']}}</td>
                         <td>{{$caci['telefono_uno']}}</td>
                         <td>{{$caci['telefono_dos']}}</td>
+                        @if ($caci['telefono_tres'] === null)
+                        <td>Ninguno</td>
+                        @else
                         <td>{{$caci['telefono_tres']}}</td>
+                        @endif
+                        @if ($caci['extension'] === null)
+                        <td>Ninguno</td>
+                        @else
                         <td>{{$caci['extension']}}</td>
+                        @endif
                         <td>{{$caci['nivel_escol']}}</td>
                         @if ($caci['escolaridad'] === null)
                         <td>No Asignado</td>
                         @else
                         <td>{{$caci['escolaridad']}}</td>
                         @endif
+                        <td>{{$caci['is_solicitud_aceptada']}}</td>
                         <td>
                             <span class="float-right">
                                 <a class="btn btn-md btn-outline-primary"

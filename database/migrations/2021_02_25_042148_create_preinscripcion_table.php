@@ -43,9 +43,11 @@ class CreatePreinscripcionTable extends Migration
             $table->string('correo_electro',50);
             $table->string('telefono_uno',50);
             $table->string('telefono_dos',50);
-            $table->string('telefono_tres',50);
-            $table->string('extension',50);
+            $table->string('telefono_tres',50)->nullable();
+            $table->string('extension',50)->nullable();
             $table->string('nivel_escol',50);
+            $table->string('is_solicitud_aceptada',50);
+            $table->string('status_empleado',50)->nullable();
             $table->string('escolaridad',100)->nullable();
 
             $table->timestamps();
