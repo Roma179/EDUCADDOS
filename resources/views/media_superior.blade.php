@@ -27,7 +27,7 @@
         <div class="card border-light">
             <p style="
             font-family: " Open Sans", sans-serif; font-size: 12pt; font-weight: 400; line-height: 1.56;">
-                <span style="font-family: Open Sans;">
+                <span>
                     La Universidad Virtual CNCI te ofrece cursar el Bachillerato General en la modalidad No
                         escolarizada,
                         opción virtual.
@@ -40,7 +40,7 @@
         <div class="card border-light" style="margin-top: 30px;">
             <p style="
             font-family: " Open Sans", sans-serif; font-size: 12pt; font-weight: 400; line-height: 1.56;">
-                <span style="font-family: Open Sans;">
+                <span>
                     Duración: dos (2) años.
                 </span>
             </p>
@@ -50,7 +50,7 @@
         <div class="card border-light">
             <p style="
             font-family: " Open Sans", sans-serif; font-size: 12pt; font-weight: 400; line-height: 1.56;">
-                <span style="font-family: Open Sans;">
+                <span>
                     Plan de Estudios: seis (6) tetramestres de 15 semanas cada uno. Cada tetramestre se divide a su vez
                     en módulos (3) con una duración de cinco semanas
                 </span>
@@ -61,7 +61,7 @@
         <div class="card border-light">
             <p style="
             font-family: " Open Sans", sans-serif; font-size: 12pt; font-weight: 400; line-height: 1.56;">
-                <span style="font-family: Open Sans;">
+                <span>
                     Materias: 36 en total. Se cursan dos (2) en cada módulo; es decir, cada tetramestre cursarás seis
                     (6) materias.
                 </span>
@@ -72,7 +72,7 @@
         <div class="card border-light">
             <p style="
             font-family: " Open Sans", sans-serif; font-size: 12pt; font-weight: 400; line-height: 1.56;">
-                <span style="font-family: Open Sans;">
+                <span>
                     Horas de estudio: para realizar las lecturas y actividades tanto de aprendizaje como de evaluación,
                     requieres dedicar mínimo ocho horas a la semana.
                 </span>
@@ -83,7 +83,7 @@
         <div class="card border-light">
             <p style="
             font-family: " Open Sans", sans-serif; font-size: 12pt; font-weight: 400; line-height: 1.56;">
-                <span style="font-family: Open Sans;">
+                <span>
                     RVOE: SEDU 021714-2-18-002.
                 </span>
             </p>
@@ -93,8 +93,8 @@
         <div class="card border-light">
             <p style="
             font-family: " Open Sans", sans-serif; font-size: 12pt; font-weight: 400; line-height: 1.56;">
-                <span style="font-family: Open Sans;">
-                    ¿Quieres conocer el Plan de Estudios? Haz clic aquí <a href="#">Bachillerato General</a>
+                <span>
+                    ¿Quieres conocer el Plan de Estudios? Haz clic aquí <a href="{{url('uploads/bachillerato/BGTR.pdf')}}" target="_blank" >Bachillerato General</a>
                 </span>
             </p>
         </div>
@@ -103,7 +103,7 @@
         <div class="card border-light">
             <p style="
             font-family: " Open Sans", sans-serif; font-size: 12pt; font-weight: 400; line-height: 1.56;">
-                <span style="font-family: Open Sans;">
+                <span>
                     Más información: revisa el siguiente video.
                 </span>
             </p>

@@ -46,13 +46,28 @@
       {{ session('status') }}
   </div>
 @endif  
-<center><h3>Pre-registro</h3></center>
+
+<h1 style="text-align: center; padding-bottom: 18px; font-size: 45pt;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+    line-height: 1.26;">Pre-inscripción</h1>
 <p>En esta etapa se validará, a través de diversos documentos, que cumplas con los requisitos laborales y académicos según el nivel de estudios
  en el que te gustaría inscribirte.</p>
 
 <p>Es por ello que te pedimos realices los siguientes pasos.</p>
 
-<p><b>1. Llena el siguiente formulario.</b> Te recomendamos tener a la mano el último recibo de nómina.</p>
+<p><b>1. Revisa los documentos que debes tener digitalizados (escaneados)</b>, por favor, toma como base el manual que te corresponda:</p>
+<ul style= "list-style-type: square">
+
+<li>Expediente digital para <a href="{{url('uploads/manuales/Manual_expediente digital-BACHILLERATO GENERAL.pdf')}}" target="_blank"><u><font color="#000000"> ingreso al Bachillerato</u></font></a></li>
+
+<li>Expediente digital para <a href="{{url('uploads/manuales/Manual_expediente digital-LICENCIATURA.pdf')}}" target="_blank"><u><font color="#000000"> ingreso a Licenciatura</u></font></a></li>
+
+ <li>Expediente digital para <a href="{{url('uploads/manuales/Manual_expediente digital-MAESTRIA.pdf')}}" target="_blank"><u><font color="#000000"> ingreso a Maestría</font></u> </a></li>
+</ul>
+
+<p><b>2. Llena el siguiente formulario.</b> Te recomendamos tener a la mano el último recibo de nómina.</p>
 <p>El propósito de este formulario es recabar información para generar su pre-inscripción en la convocatoria 2020 del Programa de Educación a
  Distancia de la Administración Pública de la Ciudad de México "EDUCAD". La información proporcionada en este formulario, será
  empleada de manera exclusiva para dicho fin.</p>
@@ -88,7 +103,7 @@ el uso de mi correo electrónico y número de teléfono para el envío de inform
 </div>
 @endif
 <form id="regForm" action="{{route('guardar_pre-registro')}}" method="POST" enctype="multipart/form-data" style="display:none;">
- <label style="color:#777777; font-size: 40px; text-align: left; ">Preregistro</label>
+ <label style="color:#777777; font-size: 40px; text-align: left; ">Pre-inscripción</label>
     @csrf
  <label style="color:#054a41; font-size: 16px; text-align: justify;">Para iniciar el proceso de preregistro, proporciona el siguiente dato. Te recomendamos
     tener a la mano tu recibo de nómina.
@@ -103,18 +118,7 @@ el uso de mi correo electrónico y número de teléfono para el envío de inform
 
 <!--<button class="btn btn-primary" style="border-color:#31b700; background-color: #31b700;" >Siguiente </button>-->
 
-<p><b>2. Conforma tu expediente digital,</b> por favor, toma como base el manual que te corresponda:</p>
-<ul style= "list-style-type: square">
-
-<li>Expediente digital para <a href="{{url('uploads/manuales/Manual_expediente digital-BACHILLERATO GENERAL.pdf')}}" target="_blank"><u><font color="#000000"> ingreso al Bachillerato</u></font></a></li>
-
-<li>Expediente digital para <a href="{{url('uploads/manuales/Manual_expediente digital-LICENCIATURA.pdf')}}" target="_blank"><u><font color="#000000"> ingreso a Licenciatura</u></font></a></li>
-
- <li>Expediente digital para <a href="{{url('uploads/manuales/Manual_expediente digital-MAESTRIA.pdf')}}" target="_blank"><u><font color="#000000"> ingreso a Maestría</font></u> </a></li>
-</ul>
-
-<p><b>3. Envía tu expediente digital al correo electrónico<a href="mailto:inscripcionescncicdmx@gmail.com"><font color="#000000"> <u>inscripcionescncicdmx@gmail.com</u></font></b></a> En el ASUNTO del correo electrónico escribe tu <i> ID Empleado</i>.</p><br><br>
-<p><b>4. Recibirás un correo electrónico en el que se te informará el dictamen.</b></p>
+<p><b>3. Recibirás un correo electrónico en el que se te informará el dictamen.</b></p>
 
 {{--  <div class="pane-header">
         <a href="{{ url('/prueba') }}">Entrar a la entrega de documentos</a>  

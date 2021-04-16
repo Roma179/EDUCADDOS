@@ -41,6 +41,7 @@ function preinscripcion() {
     var dato_archivo_cert_secu = $('#filename_secundaria').prop("files")[0];
     var dato_archivo_cert_bachi = $('#filename_bachillerato').prop("files")[0];
     var dato_archivo_cert_maestria = $('#filename_certificado_maestria').prop("files")[0];
+    var dato_archivo_cedula_maestria = $('#filename_cedula_maestria').prop("files")[0];
 
     if (dato_archivo_cert_secu !== undefined) {
         form_data.append("filename_certif_estudio", dato_archivo_cert_secu);
@@ -52,8 +53,9 @@ function preinscripcion() {
         form_data.append("nivel_escol", $("#select_nivel_escol").val());
         form_data.append("escolaridad", $("#select_lic").val());
     }
-    if (dato_archivo_cert_maestria !== undefined) {
+    if (dato_archivo_cert_maestria !== undefined && dato_archivo_cedula_maestria !== undefined) {
         form_data.append("filename_certif_estudio", dato_archivo_cert_maestria);
+        form_data.append("filename_cedula_maestria", dato_archivo_cedula_maestria);
         form_data.append("nivel_escol", $("#select_nivel_escol").val());
         form_data.append("escolaridad", $("#select_maestria").val());
     }

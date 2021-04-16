@@ -1,5 +1,6 @@
 <?php
 
+use App\Model\NivelEducativo;
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
@@ -80,6 +81,18 @@ class PermissionsSeeder extends Seeder
             'email' => 'guest@gmail.com',
             'password' => Hash::make('guest123.,'),
             'status' => '1',
+        ]);
+        ///////////Create Nivel
+        NivelEducativo::create([
+            'nombre' => 'Bachillerato',
+        ]);
+        ///////////Create Nivel
+        NivelEducativo::create([
+            'nombre' => 'Licenciatura',
+        ]);
+        ///////////Create Nivel
+        NivelEducativo::create([
+            'nombre' => 'Maestria',
         ]);
     }
 }

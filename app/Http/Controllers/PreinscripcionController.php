@@ -90,17 +90,32 @@ class PreinscripcionController extends Controller
             //obtiene id de preinscripcion
             $id_preins = Preinscripcion::select('id')->orderByDesc('id')->get()->first();
             $id = $id_preins->id;
-            
-            $filename_certif_estudio = $request->file('filename_certif_estudio');
-            $filename_acta_nacimiento = $request->file('filename_acta_nacimiento');
-            $filename_curp = $request->file('filename_curp');
-            $filename_comprobante_domicilio = $request->file('filename_comprobante_domicilio');
-            $filename_ine = $request->file('filename_ine');
-            $filename_recibo_nomina = $request->file('filename_recibo_nomina');
-
-            $array_files = array(array($filename_certif_estudio, "Certicado de Estudios"),array($filename_acta_nacimiento, "Acta de Nacimiento"),
-            array($filename_curp, "Curp"),array($filename_comprobante_domicilio, "Comprobante de Domicilio"),
-            array($filename_ine, "INE"),array($filename_recibo_nomina, "Nomina"));
+            $array_files = [];
+            if($request->nivel_escol == 'maestria'){
+                //aqui se agrega el file titulo y la cedula profesional
+                $filename_certif_estudio = $request->file('filename_certif_estudio');
+                $filename_cedula_maestria = $request->file('filename_cedula_maestria');
+                $filename_acta_nacimiento = $request->file('filename_acta_nacimiento');
+                $filename_curp = $request->file('filename_curp');
+                $filename_comprobante_domicilio = $request->file('filename_comprobante_domicilio');
+                $filename_ine = $request->file('filename_ine');
+                $filename_recibo_nomina = $request->file('filename_recibo_nomina');
+                
+                $array_files = array(array($filename_certif_estudio, "Título Profesional"),array($filename_cedula_maestria, "Cédula Profesional"),array($filename_acta_nacimiento, "Acta de Nacimiento"),
+                array($filename_curp, "Curp"),array($filename_comprobante_domicilio, "Comprobante de Domicilio"),
+                array($filename_ine, "INE"),array($filename_recibo_nomina, "Nomina"));
+            }else{
+                $filename_certif_estudio = $request->file('filename_certif_estudio');
+                $filename_acta_nacimiento = $request->file('filename_acta_nacimiento');
+                $filename_curp = $request->file('filename_curp');
+                $filename_comprobante_domicilio = $request->file('filename_comprobante_domicilio');
+                $filename_ine = $request->file('filename_ine');
+                $filename_recibo_nomina = $request->file('filename_recibo_nomina');
+    
+                $array_files = array(array($filename_certif_estudio, "Certicado de Estudios"),array($filename_acta_nacimiento, "Acta de Nacimiento"),
+                array($filename_curp, "Curp"),array($filename_comprobante_domicilio, "Comprobante de Domicilio"),
+                array($filename_ine, "INE"),array($filename_recibo_nomina, "Nomina"));
+            }
 
             $preinscripcionController = new PreinscripcionController;
 
@@ -119,6 +134,7 @@ class PreinscripcionController extends Controller
     public static function setDoc($uploadedFile, $id_reins)
     {
         $data = [];
+        //dd($uploadedFile);
         if ($uploadedFile) {
             //recorre los arreglos hijos
             foreach ($uploadedFile as $value) {

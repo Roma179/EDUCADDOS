@@ -118,7 +118,7 @@ img.avatar {
   </div>
 </div>
 @endif
-<form style="width:90%;" class="modal-content animate" action="{{route('login_post')}}" method="POST" autocomplete="off">
+<form style="width:90%; margin-top: 50px;" class="modal-content animate" action="{{route('login_post')}}" method="POST" autocomplete="off">
   @csrf
     <a style=" text-align: center;"><img style="margin-left: 50px; margin-top: 50px; height: 150px; width: 570px;" src="{{asset('img/logotipoCDMX.svg')}}" alt="Logo_CDMX"></a>
   <div class="container">

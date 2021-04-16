@@ -7,9 +7,13 @@ p{
 }
 </style>
 <div class="container mt-5">
-<center><h1>Curso de Inducción</h1></center>
+<h1 style="text-align: center; padding-bottom: 18px; font-size: 45pt;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+    line-height: 1.26;">Curso de Inducción</h1>
 <p><b>Propósito</b></p>
-<p>El estudiante practicará habilidades académicas y tecnológicas que permitirán permitirán familiarizarse con la educación en línea 
+<p>La persona estudiante practicará habilidades académicas y tecnológicas que permitirán permitirán familiarizarse con la educación en línea 
 y la mecánica de la institución Universidad CNCI, para mantener un desarrollo óptimo en el transcurso de su plan de estudios.</p>
 <p><b>Competencias generales</b></p>
 <ul style= "list-style-type: square">
@@ -40,7 +44,7 @@ activo dentro de su proceso de aprendizaje.</li>
 <p>Módulo IV. Perfil vocacional</p>
 </div>
 <div class="col-lg-4">
-<img src="{{url('/assets/img/Bachillerato.jpg')}}" style="width: 200%; float:right;">
+<a href="https://cnci.blackboard.com/bbcswebdav/courses/PCNCIN2012/Contenidos/B_Induccion_AGO18/index.html" target="_blank"><img src="{{url('/assets/img/bachillerato.jpg')}}" style="width: 200%; float:right;"></a>
 </div>
 </div>
 <hr>
@@ -53,7 +57,7 @@ activo dentro de su proceso de aprendizaje.</li>
 <p>Módulo IV. Comunicación asertiva</p>
 </div>
 <div class="col-lg-4">
-<img src="{{url('/assets/img/maestria.jpg')}}" style="width: 200%; float:right;">
+<a href="https://cnci.blackboard.com/bbcswebdav/courses/BbCont10/Contenido/Lic_Ing/L_Induccion_AGO18/index.html" target="_blank"><img src="{{url('/assets/img/maestria.jpg')}}" style="width: 200%; float:right;"></a>
 </div>
 </div>
 

@@ -84,9 +84,9 @@
       @can('view_inscripcion')
       <a href="{{url('lista_inscripcion')}}"><i class="fa fa-book"></i><span> Inscripci&oacute;n</span> </a>
       @endcan
-      @can('view_reinscripcion')
+      {{-- @can('view_reinscripcion')
       <a href="{{url('lista_reinscripcion')}}"><i class="fa fa-book"></i><span> Reinscripci&oacute;n</span> </a>
-      @endcan
+      @endcan --}}
       <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
       <div class="float-right"><a href="{{route('logout')}}"><i class="fa fa-power-off"></i><span> Cerrar Sesi&oacute;n</span></a></div>
 

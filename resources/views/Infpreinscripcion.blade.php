@@ -236,13 +236,13 @@
                       <option id="gestion_turistica" name="gestion_turistica">Gestión Turística</option>
                       <option id="merc_turistica" name="merc_turistica">Mercadotecnia Turística</option>
                       <option id="derech_lab" name="derech_lab">Derecho Laboral</option>
-                      <option disabled><b>Ingeniería en:</b></option>
+                      <option disabled style="font-weight: bold;"><strong>Ingeniería en:</strong></option>
                       <option id="tec_comp" name="tec_comp">Tecnologías Computacionales</option>
                       <option id="indus_sistemas" name="indus_sistemas">Industrial y de Sistemas</option>
                       <option id="logistica" name="logistica">Logística</option>
                       <option id="gestion_empresarial" name="gestion_empresarial">Gestión Empresarial</option>
                     </select>
-                    <h5>Certificado total de estudios de Bachillerato o equivalente.</h5>
+                    <h5>Certificado total de estudios de Bachillerato o equivalente (ambos lados).</h5>
                     <input type="file" id="filename_bachillerato" name="filename_bachillerato"
                       accept="application/msword, application/pdf">
                   </div>
@@ -262,9 +262,11 @@
                       <option id="maestria_derech" name="maestria_derech">Maestría en Derecho Laboral</option>
                     </select>
 
-                    <h5>Título Profesional</br>
-                      Cédula Profesional de nivel superior</h5>
+                    <h5>Título Profesional</h5>
                     <input type="file" id="filename_certificado_maestria" name="filename_certificado_maestria"
+                      accept="application/msword, application/pdf">
+                    <h5>Cédula Profesional de nivel superior</h5>
+                    <input type="file" id="filename_cedula_maestria" name="filename_cedula_maestria"
                       accept="application/msword, application/pdf">
                   </div>
                   <!--none maestría-->
@@ -272,6 +274,9 @@
               </div>
             </div>
           </div>
+          <h4 style="color:#545151;"><i style="color: #00b140; font-size:30px;" class="fa fa-newspaper-o"></i> <b>
+            Nota:</b> Los archivos soportados son .pdf, .docx. Asegúrese que sus archivos cumplan el requisito
+          </h4>
         </div>
 
       </div><!-- 12 DIV-->
@@ -584,6 +589,28 @@ $("#filename_certificado_maestria").on('change', function () {
         $("#nextBtn").attr("disabled", false);
     }
 });
+$("#filename_cedula_maestria").on('change', function () {
+  const tamanioArchivoPermitido = 2000000;
+  var dato_archivo_act = $('#filename_cedula_maestria').prop("files")[0];
+  if(dato_archivo_act.size > tamanioArchivoPermitido){
+    maestria_supera_tamanio_permitido = true;
+        //console.log(dato_archivo_act.size);
+        //$("#nextBtn").attr("disabled", true);
+        Swal.fire({
+            title: 'El tamaño del archivo no debe de exceder los 2 Mb',
+            text: 'Por favor seleccione un archivo que no exceda el tamaño permitido',
+            icon: 'warning',
+            showCancelButton: false,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Ok',
+            allowOutsideClick: false
+      });    
+    }else{
+      maestria_supera_tamanio_permitido = false;
+        $("#nextBtn").attr("disabled", false);
+    }
+});
 });
 
 
@@ -624,7 +651,7 @@ function validateForm() {
   // A loop that checks every input field in the current tab:
   for (i = 0; i < y.length; i++) {
     // If a field is empty...
-    if (y[i].value == "" && y[i].name != 'telefono_tres' && y[i].name != 'extension' && y[i].name != 'filename_secundaria' && y[i].name != 'filename_bachillerato' && y[i].name != 'filename_certificado_maestria') {
+    if (y[i].value == "" && y[i].name != 'telefono_tres' && y[i].name != 'extension' && y[i].name != 'filename_secundaria' && y[i].name != 'filename_bachillerato' && y[i].name != 'filename_certificado_maestria' && y[i].name != 'filename_cedula_maestria') {
       // add an "invalid" class to the field:
       y[i].className += " invalid";
       // and set the current valid status to false

@@ -2,7 +2,11 @@
 @section('title','Contacto')
 @section('content')
 <div class="container mt-5">
-<center><h3>MAYORES INFORMES</h3></center>
+<h1 style="text-align: center; padding-bottom: 18px; font-size: 45pt;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+    line-height: 1.26;">MAYORES INFORMES</h1>
 <p>Si deseas más información sobre este programa, favor de contactar a:</p> 
 
 <p><b>Ismael Alberto Gómez Ávila</b></p>

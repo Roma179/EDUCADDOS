@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Model\Citas;
 use App\Model\Inscripcion;
 use App\Model\Preinscripcion;
 use App\Model\Reinscripcion;
@@ -38,7 +39,45 @@ class AdminController extends Controller
         /* return view('admin.prueba'); */
     }
 
-    public function showCicloEscolar($lista_caci){
+    public function showCitas()
+    {
+        //caduca las citas que ya son pasadas a la fecha de hoy
+        $hoy = date("Y-m-d");
+        $citas = Citas::where('status', '1')->get();
+        if (sizeof($citas) >= 1) {
+            foreach ($citas as $key => $value) {
+                $id = $value->id;
+                $fecha = substr($value->start, 0, 10);
+                if ($fecha < $hoy) {
+                    DB::table('citas')
+                        ->where('id', $id)
+                        ->update(['status' => '-1']);
+                }
+            }
+        }
+        //evalua los usuarios penalizados y les quita la penalizacion en caso de haber ya pasado el tiempo de penalizacion
+        $citas_pena = Citas::where('penalizado', '1')->get();
+        /* dd(sizeof($citas_pena)); */
+        if (sizeof($citas_pena) >= 1) {
+            foreach ($citas_pena as $key => $value) {
+                $id = $value->id;
+                $fecha = substr($value->start, 0, 10);
+                $fecha_pasada = date_create($fecha);
+                $fecha_hoy = date_create($hoy);
+                $interval = date_diff($fecha_pasada, $fecha_hoy);
+                $num_dias = intval($interval->format('%a%'));
+                if ($num_dias > 3) {
+                    DB::table('citas')
+                        ->where('id', $id)
+                        ->delete();
+                }
+            }
+        }
+        return view('admin.citas');
+    }
+
+    public function showCicloEscolar($lista_caci)
+    {
         //se agrega el ciclo escolar correspondiente a la fecha de inscripcion
         $indice_lista_caci = -1;
         $array_ciclo_escolar = [];
@@ -47,36 +86,36 @@ class AdminController extends Controller
         foreach ($lista_caci as $value) {
             //obtiene la fecha de inscripcion y se descompone por mes y anio
             $fecha = $value['created_at'];
-            $fecha_explode = explode('-',$fecha);
+            $fecha_explode = explode('-', $fecha);
             $anio = $fecha_explode[0];
             $mes = $fecha_explode[1];
             $dia_with_hora = $fecha_explode[2];
-            $dia = explode(' ',$dia_with_hora);
+            $dia = explode(' ', $dia_with_hora);
             //constantes que definen el rango del ciclo escolar
-            $fecha_ini_escolar = $anio.'-07-01';
-            $fecha_final_escolar = (intval($anio)+1).'-06-30';
-            $pre_fecha_ini_escolar = (intval($anio)-1).'-07-01';
-            $pre_fecha_final_escolar = $anio.'-06-30';
+            $fecha_ini_escolar = $anio . '-07-01';
+            $fecha_final_escolar = (intval($anio) + 1) . '-06-30';
+            $pre_fecha_ini_escolar = (intval($anio) - 1) . '-07-01';
+            $pre_fecha_final_escolar = $anio . '-06-30';
             //concateno la fecha actual de la inscripcion ojo, ya no tiene la hora
-            $fecha_procesada = $anio.'-'.$mes.'-'.$dia[0];
+            $fecha_procesada = $anio . '-' . $mes . '-' . $dia[0];
             //dd($fecha_ini_escolar,$fecha_final_escolar,$fecha_procesada,$pre_fecha_ini_escolar,$pre_fecha_final_escolar);
             //primera evaluacion es para las fechas que esten dentro del rango el segundo es el que este un ciclo atras
-            if($fecha_procesada >= $fecha_ini_escolar && $fecha_procesada <= $fecha_final_escolar){
+            if ($fecha_procesada >= $fecha_ini_escolar && $fecha_procesada <= $fecha_final_escolar) {
                 //ejemplo(2020-10-10) ciclo escolar 2020-2021
                 $int_anio = intval($anio);
-                $ciclo_escolar = $anio. "-" .($int_anio + 1);
+                $ciclo_escolar = $anio . "-" . ($int_anio + 1);
                 $array_ciclo_escolar = array('ciclo_escolar' => $ciclo_escolar);
                 //dd($array_ciclo_escolar);
-            }elseif ($fecha_procesada >= $pre_fecha_ini_escolar && $fecha_procesada <= $pre_fecha_final_escolar) {
+            } elseif ($fecha_procesada >= $pre_fecha_ini_escolar && $fecha_procesada <= $pre_fecha_final_escolar) {
                 //ejemplo(2020-04-10) ciclo escolar 2019-2020
                 $int_anio = intval($anio);
-                $ciclo_escolar = ($int_anio - 1). "-" .$anio;
+                $ciclo_escolar = ($int_anio - 1) . "-" . $anio;
                 $array_ciclo_escolar = array('ciclo_escolar' => $ciclo_escolar);
                 //dd($array_ciclo_escolar);
             }
             $indice_lista_caci = $indice_lista_caci + 1;
             //avanza al siguiente arreglo en la lista de inscripcion
-            $array_list_caci_with_cicl_escolar = array_merge($array_lista_caci[$indice_lista_caci],$array_ciclo_escolar);
+            $array_list_caci_with_cicl_escolar = array_merge($array_lista_caci[$indice_lista_caci], $array_ciclo_escolar);
             array_push($array_lista_preins_reins, $array_list_caci_with_cicl_escolar);
         }
         return $array_lista_preins_reins;

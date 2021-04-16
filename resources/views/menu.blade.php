@@ -3,6 +3,10 @@
 
 <head>
   <title>@yield('title',"Inicio")</title>
+  <script type="text/javascript">
+    // var global URL
+var url = '{!! URL::asset('') !!}';
+  </script>
   <meta charset="utf-8">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,7 +14,12 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  {{--  <link rel="stylesheet" type="text/css" href="{{URL::asset('assets/css/jquery.datetimepicker.css')}}"/>  --}}
+  <link rel="stylesheet" type="text/css" href="{{URL::asset('assets/css/main.css')}}"/>
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  {{--  <script src="{{URL::asset('assets/js/jquery.datetimepicker.full.min.js')}}" type="text/javascript"> </script>  --}}
+  <script src="{{URL::asset('assets/js/main.js')}}" type="text/javascript"> </script>
+  <script src="{{URL::asset('assets/js/es.js')}}" type="text/javascript"> </script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <link href="{{ asset('assets/vendors/general/sweetalert2/dist/sweetalert2.css')}}" rel="stylesheet" type="text/css">
@@ -23,16 +32,13 @@
       padding-top: 70px;
     }
   </style>
-  <script type="text/javascript">
-    // var global URL
-var url = '{!! URL::asset('') !!}';
-  </script>
+  @yield('scripts')
 </head>
 
 <body>
   <div class="bs-example">
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-      <img style="width: 280px; height: 70px; padding-top: 10px;" src="{{asset('img/logotipoCDMX.svg')}}"
+      <img style="width: 400px; height: 85px; padding-top: 10px;" src="{{asset('img/header_educad.svg')}}"
         alt="Imagenes">
       <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
@@ -42,7 +48,7 @@ var url = '{!! URL::asset('') !!}';
         <div class="navbar-nav ml-auto">
           <a href="{{ url('/inicio') }}" class="nav-item nav-link">Inicio</a>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown"
+            <a class="nav-link dropdown-toggle" href="{{url('oferta_academica')}}" id="navbarDropdown2" role="button"
               aria-haspopup="true" aria-expanded="false">
               Oferta Educativa
             </a>
@@ -53,14 +59,14 @@ var url = '{!! URL::asset('') !!}';
             </div>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="" role="button" 
+            <a class="nav-link dropdown-toggle" id="convo" href="{{url('convocatoria')}}" role="button"
               aria-haspopup="true" aria-expanded="false">
-              Convocatoria 2020
+              Convocatoria 2021
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
               <a class="dropdown-item" href="{{ url('/pre-registro') }}">Etapa 1. Pre-Inscripción</a>
               <a class="dropdown-item" href="{{ url('/curso-induccion') }}">Etapa 2. Curso de Inducción</a>
-              <a class="dropdown-item" href="{{ url('/Inscripción') }}">Etapa 3. Inscripción</a>
+              <a class="dropdown-item" href="{{ url('/Inscripcion') }}">Etapa 3. Inscripción</a>
             </div>
           </li>
           <li class="nav-item">

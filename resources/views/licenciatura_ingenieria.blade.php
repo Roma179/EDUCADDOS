@@ -26,7 +26,7 @@
     <div class="row">
         <div class="card border-light">
             <p>
-                <span style="font-family: Open Sans;">
+                <span>
                     La Universidad CNCI cuenta con siete licenciaturas y tres ingenierías con RVOE de la Autoridad
                     Educativa de la Ciudad de México; además de seis licenciaturas y una ingeniería con RVOE de la
                     Autoridad Educativa del Estado de Coahuila.
@@ -63,15 +63,15 @@
             text-decoration: underline;" href="#sec-edu-coahuila">Secretaría de Educación del Estado de Coahuila</a>
         </div>
     </div>
-    <div class="row" style="margin-top: 30px;">
-        <h3 style="font-weight: 200; font-size: 20pt; color:#000; font-family:" Open Sans", sans-serif;">Secretaría de
-            Educación, Ciencia, Tecnología e Innovación en la Ciudad de México</h3>
+    <div class="row" style="margin-top: 30px;" id="secretaria-edu">
+        <h3 style="font-weight: 200; font-size: 20pt; color:#000; font-family:" Open Sans", sans-serif;"><strong>Secretaría de
+            Educación, Ciencia, Tecnología e Innovación en la Ciudad de México</strong></h3>
     </div>
     <div class="row" style="margin-top: 20px;">
         <div class="card border-light">
             <p style="
             font-family: " Open Sans", sans-serif; font-size: 12pt; font-weight: 400; line-height: 1.56;">
-                <span style="font-family: Open Sans;">
+                <span>
                     Duración: tres (3) años.
                 </span>
             </p>
@@ -81,7 +81,7 @@
         <div class="card border-light">
             <p style="
             font-family: " Open Sans", sans-serif; font-size: 12pt; font-weight: 400; line-height: 1.56;">
-                <span style="font-family: Open Sans;">
+                <span>
                     Plan de Estudios: nueve (9) tetramestres de 15 semanas cada uno. Cada tetramestre se divide a su vez
                     en módulos (3) con una duración de cinco semanas.
                 </span>
@@ -92,7 +92,7 @@
         <div class="card border-light">
             <p style="
             font-family: " Open Sans", sans-serif; font-size: 12pt; font-weight: 400; line-height: 1.56;">
-                <span style="font-family: Open Sans;">
+                <span>
                     Materias: 56 curriculares y cuatro co-curriculares. Se cursan dos en cada módulo; es decir, cada
                     tetramestre cursarás seis materias; a fin de cubrir las materias co-curriculares, habrá módulos en
                     los que cursarás tres materias.
@@ -106,13 +106,13 @@
                 <div class="card border-light">
                     <h4 style="color:#000; font-family: " Open Sans", sans-serif; ">LICENCIATURAS EN:</h4>
                     <ol>
-                        <li><a>Contador Público</a>.<strong>RVOE</strong> SEDU 011709-4-18-004</li>
-                        <li><a>Administración de Empresas</a>.<strong>RVOE</strong> SEDU 011712-7-18-007</li>
-                        <li><a>Derecho</a>.<strong>RVOE</strong> SEDU 011710-5-18-005</li>
-                        <li><a>Informática Administrativa</a>.<strong>RVOE</strong> SEDU 011718-9-18-009</li>
-                        <li><a>Recursos Humanos</a>.<strong>RVOE</strong> SEDU 011720-11-18-011</li>
-                        <li><a>Ciencias de la Educación</a>.<strong>RVOE</strong> SEDU 011721-12-18-012 [NUEVA]</li>
-                        <li><a>Mercadotecnia</a>.<strong>RVOE</strong> SEDU 011717-8-18-008 [NUEVA]</li>
+                        <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank" href="{{url('uploads/licenciatura/CP.pdf')}}">Contador Público</a>. <strong>RVOE</strong> SEDU 011709-4-18-004</li>
+                        <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank" href="{{url('uploads/licenciatura/LAE.pdf')}}">Administración de Empresas</a>. <strong>RVOE</strong> SEDU 011712-7-18-007</li>
+                        <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank" href="{{url('uploads/licenciatura/LD.pdf')}}">Derecho</a>. <strong>RVOE</strong> SEDU 011710-5-18-005</li>
+                        <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank" href="{{url('uploads/licenciatura/LIA.pdf')}}">Informática Administrativa</a>. <strong>RVOE</strong> SEDU 011718-9-18-009</li>
+                        <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank" href="{{url('uploads/licenciatura/LRH.pdf')}}">Recursos Humanos</a>. <strong>RVOE</strong> SEDU 011720-11-18-011</li>
+                        <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank" href="{{url('uploads/licenciatura/LCE.pdf')}}">Ciencias de la Educación</a>. <strong>RVOE</strong> SEDU 011721-12-18-012 [NUEVA]</li>
+                        <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank" href="{{url('uploads/licenciatura/LM.pdf')}}">Mercadotecnia</a>. <strong>RVOE</strong> SEDU 011717-8-18-008 [NUEVA]</li>
                     </ol>
                 </div>
             </div>
@@ -120,9 +120,9 @@
                     <div class=" card border-light">
                         <h4 style="color:#000; font-family: " Open Sans", sans-serif; ">INGENIERÍAS EN:</h4>
                     <ol>
-                        <li><a>Tecnologías Computacionales</a>.RVOE SEDU 011708-3-18-003</li>
-                        <li><a>Industrial y de Sistemas </a>. RVOE SEDU 011719-10-18-010</li>
-                        <li><a>Logística</a>. RVOE SEDU 011726-17-18-017 [NUEVA]</li>
+                        <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank" href="{{url('uploads/licenciatura/ITC.pdf')}}">Tecnologías Computacionales</a>. <strong>RVOE</strong> SEDU 011708-3-18-003</li>
+                        <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank" href="{{url('uploads/licenciatura/IIS.pdf')}}">Industrial y de Sistemas</a>. <strong>RVOE</strong> SEDU 011719-10-18-010</li>
+                        <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank" href="{{url('uploads/licenciatura/IL.pdf')}}">Logística</a>. <strong>RVOE</strong> SEDU 011726-17-18-017 [NUEVA]</li>
                     </ol>
                 </div>
             </div>
@@ -132,7 +132,7 @@
         <div class="card border-light">
             <p style="
             font-family: " Open Sans", sans-serif; font-size: 12pt; font-weight: 400; line-height: 1.56;">
-                <span style="font-family: Open Sans;">
+                <span>
                     Más información: revisa el siguiente video.
                 </span>
             </p>
@@ -154,14 +154,14 @@
         </div>
     </div>
 
-    <div class="row" style="margin-top: 30px;">
-        <h3 style="font-weight: 200; font-size: 20pt; color:#000; font-family:" Open Sans", sans-serif;">Secretaría de Educación del Estado de Coahuila</h3>
+    <div class="row" style="margin-top: 30px;" id="sec-edu-coahuila">
+        <h3 style="font-weight: 200; font-size: 20pt; color:#000; font-family:" Open Sans", sans-serif;"><strong>Secretaría de Educación del Estado de Coahuila</strong></h3>
     </div>
     <div class="row" style="margin-top: 20px;">
         <div class="card border-light">
             <p style="
             font-family: " Open Sans", sans-serif; font-size: 12pt; font-weight: 400; line-height: 1.56;">
-                <span style="font-family: Open Sans;">
+                <span>
                     Duración: tres (3) años.
                 </span>
             </p>
@@ -171,7 +171,7 @@
         <div class="card border-light">
             <p style="
             font-family: " Open Sans", sans-serif; font-size: 12pt; font-weight: 400; line-height: 1.56;">
-                <span style="font-family: Open Sans;">
+                <span>
                     Plan de Estudios:  nueve (9) tetramestres de 14 semanas cada uno. Cada tetramestre se divide a su vez en módulos (4) con una duración de cuatro semanas.
                 </span>
             </p>
@@ -181,7 +181,7 @@
         <div class="card border-light">
             <p style="
             font-family: " Open Sans", sans-serif; font-size: 12pt; font-weight: 400; line-height: 1.56;">
-                <span style="font-family: Open Sans;">
+                <span>
                     Materias: 56 curriculares y cuatro co-curriculares. Se cursan dos en cada módulo; es decir, cada tetramestre cursarás seis materias.
                 </span>
             </p>
@@ -193,16 +193,17 @@
                 <div class="card border-light">
                     <h4 style="color:#000; font-family: " Open Sans", sans-serif; ">LICENCIATURAS EN:</h4>
                     <ol>
-                        <li><a>Administración Financiera</a>.<strong>RVOE</strong> 528163237 [NUEVA]</li>
-                        <li><a>Derecho con Acentuación en Economía.</a>.<strong>RVOE</strong> 528163284 [NUEVA]</li>
-                        <li><a>Derecho Corporativo</a>.<strong>RVOE</strong> 528163239 [NUEVA]</li>
-                        <li><a>Derecho y Finanzas</a>.<strong>RVOE</strong> 528163236 [NUEVA]</li>
-                        <li><a>Gestión Turística</a>.<strong>RVOE</strong>  528163260 [NUEVA]</li>
-                        <li><a>Mercadotecnia Turística</a>.<strong>RVOE</strong> 528163238 [NUEVA]</li>
+                        <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank" href="{{url('uploads/licenciatura/LICENCIATURA EN ADMINISTRACIÓN FINANCIERA.pdf')}}">Administración Financiera</a>. <strong>RVOE</strong> 528163237 [NUEVA]</li>
+                        <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank" href="{{url('uploads/licenciatura/LICENCIATURA EN DERECHO CON ACENTUACIÓN EN ECONOMÍA.pdf')}}">Derecho con Acentuación en Economía.</a> <strong>RVOE</strong> 528163284 [NUEVA]</li>
+                        <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank" href="{{url('uploads/licenciatura/LICENCIATURA EN DERECHO CORPORATIVO.pdf')}}">Derecho Corporativo</a>. <strong>RVOE</strong> 528163239 [NUEVA]</li>
+                        <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank" href="{{url('uploads/licenciatura/LICENCIATURA EN DERECHO Y FINANZAS.pdf')}}">Derecho y Finanzas</a>. <strong>RVOE</strong> 528163236 [NUEVA]</li>
+                        <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank" href="{{url('uploads/licenciatura/LICENCIATURA EN GESTIÓN TURÍSTICA.pdf')}}">Gestión Turística</a>. <strong>RVOE</strong>  528163260 [NUEVA]</li>
+                        <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank" href="{{url('uploads/licenciatura/LICENICIATURA EN MERCADOTECNIA TURISTICA.pdf')}}">Mercadotecnia Turística</a>. <strong>RVOE</strong> 528163238 [NUEVA]</li>
+                        <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank" href="{{url('uploads/licenciatura/.pdf')}}">Derecho Laboral</a>. <strong>RVOE SEDU COAHUILA EN TRÁMITE.</strong></li>
                     </ol>
                     <h4 style="color:#000; font-family: " Open Sans", sans-serif; ">INGENIERÍAS EN:</h4>
                     <ol>
-                        <li><a>Gestión Empresarial</a>.RVOE 528163242 [NUEVA]</li>
+                        <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank" href="{{url('uploads/licenciatura/INGENIERÍA EN GESTIÓN EMPRESARIAL.pdf')}}">Gestión Empresarial</a>. <strong>RVOE</strong> 528163242 [NUEVA]</li>
                     </ol>
                 </div>
             </div>
@@ -212,7 +213,7 @@
         <div class="card border-light">
             <p style="
             font-family: " Open Sans", sans-serif; font-size: 12pt; font-weight: 400; line-height: 1.56;">
-                <span style="font-family: Open Sans;">
+                <span>
                     Más información: revisa el siguiente video.
                 </span>
             </p>
@@ -220,7 +221,7 @@
     </div>
     
     <div class=" row" style="margin-top:3rem; margin-left: 16rem;">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/r26dnYpZu7A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/2JYxq9PICYM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
     <div class="row" style=" margin-top: 40px; margin-bottom: 40px; margin-left:26rem;">
         <div class="enla_inscribir">

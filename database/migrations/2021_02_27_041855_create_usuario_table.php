@@ -18,7 +18,7 @@ class CreateUsuarioTable extends Migration
             $table->string('name', 100);
             $table->string('email', 150);
             $table->string('password', 150);        
-            $table->string('status', 1);        
+            $table->string('status', 2);        
             $table->timestamps();
         });
     }

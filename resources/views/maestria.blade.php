@@ -27,7 +27,7 @@
         <div class="card border-light">
             <p style="
             font-family: " Open Sans", sans-serif; font-size: 12pt; font-weight: 400; line-height: 1.56;">
-                <span style="font-family: Open Sans;">
+                <span>
                     Duración: dos (2) años.
                 </span>
             </p>
@@ -37,7 +37,7 @@
         <div class="card border-light">
             <p style="
             font-family: " Open Sans", sans-serif; font-size: 12pt; font-weight: 400; line-height: 1.56;">
-                <span style="font-family: Open Sans;">
+                <span>
                     Plan de Estudios: cuatro (4) semestres de 16 semanas cada uno. Cada semestre se divide a su vez en módulos (4) con una duración de cuatro semanas.
                 </span>
             </p>
@@ -47,7 +47,7 @@
         <div class="card border-light">
             <p style="
             font-family: " Open Sans", sans-serif; font-size: 12pt; font-weight: 400; line-height: 1.56;">
-                <span style="font-family: Open Sans;">
+                <span>
                     Materias: 16 curriculares + cinco co-curriculares. Cada semestre cursarás cuatro materias, una por módulo; sin embargo, habrá módulos en los que se asignen dos materias para que puedas cursar las co-curriculares.
                 </span>
             </p>
@@ -59,11 +59,12 @@
                 <div class="card border-light">
                     <h4 style="color:#000; font-family: " Open Sans", sans-serif; ">MAESTRÍAS EN:</h4>
                     <ol>
-                        <li><a>Administración</a>.<strong>RVOE</strong> SEDU 011722-13-18-013</li>
-                        <li><a>Administración del Capital Humano</a>.<strong>RVOE</strong> SEDU 011711-6-18-006</li>
-                        <li><a>Administración y Finanzas</a>.<strong>RVOE</strong> SEDU 011723-14-18-014 [NUEVA]</li>
-                        <li><a>Administración y Mercadotecnia</a>.<strong>RVOE</strong>SEDU 011724-15-18-015 [NUEVA]</li>
-                        <li><a>ducación con Acentuación en Tecnología Educativa</a>.<strong>RVOE</strong> SEDU 011725-18-18-016 [NUEVA]</li>
+                        <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank" href="{{url('uploads/maestrias/MA.pdf')}}">Administración</a>. <strong>RVOE</strong> SEDU 011722-13-18-013</li>
+                        <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank" href="{{url('uploads/maestrias/MACH.pdf')}}">Administración del Capital Humano</a>. <strong>RVOE</strong> SEDU 011711-6-18-006</li>
+                        <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank" href="{{url('uploads/maestrias/MAF.pdf')}}">Administración y Finanzas</a>. <strong>RVOE</strong> SEDU 011723-14-18-014 [NUEVA]</li>
+                        <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank" href="{{url('uploads/maestrias/MAM.pdf')}}">Administración y Mercadotecnia</a>. <strong>RVOE</strong> SEDU 011724-15-18-015 [NUEVA]</li>
+                        <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank" href="{{url('uploads/maestrias/MTE.pdf')}}">Educación con Acentuación en Tecnología Educativa</a>. <strong>RVOE</strong> SEDU 011725-18-18-016 [NUEVA]</li>
+                        <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank" href="{{url('uploads/maestrias/.pdf')}}">Derecho Laboral</a>. <strong>RVOE SEDU COAHUILA EN TRÁMITE.</strong> SEDU 011725-18-18-016 [NUEVA]</li>
                     </ol>
                 </div>
             </div>
@@ -73,7 +74,7 @@
         <div class="card border-light">
             <p style="
             font-family: " Open Sans", sans-serif; font-size: 12pt; font-weight: 400; line-height: 1.56;">
-                <span style="font-family: Open Sans;">
+                <span>
                     Más información: revisa el siguiente video.
                 </span>
             </p>

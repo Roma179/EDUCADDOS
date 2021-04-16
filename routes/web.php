@@ -23,6 +23,12 @@ Route::get('inicio', function () {
 Route::get('media_superior', function () {
     return view('/media_superior');
 });
+Route::get('oferta_academica', function () {
+    return view('/ofertaAcademica');
+});
+Route::get('convocatoria', function () {
+    return view('/convocatoria');
+});
 Route::get('licenciatura_ingenieria', function () {
     return view('/licenciatura_ingenieria');
 });
@@ -45,10 +51,17 @@ Route::post('webservicecp', 'WebServicesCP@getCP')->name('webservicecp');
 Route::post('guardar_preinscripcion', 'PreinscripcionController@guardar')->name('guardar_preinscripcion');
 
 Route::get('/curso-induccion', 'CMenu@etapa2');
-Route::get('/Inscripción', 'CMenu@etapa3');
+Route::get('/Inscripcion', 'CMenu@etapa3')->name('Inscripcion');
 Route::get('/contacto', 'CMenu@contacto');
 
 Route::get('/prueba', 'CMenu@pruebass');
+
+Route::post('registro_cita', 'CitasController@store')->name('save_cita_bd');
+Route::get('/get_citas', 'CitasController@getCitas')->name('get_citas');
+Route::get('/get_citas_admin', 'CitasController@getCitasAdmin')->name('get_citas_admin');
+Route::post('set_asistencia', 'CitasController@setAsistencia')->name('set_asistencia');
+Route::post('set_penalizar', 'CitasController@penalizar')->name('set_penalizar');
+
 //rutas para superusuarios
 Route::group(['middleware' => ['nocache','permission:view_users|edit_users|delete_users|create_users']], function() {
     Route::resource('users','UserController');
@@ -67,6 +80,7 @@ Route::group(['middleware' => ['nocache','permission:view_roles|edit_roles|delet
 
 Route::group(['middleware' => ['permission:view_preinscripcion','nocache']], function() {
 //Route::group(['middleware' => ['permission:view_inscripcion']], function() {
+    Route::get('/citas','Admin\AdminController@showCitas')->name('citas');
     Route::get('/lista_preinscripcion','Admin\AdminController@showListPreinscri')->name('lista_preinscripcion');
     Route::get('/lista_documentos_inscr/{id}', 'Admin\DocumentosController@show_inscr')->name('lista_documentos_inscr');
     Route::post('/email_info_recibida_inscr', 'Admin\EmailController@sendEmailRecibiInscrip')->name('email_info_recibida_inscr');

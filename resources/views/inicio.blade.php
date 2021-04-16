@@ -20,7 +20,7 @@
     font-style: normal;
     font-weight: 500;
     letter-spacing: -0.5px;
-    line-height: 1.26; margin-top: 45px;">DGAP-EDUCAD</h1>
+    line-height: 1.26; margin-top: 45px;">EDUCAD-DGAP</h1>
     <div class="row" style="margin-top 40px;">
         <div style="font-family: " Open Sans", sans-serif; font-size: 12pt; font-weight: 400; line-height: 1.56;
             font-style: inherit;">
@@ -30,7 +30,7 @@
             overflow-wrap: break-word;
             overflow: hidden;
             margin-left: 8px;
-            text-decoration: underline;" href="#consiste">EN QUÉ CONSISTE DGAP-EDUCAD</a>
+            text-decoration: underline;" href="#consiste">EN QUÉ CONSISTE EDUCAD-DGAP</a>
         </div>
     </div>
     <div class="row">
@@ -63,7 +63,7 @@
                 <div class="col-12 col-sm-12 col-md-12 col-lg-12">
                     <div id="consiste" class="card border-light" style="margin-top: 40px; padding: 10px;">
                         <div class="card-title">
-                            <h2>EN QUÉ CONSISTE DGAP-EDUCAD</h2>
+                            <h2>EN QUÉ CONSISTE EDUCAD-DGAP</h2>
                         </div>
                         <div class="card-text">
                             <p align="justify">EDUCAD-DGAP es un programa cuya finalidad es que las personas servidoras

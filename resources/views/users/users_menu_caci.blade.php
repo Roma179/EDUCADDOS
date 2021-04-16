@@ -24,16 +24,20 @@
     <!--begin:: Global Optional Vendors -->
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link href="{{ asset('assets/vendors/general/sweetalert2/dist/sweetalert2.css')}}" rel="stylesheet"
-        type="text/css">
+    <link href="{{ asset('assets/vendors/general/sweetalert2/dist/sweetalert2.css')}}" rel="stylesheet" type="text/css">
     <!--end:: Global Optional Vendors -->
     <link href="{{ asset('assets/vendors/custom/datatables/datatables.bundle.min.css')}}" rel="stylesheet"
         type="text/css">
+
 
     <!--begin::Global Theme Styles(used by all pages) -->
     <link href="{{ asset('assets/css/demo5/style.bundle.css')}}" rel="stylesheet" type="text/css">
     <link href="{{ asset('assets/css/estilo_saf.css')}}" rel="stylesheet" type="text/css">
     <!--end::Global Theme Styles -->
+    <link rel="stylesheet" type="text/css" href="{{URL::asset('assets/css/main.css')}}" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="{{URL::asset('assets/js/main.js')}}" type="text/javascript"> </script>
+    <script src="{{URL::asset('assets/js/es.js')}}" type="text/javascript"> </script>
 
 </head>
 
@@ -46,8 +50,7 @@
     <div id="kt_header_mobile" class="kt-header-mobile  kt-header-mobile--fixed ">
         <div class="kt-header-mobile__brand">
             <a class="kt-header-mobile__logo" href="{{url('users')}}">
-                <img style="max-height: 25px; " alt="Logo"
-                    src="{{ asset('assets/img/logos/SAF_logo_header.svg')}}">
+                <img style="max-height: 25px; " alt="Logo" src="{{ asset('assets/img/logos/SAF_logo_header.svg')}}">
             </a>
         </div>
         <div class="kt-header-mobile__toolbar">
@@ -165,6 +168,14 @@
                                             @endcan
                                         </li>
 
+                                        <li class="kt-menu__item kt-menu__item--submenu kt-menu__item--rel ">
+                                            @can('view_preinscripcion')
+                                            <a href="{{url('citas')}}" class="kt-menu__link">
+                                                <span class="kt-menu__link-text">Citas</span>
+                                                <i class="kt-menu__ver-arrow la la-angle-right"></i>
+                                            </a>
+                                            @endcan
+                                        </li>
                                         <li class="kt-menu__item kt-menu__item--submenu kt-menu__item--rel ">
                                             @can('view_preinscripcion')
                                             <a href="{{url('lista_preinscripcion')}}" class="kt-menu__link">
@@ -327,8 +338,8 @@
 
 
             <!--begin:: Global Mandatory Vendors -->
-            <script src="{{asset('assets/vendors/general/bootstrap/dist/js/bootstrap.min.js')}}"
-                type="text/javascript"></script>
+            <script src="{{asset('assets/vendors/general/bootstrap/dist/js/bootstrap.min.js')}}" type="text/javascript">
+            </script>
             <!--end:: Global Mandatory Vendors -->
 
             <!--begin::Page Vendors(used by this page) -->
@@ -337,19 +348,22 @@
             <script src="{{asset('assets/vendors/custom/js/vendors/jquery-validation.init.js')}}"
                 type="text/javascript"></script>
             {{--  <script src="{{asset('assets/vendors/general/sweetalert2/dist/sweetalert2.min.js')}}"
-                type="text/javascript"></script>  --}}
+            type="text/javascript"></script> --}}
             <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-            <script src="{{asset('assets/vendors/custom/js/vendors/sweetalert2.init.js')}}"
-                type="text/javascript"></script>
+            <script src="{{asset('assets/vendors/custom/js/vendors/sweetalert2.init.js')}}" type="text/javascript">
+            </script>
             <script src="{{asset('assets/vendors/general/block-ui/jquery.blockUI.js')}}" type="text/javascript">
             </script>
             <!--end::Page Vendors -->
 
-             <!-- <script src="{{ URL::asset('js/datatables.js') }}" defer></script> -->
-        <script src="{{ URL::asset('assets/global/scripts/datatable.js') }}" type="text/javascript"></script>
-        <script src="{{ URL::asset('assets/global/plugins/datatables/datatables.min.js') }}" type="text/javascript"></script>
-        <script src="{{ URL::asset('assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js') }}" type="text/javascript"></script>
-        <script src="{{ URL::asset('assets/global/plugins/bootstrap-tagsinput/bootstrap-tagsinput.min.js') }}" type="text/javascript"></script> 
+            <!-- <script src="{{ URL::asset('js/datatables.js') }}" defer></script> -->
+            <script src="{{ URL::asset('assets/global/scripts/datatable.js') }}" type="text/javascript"></script>
+            <script src="{{ URL::asset('assets/global/plugins/datatables/datatables.min.js') }}" type="text/javascript">
+            </script>
+            <script src="{{ URL::asset('assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js') }}"
+                type="text/javascript"></script>
+            <script src="{{ URL::asset('assets/global/plugins/bootstrap-tagsinput/bootstrap-tagsinput.min.js') }}"
+                type="text/javascript"></script>
 
         </b></b>
 
