@@ -9,6 +9,7 @@ class Preinscripcion extends Model
 {
     protected $table = 'preinscripcion';
     protected $fillable = [
+        'rfc',
         'nombre', 'ape_paterno', 'ape_materno','id_empleado',
         'tipo_nomina',
         'universo_nominal',

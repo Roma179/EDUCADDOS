@@ -1,9 +1,14 @@
-function preinscripcion() {
+function preinscripcion(filename) {
+    /* console.log(filename.filename_bachi);
+    console.log(filename.filename_licen);
+    console.log(filename.filename_maestria.filename_cedula);
+    console.log(filename.filename_maestria.filename_certificado); */
     /* alert("Hola"); */
     var form_data = new FormData();
 
     form_data.append("_token", $("meta[name='csrf-token']").attr("content"));
     form_data.append("nombre", $("#nombre").val());
+    form_data.append("rfc", $("#rfc").val());
     form_data.append("ape_paterno", $("#ape_paterno").val());
     form_data.append("ape_materno", $("#ape_materno").val());
     form_data.append("id_empleado", $("#id_empleado").val());
@@ -38,26 +43,34 @@ function preinscripcion() {
     var dato_archivo_comp_dom = $('#filename_domicilio').prop("files")[0];
     var dato_archivo_ine = $('#filename_ine').prop("files")[0];
     var dato_archivo_nomi = $('#filename_recibo').prop("files")[0];
-    var dato_archivo_cert_secu = $('#filename_secundaria').prop("files")[0];
-    var dato_archivo_cert_bachi = $('#filename_bachillerato').prop("files")[0];
-    var dato_archivo_cert_maestria = $('#filename_certificado_maestria').prop("files")[0];
-    var dato_archivo_cedula_maestria = $('#filename_cedula_maestria').prop("files")[0];
+    var dato_archivo_cert_secu = filename.filename_bachi;
+    var dato_archivo_cert_bachi = filename.filename_licen;
+    var dato_archivo_cert_maestria = filename.filename_maestria.filename_cedula;
+    var dato_archivo_cedula_maestria = filename.filename_maestria.filename_certificado;
 
-    if (dato_archivo_cert_secu !== undefined) {
-        form_data.append("filename_certif_estudio", dato_archivo_cert_secu);
+    if (dato_archivo_cert_secu != '') {
+        form_data.append("filename_certif_estudio", dato_archivo_cert_secu.prop("files")[0]);
         form_data.append("nivel_escol", $("#select_nivel_escol").val());
-        form_data.append("escolaridad", '');
+        form_data.append("escolaridad", 'Ninguna');
     }
-    if (dato_archivo_cert_bachi !== undefined) {
-        form_data.append("filename_certif_estudio", dato_archivo_cert_bachi);
+    if (dato_archivo_cert_bachi != '') {
+        form_data.append("filename_certif_estudio", dato_archivo_cert_bachi.prop("files")[0]);
         form_data.append("nivel_escol", $("#select_nivel_escol").val());
-        form_data.append("escolaridad", $("#select_lic").val());
+        if($("#select_lic").val()==null){
+            form_data.append("escolaridad", '');
+        }else{
+            form_data.append("escolaridad", $("#select_lic").val());
+        }
     }
-    if (dato_archivo_cert_maestria !== undefined && dato_archivo_cedula_maestria !== undefined) {
-        form_data.append("filename_certif_estudio", dato_archivo_cert_maestria);
-        form_data.append("filename_cedula_maestria", dato_archivo_cedula_maestria);
+    if (dato_archivo_cert_maestria != '' && dato_archivo_cedula_maestria != '') {
+        form_data.append("filename_certif_estudio", dato_archivo_cert_maestria.prop("files")[0]);
+        form_data.append("filename_cedula_maestria", dato_archivo_cedula_maestria.prop("files")[0]);
         form_data.append("nivel_escol", $("#select_nivel_escol").val());
-        form_data.append("escolaridad", $("#select_maestria").val());
+        if($("#select_maestria").val()==null){
+            form_data.append("escolaridad", '');
+        }else{
+            form_data.append("escolaridad", $("#select_maestria").val());
+        }
     }
     
     form_data.append("filename_acta_nacimiento", dato_archivo_act);
@@ -90,16 +103,16 @@ function preinscripcion() {
                     }
                 });
             } else {
-                if (data.err_valid_docs) {
+                console.log(data);
+                if (data.err_valid) {
                     Swal.fire({
-                        icon: 'error',
-                        title: 'Error Documentos, Validaciones!',
+                        icon: 'warning',
+                        title: '¡Hubo un error de Validación, por favor llena otra vez tus datos!',
                         text: data.result,
-                        showConfirmButton: false,
-                        timer: 20000,
+                        confirmButtonText: 'Ok',
                         allowOutsideClick: false
                     }).then((result) => {
-                        if (result.dismiss === Swal.DismissReason.timer) {
+                        if (result.isConfirmed) {
                             location.href = url + 'pre-registro';
                         }
                     });
@@ -107,7 +120,7 @@ function preinscripcion() {
                 }
                 Swal.fire({
                     icon: 'error',
-                    title: 'Error de Sistema!',
+                    title: '¡Error de Sistema!',
                     text: data.result,
                     showConfirmButton: false,
                     timer: 20000,

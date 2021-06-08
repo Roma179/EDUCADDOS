@@ -11,7 +11,7 @@
 
 <p><b>Ismael Alberto Gómez Ávila</b></p>
 
-<p>Jefe de Unidad Departamental de Educación a Distancia</p>
+<p>Jefe de Unidad Departamental de Formación Continua y Educación a Distancia</p>
 
 <p>Correo electrónico: <a href="mailto:profesionalizacion@finanzas.cdmx.gob.mx"><font color="#000000"><u> profesionalizacion@finanzas.cdmx.gob.mx</u></font></a></p>
 

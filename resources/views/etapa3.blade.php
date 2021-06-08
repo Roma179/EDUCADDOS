@@ -64,9 +64,19 @@
   <p><b>1. Descarga los siguientes formatos,</b> llénalos con letra de molde con tinta azul y saca una copia:</p>
 
   <ul style="list-style-type: square">
-    <li><i>Formato <u><a href="https://drive.google.com/file/d/1M0mG5P5goIm9zAVFoTXZSuoWaHVWYMxq/view" target="_blank">
+    <li><i>Formato <u><a href="https://drive.google.com/file/d/12tH9gJmSCoDHFWvC2-xCqY0A61MnSiTJ/view?usp=sharing
+      " target="_blank">
             <font color="#000000">Entrevista Inicial</font>
           </a></u></li>
+    <li><i>Formato de Inscripción (<u><a href="{{url('uploads/bachillerato/Formato de Inscripcion Bach.pdf')}}"
+            target="_blank">
+            <font color="#000000">Bachillerato,</font></u>
+        <u><a href="{{url('uploads/licenciatura/Formato de Inscripcion Lic.pdf')}}" target="_blank">
+            <font color="#000000">Licenciatura o Ingeniería,</font>
+          </a></u>
+        <u><a href="{{url('uploads/maestrias/Formato de Inscripcion Mae.pdf')}}" target="_blank">
+            <font color="#000000">Maestría</font>
+          </a></u>)</li>
     <li>Formato Aceptación de Descuento vía nómina (<u><a
           href="https://drive.google.com/file/d/1rHV_l8TOBXrTzi37LI1pOCf1EZcJ3qFI/view" target="_blank">
           <font color="#000000">Bachillerato,</font></u>
@@ -104,8 +114,8 @@
       </div>
       </p>
       <div class="form-group col-md-2">
-        <input type="text" id="rfc" name="rfc" onchange="activarBoton()" placeholder="Ingresar RFC" class="form-control" maxlength="13"
-          minlength="13"
+        <input type="text" id="rfc" name="rfc" onchange="activarBoton()" placeholder="Ingresar RFC" class="form-control"
+          maxlength="13" minlength="13"
           pattern="^([A-ZÑ\x26]{3,4}([0-9]{2})(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[0-1]))((-)?([A-Z\d]{3}))?$"
           required>
       </div>

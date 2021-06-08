@@ -23,7 +23,27 @@
     font-weight: 500;
     letter-spacing: -0.5px;
     line-height: 1.26;">Maestría</h1>
+    {{--  <div class="row" style="margin-top: 20px;">
+        <div class="card border-light">
+            <p style="
+                font-family: " Open Sans", sans-serif; font-size: 12pt; font-weight: 400; line-height: 1.56;">
+                <span>
+                    La Universidad CNCI ofrece seis diferentes planes de estudio, con Reconocimiento de Validez Oficial de Estudios de la Autoridad Educativa en el Estado de Coahuila.
+                </span>
+            </p>
+        </div>
+    </div>  --}}
     <div class="row" style="margin-top: 20px;">
+        <div class="card border-light">
+            <p style="
+            font-family: " Open Sans", sans-serif; font-size: 12pt; font-weight: 400; line-height: 1.56;">
+                <span>
+                    La Universidad CNCI ofrece seis diferentes planes de estudio, con Reconocimiento de Validez Oficial de Estudios de la Autoridad Educativa en el Estado de Coahuila.
+                </span>
+            </p>
+        </div>
+    </div>
+    <div class="row">
         <div class="card border-light">
             <p style="
             font-family: " Open Sans", sans-serif; font-size: 12pt; font-weight: 400; line-height: 1.56;">
@@ -48,7 +68,7 @@
             <p style="
             font-family: " Open Sans", sans-serif; font-size: 12pt; font-weight: 400; line-height: 1.56;">
                 <span>
-                    Materias: 16 curriculares + cinco co-curriculares. Cada semestre cursarás cuatro materias, una por módulo; sin embargo, habrá módulos en los que se asignen dos materias para que puedas cursar las co-curriculares.
+                    Materias: 16 en total. Cada semestre cursarás cuatro materias, una por módulo.
                 </span>
             </p>
         </div>
@@ -59,12 +79,22 @@
                 <div class="card border-light">
                     <h4 style="color:#000; font-family: " Open Sans", sans-serif; ">MAESTRÍAS EN:</h4>
                     <ol>
-                        <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank" href="{{url('uploads/maestrias/MA.pdf')}}">Administración</a>. <strong>RVOE</strong> SEDU 011722-13-18-013</li>
-                        <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank" href="{{url('uploads/maestrias/MACH.pdf')}}">Administración del Capital Humano</a>. <strong>RVOE</strong> SEDU 011711-6-18-006</li>
-                        <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank" href="{{url('uploads/maestrias/MAF.pdf')}}">Administración y Finanzas</a>. <strong>RVOE</strong> SEDU 011723-14-18-014 [NUEVA]</li>
-                        <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank" href="{{url('uploads/maestrias/MAM.pdf')}}">Administración y Mercadotecnia</a>. <strong>RVOE</strong> SEDU 011724-15-18-015 [NUEVA]</li>
-                        <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank" href="{{url('uploads/maestrias/MTE.pdf')}}">Educación con Acentuación en Tecnología Educativa</a>. <strong>RVOE</strong> SEDU 011725-18-18-016 [NUEVA]</li>
-                        <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank" href="{{url('uploads/maestrias/.pdf')}}">Derecho Laboral</a>. <strong>RVOE SEDU COAHUILA EN TRÁMITE.</strong> SEDU 011725-18-18-016 [NUEVA]</li>
+                        <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank" 
+                            href="https://drive.google.com/file/d/1MkMrxV--WOgmZgq7XddVJkoH4bk7dqbH/view">Administración</a>. <strong>RVOE</strong> SEDU 0528163272</li>
+                        <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank" 
+                            href="https://drive.google.com/file/d/1GCmpqsmScvzba8Lgh_cSFowPJ41vqZFl/view">Administración del Capital Humano</a>. <strong>RVOE</strong> SEDU 0528163269</li>
+                    </ol>
+                </div>
+                <div class="card border-light">
+                    <h6 style="margin-left: 1.5rem; font-family: " Open Sans", sans-serif;"><strong>NUEVA OFERTA EDUCATIVA</strong></h6>
+                    <ol>
+                        <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank" 
+                            href="https://drive.google.com/file/d/1Sp9o7PceMpRkQPFqHGC8PsyHaSqRSnUZ/view">Administración y Finanzas</a>. <strong>RVOE</strong> 0528163265</li>
+                        <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank" 
+                            href="https://drive.google.com/file/d/1DzmnOR3t2riDzgP3M35D9BBERAHVDQ0V/view">Administración y Mercadotecnia</a>. <strong>RVOE</strong> 0528163267</li>
+                        <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank" 
+                            href="https://drive.google.com/file/d/1AGbZRzl4s6SBNgdrUR4V7sM-laBJJF4J/view">Educación con Acentuación en Tecnología Educativa</a>. <strong>RVOE</strong> 0528163255</li>
+                        <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank" >Derecho Laboral</a>. <strong>RVOE EN TRÁMITE.</strong></li>
                     </ol>
                 </div>
             </div>

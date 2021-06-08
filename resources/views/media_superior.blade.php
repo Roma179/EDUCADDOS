@@ -30,8 +30,7 @@
                 <span>
                     La Universidad Virtual CNCI te ofrece cursar el Bachillerato General en la modalidad No
                         escolarizada,
-                        opción virtual.
-                        
+                        opción virtual con RVOE del Estado de Nuevo León.
                 </span>
             </p>
         </div>
@@ -84,7 +83,7 @@
             <p style="
             font-family: " Open Sans", sans-serif; font-size: 12pt; font-weight: 400; line-height: 1.56;">
                 <span>
-                    RVOE: SEDU 021714-2-18-002.
+                    RVOE: ABG-178/2010.
                 </span>
             </p>
         </div>
@@ -94,7 +93,7 @@
             <p style="
             font-family: " Open Sans", sans-serif; font-size: 12pt; font-weight: 400; line-height: 1.56;">
                 <span>
-                    ¿Quieres conocer el Plan de Estudios? Haz clic aquí <a href="{{url('uploads/bachillerato/BGTR.pdf')}}" target="_blank" >Bachillerato General</a>
+                    ¿Quieres conocer el Plan de Estudios? Haz clic aquí <a href="https://drive.google.com/file/d/1CvXVwzeuHEXItTmWZiHWriEwGTatc8l9/view" target="_blank" >Bachillerato General</a>
                 </span>
             </p>
         </div>

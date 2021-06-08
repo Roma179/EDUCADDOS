@@ -16,7 +16,7 @@
 
   <h1 style="color: #054a41;">Preinscripción a EDUCAD</h1>
   <br>
-        {{--  <?php 
+  {{--  <?php 
            echo var_dump($data);
         ?>  --}}
   <div class="tab">
@@ -30,6 +30,8 @@
         <!--row primer-->
         <div class="col-sm-6">
           <!--col-sm-6-->
+          <input id="rfc" type="text" oninput="this.className = ''" name="ape_paterno" value="{{$value['rfc']}}" hidden>
+          </p>
           <p>Nombre(s)<input id="nombre" type="text" placeholder="Nombre(s) del Padre/Madre o Tutor"
               title="Nombre del Padre/Madre o Tutor" oninput="this.className = ''" name="nombre"
               value="{{$value['CH_nombres']}}" readonly></p>
@@ -61,7 +63,8 @@
               oninput="this.className = ''" name="nivel_salarial" value="{{$value['NIVEL_SALARIAL']}}" readonly></p>
           <p>Sección sindical<input id="seccion_sindical" placeholder="Sección sindical" title="Sección sindical"
               oninput="this.className = ''" name="seccion_sindical" value="{{$value['SECCION_SINDICAL']}}" readonly></p>
-          <input id="status_empleado" oninput="this.className = ''" name="status_empleado" value="{{$value['status']}}" hidden readonly></p>
+          <input id="status_empleado" oninput="this.className = ''" name="status_empleado" value="{{$value['status']}}"
+            hidden readonly></p>
         </div>
         <!--col-sm-6-->
         <div class="col-sm-6">
@@ -89,7 +92,8 @@
                 name="pais"></p>
             <h4 style="color: #00b140;"><b>Datos de Contacto</b> </h4>
             <p>Correo electrónico<input id="correo_electro" type="email" placeholder="E-mail" title="E-mail"
-                oninput="this.className = ''" name="correo_electro" value="{{$value['CH_mail']}}" readonly></p>
+                oninput="this.className = ''" name="correo_electro" value="{{$value['CH_mail']}}"></p>
+            <p>Nota: Por favor valida la cuenta de correo electronico.</p>
             <p>Teléfono domicilio a 10 dígitos<input id="telefono_uno" type="tel" placeholder="Teléfono o celular"
                 title="Teléfono o celular" oninput="this.className = ''" name="telefono_uno" maxlength="10"
                 pattern="[0-9]{10}" onkeypress="return solonumeros(event)" onpaste="return false"></p>
@@ -196,11 +200,12 @@
             <div class="row">
               <div class="mt-2">
                 <!-- los que no pide validacion-->
-                <h4 style="color: #054a41;">Seleccione el nivel de estudios al que desea inscribirse:</h4>
+                <h5 style="font-size: 15px; font-family: Arial, Helvetica; color:#777777;"><b>Seleccione el nivel de
+                    estudios al que desea inscribirse:</b></h5>
                 <div class="form-group col-md-4">
                   <!--select-->
                   <select id="select_nivel_escol" name="select" class="form-control">
-                    <option value="value1">Elige</option>
+                    <option value="value1" selected disabled>Elige</option>
                     <option value='bachillerato'>01_Bachillerato</option>
                     <option value='licenciatura_ingenieria'>02_Licenciatura o ingeniería</option>
                     <option value='maestria'>03_Maestría</option>
@@ -208,19 +213,20 @@
 
                   <div id="bachillerato" style="display:none;">
                     <div class="col-sm-12 col-md-12 col-lg-12">
-                    <!--div none bachillerato-->
-                    <h5>Certificado total de estudios del grado Secundaria (ambos lados)</h5>
-                    <input type="file" id="filename_secundaria" name="filename_secundaria"
-                      accept="application/msword, application/pdf">
+                      <!--div none bachillerato-->
+                      {{-- <h5>Certificado total de estudios del grado Secundaria (ambos lados)</h5>
+                            <input type="file" id="filename_secundaria" name="filename_secundaria"
+                              accept="application/msword, application/pdf"> --}}
                     </div>
                   </div>
                   <!--div none bachillerato-->
 
                   <div id="carreras_licenciatura_ingenieria" style="display:none;">
                     <!--div none lic_ing-->
-                    <h5>Seleccione el plan de estudios que desea cursar</h5>
-                    <select id="select_lic" name="select" class="form-control">
-                      <option value="value1">Elige</option>
+                    <h5 style="font-size: 15px; font-family: Arial, Helvetica; color:#777777;"><b>Seleccione el plan de
+                        estudios que desea cursar</b></h5>
+                    <select id="select_lic" name="select" class="form-control" required>
+                      <option selected disabled>Elige</option>
                       <option id="contador_public" name="contador_public">Contador Público</option>
                       <option id="adm_empresa" name="adm_empresa">Administración de Empresas</option>
                       <option id="derecho" name="derecho">Derecho</option>
@@ -242,16 +248,17 @@
                       <option id="logistica" name="logistica">Logística</option>
                       <option id="gestion_empresarial" name="gestion_empresarial">Gestión Empresarial</option>
                     </select>
-                    <h5>Certificado total de estudios de Bachillerato o equivalente (ambos lados).</h5>
+                    {{-- <h5>Certificado total de estudios de Bachillerato o equivalente (ambos lados).</h5>
                     <input type="file" id="filename_bachillerato" name="filename_bachillerato"
-                      accept="application/msword, application/pdf">
+                      accept="application/msword, application/pdf"> --}}
                   </div>
                   <!--div none lic_ing-->
                   <div id="maestria" style="display:none;">
                     <!--none maestría-->
-                    <h5>Seleccione el plan de estudios que desea cursar</h5>
-                    <select id="select_maestria" name="select" class="form-control">
-                      <option value="value1">Elige</option>
+                    <h5 style="font-size: 15px; font-family: Arial, Helvetica; color:#777777;"><b>Seleccione el plan de
+                        estudios que desea cursar</b></h5>
+                    <select id="select_maestria" name="select" class="form-control" required>
+                      <option selected disabled>Elige</option>
                       <option id="administracion" name="administracion">Administración</option>
                       <option id="adm_ch" name="adm_ch">Administración del Capital Humano</option>
                       <option id="adm_finanzas" name="adm_finanzas">Administración y Finanzas</option>
@@ -262,12 +269,12 @@
                       <option id="maestria_derech" name="maestria_derech">Maestría en Derecho Laboral</option>
                     </select>
 
-                    <h5>Título Profesional</h5>
+                    {{-- <h5>Título Profesional (ambos lados)</h5>
                     <input type="file" id="filename_certificado_maestria" name="filename_certificado_maestria"
                       accept="application/msword, application/pdf">
-                    <h5>Cédula Profesional de nivel superior</h5>
+                    <h5>Cédula Profesional de nivel superior (ambos lados)</h5>
                     <input type="file" id="filename_cedula_maestria" name="filename_cedula_maestria"
-                      accept="application/msword, application/pdf">
+                      accept="application/msword, application/pdf"> --}}
                   </div>
                   <!--none maestría-->
                 </div>
@@ -275,7 +282,7 @@
             </div>
           </div>
           <h4 style="color:#545151;"><i style="color: #00b140; font-size:30px;" class="fa fa-newspaper-o"></i> <b>
-            Nota:</b> Los archivos soportados son .pdf, .docx. Asegúrese que sus archivos cumplan el requisito
+              Nota:</b> Los archivos soportados son .pdf, .docx. Asegúrese que sus archivos cumplan el requisito
           </h4>
         </div>
 
@@ -309,59 +316,6 @@
 <!--<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>-->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 <script>
-  $(document).ready(function(){
-    $('#select_nivel_escol').on('change',function(){
-    var selectValor = ''+$(this).val();
-    //alert (selectValor);
-
-   if(selectValor == 'bachillerato'){
-       // alert ('entrando al if');
-        $("#bachillerato").css('display', 'block');
-        $("#carreras_licenciatura_ingenieria").css('display', 'none')
-        $("#maestria").css('display', 'none');
-    }
-    if(selectValor == 'licenciatura_ingenieria'){
-        $("#bachillerato").css('display', 'none');
-        $("#carreras_licenciatura_ingenieria").css('display', 'block');
-        $("#maestria").css('display', 'none');
-    }
-    if(selectValor == 'maestria'){
-        $("#bachillerato").css('display', 'none');
-        $("#carreras_licenciatura_ingenieria").css('display', 'none');
-        $("#maestria").css('display', 'block');
-    }
-       
-    }); 
-    
-});
-
-//Input de telefono y codigo postal
-function solonumeros(e){
-            key=e.keyCode || e.which;
-            teclado=String.fromCharCode(key);
-
-            numeros="0123456789";
-            especiales="8-37-38-46";
-            teclado_especial=false;
-
-            for(var i in especiales){
-              
-              if(key==especiales[i]){
-                teclado_especial=true;
-              }
-            }
-
-            if(numeros.indexOf(teclado)==-1 && !teclado_especial){
-              return false;
-
-            }
-          }
-
-
-</script>
-
-
-<script>
   var currentTab = 0; // Current tab is set to be the first tab (0)
   var act_supera_tamanio_permitido = false;
 var nac_supera_tamanio_permitido = false;
@@ -369,11 +323,248 @@ var vac_supera_tamanio_permitido = false;
 var curp_supera_tamanio_permitido = false;
 var recibo_supera_tamanio_permitido = false;
 
-
 var disc_supera_tamanio_permitido = false;
 var trab_supera_tamanio_permitido = false;
 var maestria_supera_tamanio_permitido = false;
+
+var filename_send = {
+  'filename_bachi':'',
+  'filename_licen':'',
+  'filename_maestria':{
+    'filename_cedula':'',
+    'filename_certificado':''
+  }
+};
+
 showTab(currentTab); // Display the current tab
+
+$(document).ready(function(){
+  $('#select_nivel_escol').on('change',function(){
+  var selectValor = ''+$(this).val();
+  //alert (selectValor);
+
+ if(selectValor == 'bachillerato'){
+      $("#bachillerato").css('display', 'block');    
+      $("#bachillerato").append(
+        $('<h5>',{
+          'id':'label_bachillerato',
+          'style':'font-size: 15px; font-family: Arial, Helvetica; color:#777777;'
+        }).append(
+          $('<b>',{
+            'html':'Certificado total de estudios del grado Secundaria (ambos lados)'
+          })
+          ),
+        $('<input>',{
+          'type':'file',
+          'id':'filename_secundaria',
+          'name':'filename_secundaria',
+          'accept':'application/msword, application/pdf'
+        })
+      );    
+      $("#carreras_licenciatura_ingenieria").css('display', 'none');
+      //$("#label_licenciatura").parent().remove();
+      $("#filename_bachillerato").parent().remove();
+      $("#maestria").css('display', 'none');
+      $("#filename_certificado_maestria").parent().remove();
+      $("#filename_cedula_maestria").parent().remove();
+
+      filename_send.filename_bachi = $("#filename_secundaria");
+      filename_send.filename_licen = '';
+      filename_send.filename_maestria.filename_certificado = '';
+      filename_send.filename_maestria.filename_cedula = '';
+
+      $("#filename_secundaria").on('change', function () {
+        const tamanioArchivoPermitido = 2000000;
+        var dato_archivo_act = $('#filename_secundaria').prop("files")[0];
+        if(dato_archivo_act.size > tamanioArchivoPermitido){
+          disc_supera_tamanio_permitido = true;
+              //console.log(dato_archivo_act.size);
+              //$("#nextBtn").attr("disabled", true);
+              Swal.fire({
+                  title: 'El tamaño del archivo no debe de exceder los 2 Mb',
+                  text: 'Por favor seleccione un archivo que no exceda el tamaño permitido',
+                  icon: 'warning',
+                  showCancelButton: false,
+                  confirmButtonColor: '#3085d6',
+                  cancelButtonColor: '#d33',
+                  confirmButtonText: 'Ok',
+                  allowOutsideClick: false
+            });    
+          }else{
+              disc_supera_tamanio_permitido = false;
+              console.log(disc_supera_tamanio_permitido);
+              $("#nextBtn").attr("disabled", false);
+          }
+      });
+
+  }
+  if(selectValor == 'licenciatura_ingenieria'){
+      $("#bachillerato").css('display', 'none');
+      //$("#label_bachillerato").parent().remove();
+      $("#filename_secundaria").parent().remove();
+      $("#carreras_licenciatura_ingenieria").css('display', 'block');
+      $("#carreras_licenciatura_ingenieria").append(
+        $('<h5>',{
+          'id':'label_licenciatura',
+          'style':'font-size: 15px; font-family: Arial, Helvetica; color:#777777;'
+        }).append(
+          $('<b>',{
+            'html':'Certificado total de estudios de Bachillerato o equivalente (ambos lados).',
+          })
+        ),
+        $('<input>',{
+          'type':'file',
+          'id':'filename_bachillerato',
+          'name':'filename_bachillerato',
+          'accept':'application/msword, application/pdf'
+        })
+      );
+      $("#maestria").css('display', 'none');
+      $("#filename_certificado_maestria").parent().remove();
+      $("#filename_cedula_maestria").parent().remove();
+
+      //filename_send = $("#filename_bachillerato");
+      filename_send.filename_bachi = '';
+      filename_send.filename_licen = $("#filename_bachillerato");
+      filename_send.filename_maestria.filename_certificado = '';
+      filename_send.filename_maestria.filename_cedula = '';
+
+      $("#filename_bachillerato").on('change', function () {
+        const tamanioArchivoPermitido = 2000000;
+        var dato_archivo_act = $('#filename_bachillerato').prop("files")[0];
+        if(dato_archivo_act.size > tamanioArchivoPermitido){
+          trab_supera_tamanio_permitido = true;
+              //console.log(dato_archivo_act.size);
+              //$("#nextBtn").attr("disabled", true);
+              Swal.fire({
+                  title: 'El tamaño del archivo no debe de exceder los 2 Mb',
+                  text: 'Por favor seleccione un archivo que no exceda el tamaño permitido',
+                  icon: 'warning',
+                  showCancelButton: false,
+                  confirmButtonColor: '#3085d6',
+                  cancelButtonColor: '#d33',
+                  confirmButtonText: 'Ok',
+                  allowOutsideClick: false
+            });    
+          }else{
+              trab_supera_tamanio_permitido = false;
+              $("#nextBtn").attr("disabled", false);
+          }
+      });
+  }
+  if(selectValor == 'maestria'){
+      $("#bachillerato").css('display', 'none');
+      //$("#label_bachillerato").parent().remove();
+      $("#filename_secundaria").parent().remove();
+      $("#carreras_licenciatura_ingenieria").css('display', 'none');
+      //$("#label_licenciatura").parent().remove();
+      $("#filename_bachillerato").parent().remove();
+      $("#maestria").css('display', 'block');
+      $("#maestria").append(
+        $('<h5>',{
+          'style':'font-size: 15px; font-family: Arial, Helvetica; color:#777777;'
+        }).append(
+          $('<b>',{
+            'html':'Título Profesional (ambos lados)',
+          })
+        ),
+        $('<input>',{
+          'type':'file',
+          'id':'filename_certificado_maestria',
+          'name':'filename_certificado_maestria',
+          'accept':'application/msword, application/pdf'
+        }),
+        $('<h5>',{
+          'style':'font-size: 15px; font-family: Arial, Helvetica; color:#777777;'
+        }).append(
+          $('<b>',{
+            'html':'Cédula Profesional de nivel superior (ambos lados)',
+          })
+        ),
+        $('<input>',{
+          'type':'file',
+          'id':'filename_cedula_maestria',
+          'name':'filename_cedula_maestria',
+          'accept':'application/msword, application/pdf'
+        })
+      );
+
+      filename_send.filename_bachi = '';
+      filename_send.filename_licen = '';
+      filename_send.filename_maestria.filename_certificado = $("#filename_certificado_maestria");
+      filename_send.filename_maestria.filename_cedula = $("#filename_cedula_maestria");
+
+      $("#filename_certificado_maestria").on('change', function () {
+        const tamanioArchivoPermitido = 2000000;
+        var dato_archivo_act = $('#filename_certificado_maestria').prop("files")[0];
+        if(dato_archivo_act.size > tamanioArchivoPermitido){
+          maestria_supera_tamanio_permitido = true;
+              //console.log(dato_archivo_act.size);
+              //$("#nextBtn").attr("disabled", true);
+              Swal.fire({
+                  title: 'El tamaño del archivo no debe de exceder los 2 Mb',
+                  text: 'Por favor seleccione un archivo que no exceda el tamaño permitido',
+                  icon: 'warning',
+                  showCancelButton: false,
+                  confirmButtonColor: '#3085d6',
+                  cancelButtonColor: '#d33',
+                  confirmButtonText: 'Ok',
+                  allowOutsideClick: false
+            });    
+          }else{
+            maestria_supera_tamanio_permitido = false;
+              $("#nextBtn").attr("disabled", false);
+          }
+      });
+      $("#filename_cedula_maestria").on('change', function () {
+        const tamanioArchivoPermitido = 2000000;
+        var dato_archivo_act = $('#filename_cedula_maestria').prop("files")[0];
+        if(dato_archivo_act.size > tamanioArchivoPermitido){
+          maestria_supera_tamanio_permitido = true;
+              //console.log(dato_archivo_act.size);
+              //$("#nextBtn").attr("disabled", true);
+              Swal.fire({
+                  title: 'El tamaño del archivo no debe de exceder los 2 Mb',
+                  text: 'Por favor seleccione un archivo que no exceda el tamaño permitido',
+                  icon: 'warning',
+                  showCancelButton: false,
+                  confirmButtonColor: '#3085d6',
+                  cancelButtonColor: '#d33',
+                  confirmButtonText: 'Ok',
+                  allowOutsideClick: false
+            });    
+          }else{
+            maestria_supera_tamanio_permitido = false;
+              $("#nextBtn").attr("disabled", false);
+          }
+      });
+  }
+     
+  }); 
+  
+});
+
+//Input de telefono y codigo postal
+function solonumeros(e){
+          key=e.keyCode || e.which;
+          teclado=String.fromCharCode(key);
+
+          numeros="0123456789";
+          especiales="8-37-38-46";
+          teclado_especial=false;
+
+          for(var i in especiales){
+            
+            if(key==especiales[i]){
+              teclado_especial=true;
+            }
+          }
+
+          if(numeros.indexOf(teclado)==-1 && !teclado_especial){
+            return false;
+
+          }
+        }
 function showTab(n) {
   // This function will display the specified tab of the form...
   var x = document.getElementsByClassName("tab");
@@ -522,99 +713,7 @@ $("#filename_recibo").on('change', function () {
         $("#nextBtn").attr("disabled", false);
     }
 });
-$("#filename_secundaria").on('change', function () {
-  const tamanioArchivoPermitido = 2000000;
-  var dato_archivo_act = $('#filename_secundaria').prop("files")[0];
-  if(dato_archivo_act.size > tamanioArchivoPermitido){
-    disc_supera_tamanio_permitido = true;
-        //console.log(dato_archivo_act.size);
-        //$("#nextBtn").attr("disabled", true);
-        Swal.fire({
-            title: 'El tamaño del archivo no debe de exceder los 2 Mb',
-            text: 'Por favor seleccione un archivo que no exceda el tamaño permitido',
-            icon: 'warning',
-            showCancelButton: false,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Ok',
-            allowOutsideClick: false
-      });    
-    }else{
-        disc_supera_tamanio_permitido = false;
-        console.log(disc_supera_tamanio_permitido);
-        $("#nextBtn").attr("disabled", false);
-    }
 });
-$("#filename_bachillerato").on('change', function () {
-  const tamanioArchivoPermitido = 2000000;
-  var dato_archivo_act = $('#filename_bachillerato').prop("files")[0];
-  if(dato_archivo_act.size > tamanioArchivoPermitido){
-    trab_supera_tamanio_permitido = true;
-        //console.log(dato_archivo_act.size);
-        //$("#nextBtn").attr("disabled", true);
-        Swal.fire({
-            title: 'El tamaño del archivo no debe de exceder los 2 Mb',
-            text: 'Por favor seleccione un archivo que no exceda el tamaño permitido',
-            icon: 'warning',
-            showCancelButton: false,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Ok',
-            allowOutsideClick: false
-      });    
-    }else{
-        trab_supera_tamanio_permitido = false;
-        $("#nextBtn").attr("disabled", false);
-    }
-});
-$("#filename_certificado_maestria").on('change', function () {
-  const tamanioArchivoPermitido = 2000000;
-  var dato_archivo_act = $('#filename_certificado_maestria').prop("files")[0];
-  if(dato_archivo_act.size > tamanioArchivoPermitido){
-    maestria_supera_tamanio_permitido = true;
-        //console.log(dato_archivo_act.size);
-        //$("#nextBtn").attr("disabled", true);
-        Swal.fire({
-            title: 'El tamaño del archivo no debe de exceder los 2 Mb',
-            text: 'Por favor seleccione un archivo que no exceda el tamaño permitido',
-            icon: 'warning',
-            showCancelButton: false,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Ok',
-            allowOutsideClick: false
-      });    
-    }else{
-      maestria_supera_tamanio_permitido = false;
-        $("#nextBtn").attr("disabled", false);
-    }
-});
-$("#filename_cedula_maestria").on('change', function () {
-  const tamanioArchivoPermitido = 2000000;
-  var dato_archivo_act = $('#filename_cedula_maestria').prop("files")[0];
-  if(dato_archivo_act.size > tamanioArchivoPermitido){
-    maestria_supera_tamanio_permitido = true;
-        //console.log(dato_archivo_act.size);
-        //$("#nextBtn").attr("disabled", true);
-        Swal.fire({
-            title: 'El tamaño del archivo no debe de exceder los 2 Mb',
-            text: 'Por favor seleccione un archivo que no exceda el tamaño permitido',
-            icon: 'warning',
-            showCancelButton: false,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Ok',
-            allowOutsideClick: false
-      });    
-    }else{
-      maestria_supera_tamanio_permitido = false;
-        $("#nextBtn").attr("disabled", false);
-    }
-});
-});
-
-
-
 
 function nextPrev(n) {
   // This function will figure out which tab to display
@@ -638,8 +737,8 @@ function nextPrev(n) {
   }
   // if you have reached the end of the form...
   if (currentTab >= x.length) {
-    console.log("Entra el ultimo");
-    preinscripcion();
+    //console.log("Entra el ultimo");
+    preinscripcion(filename_send);
   }
   showTab(currentTab);
 }
@@ -651,11 +750,13 @@ function validateForm() {
   // A loop that checks every input field in the current tab:
   for (i = 0; i < y.length; i++) {
     // If a field is empty...
-    if (y[i].value == "" && y[i].name != 'telefono_tres' && y[i].name != 'extension' && y[i].name != 'filename_secundaria' && y[i].name != 'filename_bachillerato' && y[i].name != 'filename_certificado_maestria' && y[i].name != 'filename_cedula_maestria') {
-      // add an "invalid" class to the field:
-      y[i].className += " invalid";
-      // and set the current valid status to false
-      valid = false;
+    //if (y[i].value == "" && y[i].name != 'telefono_tres' && y[i].name != 'extension') {
+      if (y[i].value == "" && y[i].name != 'telefono_tres' && y[i].name != 'extension') {
+        // add an "invalid" class to the field:
+        y[i].className += " invalid";
+        //console.log(y[i].className);
+        // and set the current valid status to false
+        valid = false;
     }
   }
   // If the valid status is true, mark the step as finished and valid:

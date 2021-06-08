@@ -14,10 +14,12 @@ var url = '{!! URL::asset('') !!}';
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  {{--  <link rel="stylesheet" type="text/css" href="{{URL::asset('assets/css/jquery.datetimepicker.css')}}"/>  --}}
-  <link rel="stylesheet" type="text/css" href="{{URL::asset('assets/css/main.css')}}"/>
+  {{--  <link rel="stylesheet" type="text/css" href="{{URL::asset('assets/css/jquery.datetimepicker.css')}}"/> --}}
+  <link rel="stylesheet" type="text/css" href="{{URL::asset('assets/css/main.css')}}" />
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  {{--  <script src="{{URL::asset('assets/js/jquery.datetimepicker.full.min.js')}}" type="text/javascript"> </script>  --}}
+  {{-- <script src="{{URL::asset('assets/js/jquery.validate.min.js')}}"></script> --}}
+  {{--  <script src="{{URL::asset('assets/js/jquery.datetimepicker.full.min.js')}}" type="text/javascript"> </script>
+  --}}
   <script src="{{URL::asset('assets/js/main.js')}}" type="text/javascript"> </script>
   <script src="{{URL::asset('assets/js/es.js')}}" type="text/javascript"> </script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
@@ -52,18 +54,18 @@ var url = '{!! URL::asset('') !!}';
               aria-haspopup="true" aria-expanded="false">
               Oferta Educativa
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+            <div class="dropdown-menu" style="margin-top:0rem;">
               <a class="dropdown-item" href="{{url('media_superior')}}">Media Superior</a>
               <a class="dropdown-item" href="{{url('licenciatura_ingenieria')}}">Licenciatura e Ingeniería</a>
               <a class="dropdown-item" href="{{url('maestria')}}">Maestría</a>
             </div>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="convo" href="{{url('convocatoria')}}" role="button"
+            <a class="nav-link dropdown-toggle" id="navbarDropdown3" href="{{url('convocatoria')}}" role="button"
               aria-haspopup="true" aria-expanded="false">
               Convocatoria 2021
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown3" style="margin-top:0rem;">
               <a class="dropdown-item" href="{{ url('/pre-registro') }}">Etapa 1. Pre-Inscripción</a>
               <a class="dropdown-item" href="{{ url('/curso-induccion') }}">Etapa 2. Curso de Inducción</a>
               <a class="dropdown-item" href="{{ url('/Inscripcion') }}">Etapa 3. Inscripción</a>

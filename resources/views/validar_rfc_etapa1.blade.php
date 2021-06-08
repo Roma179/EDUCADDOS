@@ -1,8 +1,11 @@
 @extends('menu')
 @section('title','Etapa 1. Pre-inscripcion')
+@section('scripts')
+<script src="{{URL::asset('js/preinscripcion.js')}}" type="text/javascript"> </script>
+@endsection
 @section('content')
 <style>
- #regForm {
+  #regForm {
     background-color: #f5f5f0;
     margin: 100px auto;
     font-family: Arial, Helvetica, sans-serif;
@@ -43,86 +46,119 @@
   @if (session('status'))
   <div class="alert alert-success">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
-      {{ session('status') }}
+    {{ session('status') }}
   </div>
-@endif  
+  @endif
 
-<h1 style="text-align: center; padding-bottom: 18px; font-size: 45pt;
+  <h1 style="text-align: center; padding-bottom: 18px; font-size: 45pt;
     font-style: normal;
     font-weight: 500;
     letter-spacing: -0.5px;
     line-height: 1.26;">Pre-inscripción</h1>
-<p>En esta etapa se validará, a través de diversos documentos, que cumplas con los requisitos laborales y académicos según el nivel de estudios
- en el que te gustaría inscribirte.</p>
-
-<p>Es por ello que te pedimos realices los siguientes pasos.</p>
-
-<p><b>1. Revisa los documentos que debes tener digitalizados (escaneados)</b>, por favor, toma como base el manual que te corresponda:</p>
-<ul style= "list-style-type: square">
-
-<li>Expediente digital para <a href="{{url('uploads/manuales/Manual_expediente digital-BACHILLERATO GENERAL.pdf')}}" target="_blank"><u><font color="#000000"> ingreso al Bachillerato</u></font></a></li>
-
-<li>Expediente digital para <a href="{{url('uploads/manuales/Manual_expediente digital-LICENCIATURA.pdf')}}" target="_blank"><u><font color="#000000"> ingreso a Licenciatura</u></font></a></li>
-
- <li>Expediente digital para <a href="{{url('uploads/manuales/Manual_expediente digital-MAESTRIA.pdf')}}" target="_blank"><u><font color="#000000"> ingreso a Maestría</font></u> </a></li>
-</ul>
-
-<p><b>2. Llena el siguiente formulario.</b> Te recomendamos tener a la mano el último recibo de nómina.</p>
-<p>El propósito de este formulario es recabar información para generar su pre-inscripción en la convocatoria 2020 del Programa de Educación a
- Distancia de la Administración Pública de la Ciudad de México "EDUCAD". La información proporcionada en este formulario, será
- empleada de manera exclusiva para dicho fin.</p>
-<p><b><font color="red">*Obligatorio</font></b></p>
-<p style="color:#054a41; font-size: 24px; text-align: center;"><b>Aviso de privacidad</b><br>
-<FONT SIZE=2>Los Datos Personales que se solicitan en el presente formulario se encuentran protegidos por la Ley de Protección de Datos Personales en 
-Posesión de Sujetos Obligados de la Ciudad de México, por lo que su difusión se encuentra tutelada en sus artículos 3 fracciones IX, 
-XXVIII, XXIX, XXXIV, XXXVI, 9, 16, 25, 26, 37, 41, 46, 49, 50, de dicha Ley y demás relativos y aplicables; debiendo sujetarse en su 
-caso, a las disposiciones relativas a la creación, modificación o supresión de datos personales previstos. Asimismo, deberá estarse a 
-lo señalado en los numerales 1, 3, 12, 18, 19, 20, 21, 23, 24, 29, 35 y demás aplicables de los Lineamientos para la Protección de Datos 
-Personales en el Distrito Federal. En el uso de las tecnologías de la información y comunicaciones de la Ciudad de México, deberá observarse 
-puntualmente lo dispuesto por la Ley de Gobierno Electrónico de la Ciudad de México, Ley de Operación e Innovación Digital para la Ciudad de México, 
-Criterios para la Dictaminación de Adquisiciones y Uso de Recursos Públicos Relativos a las Tecnologías de la Información y las Comunicaciones de la 
-Ciudad de México y demás relativas y aplicables.</font></p>
-<p align="justify"><font size=2><b>Autorizo a la Dirección de Desarrollo de la Competencia Laboral, Igualdad Sustantiva y Derechos Humanos así como al Prestador de los Servicios Educativos, 
-el uso de mi correo electrónico y número de teléfono para el envío de información relativo al Programa </font></b><font color="red"> * </font></p>
-<div class="form-group col-md-2">
-<select id="select" name="select" class="form-control">
-<option value="value1">Elige</option>
-  <option value='0'>Acepto</option>
-  <option value='1'>No Acepto</option>
-</select>
-</div>
-
-@if($errors->any())
-<div class="alert alert-danger alert-dismissible">
-  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
-  <div class="alert-text">
-    @foreach ($errors->all() as $error)
-    <span>{{$error}}</span>
-    @endforeach
+  @if($errors->any())
+  <div style="font-size: 1.5rem;" class="alert alert-danger alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+    <div class="alert-text">
+      @foreach ($errors->all() as $error)
+      <span>{{$error}}</span>
+      @endforeach
+    </div>
   </div>
-</div>
-@endif
-<form id="regForm" action="{{route('guardar_pre-registro')}}" method="POST" enctype="multipart/form-data" style="display:none;">
- <label style="color:#777777; font-size: 40px; text-align: left; ">Pre-inscripción</label>
+  @endif
+  <p>En esta etapa se validará, a través de diversos documentos, que cumplas con los requisitos laborales y académicos
+    según el nivel de estudios
+    en el que te gustaría inscribirte.</p>
+
+  <p>Es por ello que te pedimos realices los siguientes pasos.</p>
+
+  <p><b>1. Revisa los documentos que debes tener digitalizados (escaneados)</b>, por favor, toma como base el manual que
+    te corresponda:</p>
+  <ul style="list-style-type: square">
+
+    <li>Expediente digital para <a
+        href="https://drive.google.com/file/d/12tH9gJmSCoDHFWvC2-xCqY0A61MnSiTJ/view?usp=sharing" target="_blank"><u>
+          <font color="#000000"> ingreso al Bachillerato
+        </u></font></a></li>
+
+    <li>Expediente digital para <a href="{{url('uploads/manuales/Manual_expediente digital-LICENCIATURA.pdf')}}"
+        target="_blank"><u>
+          <font color="#000000"> ingreso a Licenciatura
+        </u></font></a></li>
+
+    <li>Expediente digital para <a href="{{url('uploads/manuales/Manual_expediente digital-MAESTRIA.pdf')}}"
+        target="_blank"><u>
+          <font color="#000000"> ingreso a Maestría</font>
+        </u> </a></li>
+  </ul>
+
+  <p><b>2. Llena el siguiente formulario.</b> Te recomendamos tener a la mano el último recibo de nómina.</p>
+  <p>El propósito de este formulario es recabar información para generar su pre-inscripción en la convocatoria 2020 del
+    Programa de Educación a
+    Distancia de la Administración Pública de la Ciudad de México "EDUCAD". La información proporcionada en este
+    formulario, será
+    empleada de manera exclusiva para dicho fin.</p>
+  <p><b>
+      <font color="red">*Obligatorio</font>
+    </b></p>
+  <p style="color:#054a41; font-size: 24px; text-align: center;"><b>Aviso de privacidad</b><br>
+    <FONT SIZE=2>Los Datos Personales que se solicitan en el presente formulario se encuentran protegidos por la Ley de
+      Protección de Datos Personales en
+      Posesión de Sujetos Obligados de la Ciudad de México, por lo que su difusión se encuentra tutelada en sus
+      artículos 3 fracciones IX,
+      XXVIII, XXIX, XXXIV, XXXVI, 9, 16, 25, 26, 37, 41, 46, 49, 50, de dicha Ley y demás relativos y aplicables;
+      debiendo sujetarse en su
+      caso, a las disposiciones relativas a la creación, modificación o supresión de datos personales previstos.
+      Asimismo, deberá estarse a
+      lo señalado en los numerales 1, 3, 12, 18, 19, 20, 21, 23, 24, 29, 35 y demás aplicables de los Lineamientos para
+      la Protección de Datos
+      Personales en el Distrito Federal. En el uso de las tecnologías de la información y comunicaciones de la Ciudad de
+      México, deberá observarse
+      puntualmente lo dispuesto por la Ley de Gobierno Electrónico de la Ciudad de México, Ley de Operación e Innovación
+      Digital para la Ciudad de México,
+      Criterios para la Dictaminación de Adquisiciones y Uso de Recursos Públicos Relativos a las Tecnologías de la
+      Información y las Comunicaciones de la
+      Ciudad de México y demás relativas y aplicables.</font>
+  </p>
+  <p align="justify">
+    <font size=2><b>Autorizo a la Dirección Ejecutiva de Desarrollo de Personal y Derechos Humanos así como al Prestador
+        de los Servicios Educativos,
+        el uso de mi correo electrónico y número de teléfono para el envío de información relativo al Programa </font>
+    </b>
+    <font color="red"> * </font>
+  </p>
+  <div class="form-group col-md-2">
+    <select id="select" name="select" class="form-control">
+      <option value="value1" disabled selected>Elige</option>
+      <option value='0'>Acepto</option>
+      <option value='1'>No Acepto</option>
+    </select>
+  </div>
+
+  <form id="regForm" action="{{route('guardar_pre-registro')}}" method="POST" enctype="multipart/form-data"
+    style="display:none;">
+    {{-- <form id="regForm" method="POST" enctype="multipart/form-data" style="display:none;"> --}}
+    <label style="color:#777777; font-size: 40px; text-align: left; ">Pre-inscripción</label>
     @csrf
- <label style="color:#054a41; font-size: 16px; text-align: justify;">Para iniciar el proceso de preregistro, proporciona el siguiente dato. Te recomendamos
-    tener a la mano tu recibo de nómina.
- </label>
- <label style="color:#777777; font-size: 25px; text-align: left;">RFC</label>
-    <p><input type="text" id="rfc" placeholder="RFC de la persona trabajadora" oninput="this.className = ''" maxlength="13" name="RFC" required></p>
- 
+    <label style="color:#054a41; font-size: 16px; text-align: justify;">Para iniciar el proceso, proporciona el
+      siguiente dato. Te recomendamos
+      tener a la mano tu recibo de nómina.
+    </label>
+    <label style="color:#777777; font-size: 25px; text-align: left;">RFC</label>
+    <p><input type="text" id="rfc" placeholder="RFC de la persona trabajadora" oninput="this.className = ''"
+        maxlength="13" minlength="13" pattern="^([A-ZÑ\x26]{3,4}([0-9]{2})(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[0-1]))((-)?([A-Z\d]{3}))?$" name="RFC" required></p>
+
     <button type="submit">Validar RFC</button>
-</form>    
+  </form>
 
 
 
-<!--<button class="btn btn-primary" style="border-color:#31b700; background-color: #31b700;" >Siguiente </button>-->
+  <!--<button class="btn btn-primary" style="border-color:#31b700; background-color: #31b700;" >Siguiente </button>-->
 
-<p><b>3. Recibirás un correo electrónico en el que se te informará el dictamen.</b></p>
+  <p><b>3. Recibirás un correo electrónico en el que se te informará el dictamen.</b></p>
 
-{{--  <div class="pane-header">
-        <a href="{{ url('/prueba') }}">Entrar a la entrega de documentos</a>  
-    </div>  --}}
+  {{--  <div class="pane-header">
+        <a href="{{ url('/prueba') }}">Entrar a la entrega de documentos</a>
+</div> --}}
 
 
 
@@ -130,7 +166,7 @@ el uso de mi correo electrónico y número de teléfono para el envío de inform
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <!--Desglozar div para el RFC -->
 <script>
-$(document).ready(function(){
+  $(document).ready(function(){
     $('#select').on('change',function(){
     var selectValor = ''+$(this).val();
     //alert (selectValor);
@@ -247,5 +283,6 @@ function fixStepIndicator(n) {
   });
 </script>  --}}
 
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script src="{{URL::asset('assets/js/jquery.validate.min.js')}}"></script>
 @endsection

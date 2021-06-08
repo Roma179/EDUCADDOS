@@ -73,12 +73,17 @@
                 <li>Identificación Oficial vigente (INE)</li>
                 <li>Último recibo de nómina (a la quincena vigente)</li>
                 <li>Comprobante de estudios considerando que: </li>
-                <li><strong>Si deseas inscribirte a Bachillerato:</strong> Certificado total de estudios del grado
-                    Secundaria.</li>
-                <li><strong>Si deseas inscribirte a Licenciatura e Ingeniería:</strong> Certificado total de estudios de
-                    Bachillerato o equivalente.</li>
-                <li><strong>Si deseas inscribirte a Maestría:</strong> Título Profesional y/o Cédula Profesional de
-                    nivel superior.</li>
+                <ul>
+                    <li><strong>Si deseas inscribirte a Bachillerato:</strong> Certificado total de estudios del
+                        grado
+                        Secundaria.</li>
+                    <li><strong>Si deseas inscribirte a Licenciatura e Ingeniería:</strong> Certificado total de
+                        estudios de
+                        Bachillerato o equivalente.</li>
+                    <li><strong>Si deseas inscribirte a Maestría:</strong> Título Profesional y/o Cédula Profesional
+                        de
+                        nivel superior.</li>
+                </ul>
             </ul>
         </div>
     </div>
@@ -115,7 +120,8 @@
     <div class="row" style="margin-top: 30px;">
         <div class="card border-light" align="center">
             <strong>***CUPO LIMITADO***</strong>
-            <p>LOS LUGARES SE ASIGNARÁN POR ORDEN DE PRELACIÓN CONFORME SE VERIFIQUE QUE LA PERSONA CANDIDATA CUMPLE CON LOS REQUISITOS SEÑALADOS.</p>
+            <p>LOS LUGARES SE ASIGNARÁN POR ORDEN DE PRELACIÓN CONFORME SE VERIFIQUE QUE LA PERSONA CANDIDATA CUMPLE CON
+                LOS REQUISITOS SEÑALADOS.</p>
         </div>
     </div>
 </div>

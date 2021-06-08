@@ -15,6 +15,7 @@ class CreatePreinscripcionTable extends Migration
     {
         Schema::create('preinscripcion', function (Blueprint $table) {
             $table->Increments('id');
+            $table->string('rfc',15);
             $table->string('nombre',100);
             $table->string('ape_paterno',50);
             $table->string('ape_materno',50);

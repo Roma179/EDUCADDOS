@@ -13,7 +13,7 @@ p{
     letter-spacing: -0.5px;
     line-height: 1.26;">Curso de Inducción</h1>
 <p><b>Propósito</b></p>
-<p>La persona estudiante practicará habilidades académicas y tecnológicas que permitirán permitirán familiarizarse con la educación en línea 
+<p>La persona estudiante practicará habilidades académicas y tecnológicas que permitirán familiarizarse con la educación en línea 
 y la mecánica de la institución Universidad CNCI, para mantener un desarrollo óptimo en el transcurso de su plan de estudios.</p>
 <p><b>Competencias generales</b></p>
 <ul style= "list-style-type: square">
