@@ -41,13 +41,13 @@
         margin: 0px 20px 40px 0px;
     }
     .empleado_activo {
-        background-color: #0FA433;
+        background-color: #0fb335;
         color: #ffffff;
         border: none;
         padding: 10px 20px;
         font-size: 20px;
         font-family: Arial;
-        border-radius: 4px;
+        {{--  border-radius: 4px;  --}}
         width: 115px;
     }
     .empleado_inactivo {
@@ -143,6 +143,7 @@
                         @else
                             <div class="row empleado_inactivo" style="margin-left: 11rem;"><label class="font-label" style="font-size: 20px;">{{$preinsc->status_empleado}}</label></div>
                         @endif
+                        <div class="row row-margin"><h3>RFC:</h3><label class="font-label">{{$preinsc->rfc}}</label></div>
                         <div class="row row-margin"><h3>Nombre:</h3><label class="font-label">{{$preinsc->nombre}} {{$preinsc->ape_paterno}} {{$preinsc->ape_materno}}</label></div>
                         
                         <div class="row row-margin"><h3>Nivel Escolaridad:</h3><label class="font-label">{{$preinsc->nivel_escol}}</label></div>
@@ -151,39 +152,39 @@
                         @else
                             <div class="row row-margin"><h3>Carrera:</h3><label class="font-label">{{$preinsc->escolaridad}}</label></div>
                         @endif
-                        <div class="row row-margin"><h3>id_empleado:</h3><label class="font-label">{{$preinsc->id_empleado}}</label></div>
-                        <div class="row row-margin"><h3>tipo_nomina:</h3><label class="font-label">{{$preinsc->tipo_nomina}}</label></div>
-                        <div class="row row-margin"><h3>universo_nominal:</h3><label class="font-label">{{$preinsc->universo_nominal}}</label></div>
-                        <div class="row row-margin"><h3>id_unidad_administrativa:</h3><label class="font-label">{{$preinsc->id_unidad_administrativa}}</label></div>
-                        <div class="row row-margin"><h3>unidad_administrativa:</h3><label class="font-label">{{$preinsc->unidad_administrativa}}</label></div>
+                        <div class="row row-margin"><h3>Id Empleado:</h3><label class="font-label">{{$preinsc->id_empleado}}</label></div>
+                        <div class="row row-margin"><h3>Tipo Nomina:</h3><label class="font-label">{{$preinsc->tipo_nomina}}</label></div>
+                        <div class="row row-margin"><h3>Universo Nominal:</h3><label class="font-label">{{$preinsc->universo_nominal}}</label></div>
+                        <div class="row row-margin"><h3>Id Unidad Administrativa:</h3><label class="font-label">{{$preinsc->id_unidad_administrativa}}</label></div>
+                        <div class="row row-margin"><h3>Unidad Administrativa:</h3><label class="font-label">{{$preinsc->unidad_administrativa}}</label></div>
                         
-                        <div class="row row-margin"><h3>id_sector:</h3><label class="font-label">{{$preinsc->id_sector}}</label></div>
-                        <div class="row row-margin"><h3>sector:</h3><label class="font-label">{{$preinsc->sector}}</label></div>
-                        <div class="row row-margin"><h3>sector_pago:</h3><label class="font-label">{{$preinsc->sector_pago}}</label></div>
-                        <div class="row row-margin"><h3>nivel_salarial:</h3><label class="font-label">{{$preinsc->nivel_salarial}}</label></div>
-                        <div class="row row-margin"><h3>seccion_sindical:</h3><label class="font-label">{{$preinsc->seccion_sindical}}</label></div>
-                        <div class="row row-margin"><h3>calle:</h3><label class="font-label">{{$preinsc->calle}}</label></div>
+                        <div class="row row-margin"><h3>Id Sector:</h3><label class="font-label">{{$preinsc->id_sector}}</label></div>
+                        <div class="row row-margin"><h3>Sector:</h3><label class="font-label">{{$preinsc->sector}}</label></div>
+                        <div class="row row-margin"><h3>Sector Pago:</h3><label class="font-label">{{$preinsc->sector_pago}}</label></div>
+                        <div class="row row-margin"><h3>Nivel Salarial:</h3><label class="font-label">{{$preinsc->nivel_salarial}}</label></div>
+                        <div class="row row-margin"><h3>Seccion Sindical:</h3><label class="font-label">{{$preinsc->seccion_sindical}}</label></div>
+                        <div class="row row-margin"><h3>Calle:</h3><label class="font-label">{{$preinsc->calle}}</label></div>
 
-                        <div class="row row-margin"><h3>numero_ext:</h3><label class="font-label">{{$preinsc->numero_ext}}</label></div>
-                        <div class="row row-margin"><h3>numero_int:</h3><label class="font-label">{{$preinsc->numero_int}}</label></div>
-                        <div class="row row-margin"><h3>codigo_postal:</h3><label class="font-label">{{$preinsc->codigo_postal}}</label></div>
+                        <div class="row row-margin"><h3>Número Ext:</h3><label class="font-label">{{$preinsc->numero_ext}}</label></div>
+                        <div class="row row-margin"><h3>Número Inte:</h3><label class="font-label">{{$preinsc->numero_int}}</label></div>
+                        <div class="row row-margin"><h3>Codigo Postal:</h3><label class="font-label">{{$preinsc->codigo_postal}}</label></div>
 
-                        <div class="row row-margin"><h3>colonia:</h3><label class="font-label">{{$preinsc->colonia}}</label></div>
-                        <div class="row row-margin"><h3>alcaldia:</h3><label class="font-label">{{$preinsc->alcaldia}}</label></div>
-                        <div class="row row-margin"><h3>estado:</h3><label class="font-label">{{$preinsc->estado}}</label></div>
-                        <div class="row row-margin"><h3>pais:</h3><label class="font-label">{{$preinsc->pais}}</label></div>
-                        <div class="row row-margin"><h3>correo_electro:</h3><label class="font-label">{{$preinsc->correo_electro}}</label></div>
-                        <div class="row row-margin"><h3>telefono_uno:</h3><label class="font-label">{{$preinsc->telefono_uno}}</label></div>
-                        <div class="row row-margin"><h3>telefono_dos:</h3><label class="font-label">{{$preinsc->telefono_dos}}</label></div>
+                        <div class="row row-margin"><h3>Colonia:</h3><label class="font-label">{{$preinsc->colonia}}</label></div>
+                        <div class="row row-margin"><h3>Alcaldia:</h3><label class="font-label">{{$preinsc->alcaldia}}</label></div>
+                        <div class="row row-margin"><h3>Estado:</h3><label class="font-label">{{$preinsc->estado}}</label></div>
+                        <div class="row row-margin"><h3>Pais:</h3><label class="font-label">{{$preinsc->pais}}</label></div>
+                        <div class="row row-margin"><h3>Correo Electro:</h3><label class="font-label">{{$preinsc->correo_electro}}</label></div>
+                        <div class="row row-margin"><h3>Telefono Uno:</h3><label class="font-label">{{$preinsc->telefono_uno}}</label></div>
+                        <div class="row row-margin"><h3>Telefono Dos:</h3><label class="font-label">{{$preinsc->telefono_dos}}</label></div>
                         @if ($preinsc->telefono_tres == null)
-                            <div class="row row-margin"><h3>telefono_tres:</h3><label class="font-label">Ninguno</label></div>
+                            <div class="row row-margin"><h3>Telefono Tres:</h3><label class="font-label">Ninguno</label></div>
                         @else
-                            <div class="row row-margin"><h3>telefono_tres:</h3><label class="font-label">{{$preinsc->telefono_tres}}</label></div>
+                            <div class="row row-margin"><h3>Telefono Tres:</h3><label class="font-label">{{$preinsc->telefono_tres}}</label></div>
                         @endif
                         @if ($preinsc->extension == null)
-                            <div class="row row-margin"><h3>extension:</h3><label class="font-label">Ninguno</label></div>   
+                            <div class="row row-margin"><h3>Extension:</h3><label class="font-label">Ninguno</label></div>   
                         @else
-                            <div class="row row-margin"><h3>extension:</h3><label class="font-label">{{$preinsc->extension}}</label></div>   
+                            <div class="row row-margin"><h3>Extension:</h3><label class="font-label">{{$preinsc->extension}}</label></div>   
                         @endif
                         @endforeach
                     </div>

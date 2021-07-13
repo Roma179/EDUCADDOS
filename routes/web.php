@@ -54,9 +54,9 @@ Route::get('/curso-induccion', 'CMenu@etapa2');
 Route::get('/Inscripcion', 'CMenu@etapa3')->name('Inscripcion');
 Route::get('/contacto', 'CMenu@contacto');
 
-Route::get('/prueba', 'CMenu@pruebass');
+/* Route::get('/prueba', 'CMenu@pruebass'); */
 
-Route::post('registro_cita', 'CitasController@store')->name('save_cita_bd');
+Route::post('/', 'CitasController@store')->name('save_cita_bd');
 Route::get('/get_citas', 'CitasController@getCitas')->name('get_citas');
 Route::get('/get_citas_admin', 'CitasController@getCitasAdmin')->name('get_citas_admin');
 Route::post('set_asistencia', 'CitasController@setAsistencia')->name('set_asistencia');

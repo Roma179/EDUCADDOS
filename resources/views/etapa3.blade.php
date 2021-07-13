@@ -2,6 +2,7 @@
 @section('title','Etapa 3: Inscripción')
 @section('scripts')
 <script src="{{URL::asset('js/calendar.js')}}" type="text/javascript"> </script>
+<script src="{{ asset('js/inscripcion.js') }}" type="text/javascript"> </script>
 @endsection
 @section('content')
 <style>

@@ -54,7 +54,7 @@ class DocumentosController extends Controller
         /* $emailCaci = Session::get('email'); */
         $data=Documentos::where('preinscripcion_id',$id)->get();
         $lista_preinscripcion=Preinscripcion::where('id',$id)->get();
-        /* dd($data); */
+        /* dd($lista_preinscripcion); */
         return view('admin.lista_documentos_insc',compact('data','id','lista_preinscripcion'));
     }
 

@@ -57,6 +57,7 @@
             {{-- <table class="table table-striped table-responsive-lg"> --}}
                 <thead class="flip-content">
                     <tr>
+                        <th>RFC</th>
                         <th>Nombre</th>
                         <th>Id Empleado</th>
                         <th>Tipo Nomina</th>
@@ -90,6 +91,7 @@
                 <tbody>
                     @foreach ($lista_preins as $caci)
                     <tr>
+                        <td>{{$caci['rfc']}}</td>
                         <td>{{$caci['nombre']}} {{$caci['ape_paterno']}} {{$caci['ape_materno']}}</td>
                         <td>{{$caci['id_empleado']}}</td>
                         <td>{{$caci['tipo_nomina']}}</td>

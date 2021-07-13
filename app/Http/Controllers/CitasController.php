@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Model\Citas;
+use App\Model\Preinscripcion;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
@@ -67,60 +68,67 @@ class CitasController extends Controller
      */
     public function store(Request $request)
     {
-        /* dd($request->all()); */
-        /* $citasController = new CitasController;
-        $citasController->_validations(); */
-        /* $rfc = Citas::where('status', '1')->where('rfc', $request->rfc)->count(); */
-        $rfc = Citas::where('rfc', $request->rfc)->where('nivel_educativo_id', $request->nivel_edu)->count();
-        $isPenalizado = Citas::where('status', '-1')->where('penalizado', '1')->where('rfc', $request->rfc)->count();
-        if ($rfc === 0) {
-            if ($isPenalizado >= 1) {
-                Session::flash('error', '¡El Usuario con este RFC esta Penalizado tendra que esperar 3 dias habiles para generar una nueva cita!');
+        $isPreinscrito = Preinscripcion::where('rfc', $request->rfc)->count();
+        /* dd($isPreinscrito); */
+        if ($isPreinscrito >= 1) {
+            /* $citasController = new CitasController;
+            $citasController->_validations(); */
+            /* $rfc = Citas::where('status', '1')->where('rfc', $request->rfc)->count(); */
+            $rfc = Citas::where('rfc', $request->rfc)->where('nivel_educativo_id', $request->nivel_edu)->count();
+            $isPenalizado = Citas::where('status', '-1')->where('penalizado', '1')->where('rfc', $request->rfc)->count();
+            if ($rfc === 0) {
+                if ($isPenalizado >= 1) {
+                    Session::flash('error', '¡El Usuario con este RFC esta Penalizado tendra que esperar 3 dias habiles para generar una nueva cita!');
 
-                return redirect(url('Inscripcion'));
-            } else {
-                $join_fecha_hora = $request->fecha_select . "T" . $request->horario_select;
-                $minutos = substr($request->horario_select, 3, -3);
-                $covert_hora_end = '';
-                if ($minutos === '00') {
-                    $covert_hora_end = substr_replace($request->horario_select, '30', -5, -3);
+                    return redirect(url('Inscripcion'));
                 } else {
-                    $covert_hora_end = substr_replace($request->horario_select, '00', -5, -3);
-                    $hora = intval(substr($covert_hora_end, 0, 2)) + 1;
-                    /* dd(intval(substr($covert_hora_end,0,2))+1); */
-                    $hora_str = strval($hora);
-                    if (strlen($hora_str) == 1) {
-                        $hora = '0' . $hora_str;
-                    } elseif (strlen($hora_str) == 2) {
-                        $hora = $hora_str;
+                    $join_fecha_hora = $request->fecha_select . "T" . $request->horario_select;
+                    $minutos = substr($request->horario_select, 3, -3);
+                    $covert_hora_end = '';
+                    if ($minutos === '00') {
+                        $covert_hora_end = substr_replace($request->horario_select, '30', -5, -3);
+                    } else {
+                        $covert_hora_end = substr_replace($request->horario_select, '00', -5, -3);
+                        $hora = intval(substr($covert_hora_end, 0, 2)) + 1;
+                        /* dd(intval(substr($covert_hora_end,0,2))+1); */
+                        $hora_str = strval($hora);
+                        if (strlen($hora_str) == 1) {
+                            $hora = '0' . $hora_str;
+                        } elseif (strlen($hora_str) == 2) {
+                            $hora = $hora_str;
+                        }
+                        /* dd($covert_hora_end); */
+                        $covert_hora_end = substr_replace($covert_hora_end, $hora, 0, 2);
                     }
-                    /* dd($covert_hora_end); */
-                    $covert_hora_end = substr_replace($covert_hora_end, $hora, 0, 2);
+                    $join_fecha_hora_end = $request->fecha_select . "T" . $covert_hora_end;
+                    $input = $request->except(['fecha_select', 'horario_select']);
+                    /* dd(array_merge($input,['start'=>$join_fecha_hora,'end'=>$join_fecha_hora_end,'title'=>'Reservado'])); */
+
+                    Citas::create(array_merge($input, ['start' => $join_fecha_hora, 'end' => $join_fecha_hora_end, 'title' => 'Reservado', 'status' => '1', 'asistio' => '-1', 'penalizado' => '-1', 'nivel_educativo_id' => $request->nivel_edu]));
+                    Session::flash('mensaje', '¡La cita ha sido registrada!');
+
+                    return redirect(url('Inscripcion'));
                 }
-                $join_fecha_hora_end = $request->fecha_select . "T" . $covert_hora_end;
-                $input = $request->except(['fecha_select', 'horario_select']);
-                /* dd(array_merge($input,['start'=>$join_fecha_hora,'end'=>$join_fecha_hora_end,'title'=>'Reservado'])); */
+            } else if ($rfc >= 1) {
+                /* $nivel_educativo = Citas::where('rfc', $request->rfc)->where('nivel_educativo_id', $request->nivel_edu)->get(); */
+                /* dd($nivel_educativo->all()); */
+                if ($isPenalizado >= 1) {
+                    Session::flash('error', '¡El Usuario con este RFC esta Penalizado tendra que esperar 3 dias habiles para generar una nueva cita!');
 
-                Citas::create(array_merge($input, ['start' => $join_fecha_hora, 'end' => $join_fecha_hora_end, 'title' => 'Reservado', 'status' => '1', 'asistio' => '-1', 'penalizado' => '-1', 'nivel_educativo_id' => $request->nivel_edu]));
-                Session::flash('mensaje', '¡La cita ha sido registrada!');
+                    return redirect(url('Inscripcion'));
+                } else {
+                    Session::flash('warning', '¡El Usuario con este RFC y nivel de estudios ya cuenta con una cita registrada!');
 
-                return redirect(url('Inscripcion'));
-            }
-        } else if ($rfc >= 1) {
-            /* $nivel_educativo = Citas::where('rfc', $request->rfc)->where('nivel_educativo_id', $request->nivel_edu)->get(); */
-            /* dd($nivel_educativo->all()); */
-            if ($isPenalizado >= 1) {
-                Session::flash('error', '¡El Usuario con este RFC esta Penalizado tendra que esperar 3 dias habiles para generar una nueva cita!');
-
-                return redirect(url('Inscripcion'));
-            } else {
-                Session::flash('warning', '¡El Usuario con este RFC y nivel de estudios ya cuenta con una cita registrada!');
-
-                return redirect(url('Inscripcion'));
-            }
-            /* else if($request-){
+                    return redirect(url('Inscripcion'));
+                }
+                /* else if($request-){
 
             } */
+            }
+        } else if ($isPreinscrito === 0) {
+            Session::flash('warning', '¡Antes de agendar una cita, es necesario haber realizado tu registro previamente!');
+
+            return redirect(url('Inscripcion'));
         }
     }
 
