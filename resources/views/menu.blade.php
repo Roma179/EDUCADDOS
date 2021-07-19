@@ -40,7 +40,7 @@ var url = '{!! URL::asset('') !!}';
 <body>
   <div class="bs-example">
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-      <img style="width: 400px; height: 85px; padding-top: 10px;" src="{{asset('img/header_educad.svg')}}"
+      <img style="width: 400px; height: 85px; padding-top: 10px;" src="{{asset('img/LogosVerde.jpeg')}}"
         alt="Imagenes">
       <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>

@@ -6,7 +6,7 @@
     font-style: normal;
     font-weight: 500;
     letter-spacing: -0.5px;
-    line-height: 1.26;">Oferta Académica</h1>
+    line-height: 1.26;">Oferta Acad&eacute;mica</h1>
     <div class="row">
         <div class="card border-light" align="justify">
             <p style="
@@ -25,8 +25,9 @@
             font-family: " Open Sans", sans-serif; font-size: 12pt; font-weight: 400; line-height: 1.56;">
                 <span>
                     La Universidad CNCI, ofrece estudios de Nivel Medio Superior y Superior -en el que se incluyen
-                    Posgrados- con Reconocimiento de Validez Oficial de Estudios (RVOE) expedido y Nuevo Léon, por la Secretaría de
-                    Educación del Estado de Coahuila.
+                    Posgrados- con Reconocimiento de Validez Oficial de Estudios (RVOE) otorgados por la Secretaría
+                     de Educación en los estados de Coahuila, la Secretaría de Educación del Estado de Nuevo León 
+                     y la Secretaría de Educación, Ciencia, Tecnología e Innovación de la Ciudad de México.
                 </span>
             </p>
         </div>

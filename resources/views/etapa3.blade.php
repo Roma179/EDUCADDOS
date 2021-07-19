@@ -50,19 +50,16 @@
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
   </p>
   @endif
-  <p>Esta es la última etapa del proceso, si llegaste hasta aquí significa que:</p>
-  <ol>
-    <li>Entregaste la documentación en tiempo y forma</li>
+  <p>Esta es la última etapa del proceso de ingreso y es ÚNICAMENTE para aquellas personas servidoras públicas que:</p>
+  <ul>
+    <li>Cumplieron con los criterios de selección</li>
+    <li>Entregaron la documentación señalada en tiempo y forma</li>
+    <li>Aprobaron el Curso de Inducción</li>
+  </ul>
 
-    <li>Cumples con los criterios laborales de ingreso al programa</li>
+  <p>Si cumples con todo lo anterior, recibirás al correo electrónico registrado en el formulario de Pre-Inscripción, indicaciones para concluir el proceso de ingreso al Programa EDUCAD-DGAP y para concretar tu inscripción a la Universidad CNCI.</p>
 
-    <li>Cuentas con la documentación que avala haber cursado los estudios del nivel inmediato anterior que deseas cursar
-      en la Universidad Virtual CNCI.</li>
-  </ol>
-
-  <p>Para finalizar tu inscripción requerimos lo siguiente:</p>
-
-  <p><b>1. Descarga los siguientes formatos,</b> llénalos con letra de molde con tinta azul y saca una copia:</p>
+  {{--  <p><b>1. Descarga los siguientes formatos,</b> llénalos con letra de molde con tinta azul y saca una copia:</p>
 
   <ul style="list-style-type: square">
     <li><i>Formato <u><a href="https://drive.google.com/file/d/12tH9gJmSCoDHFWvC2-xCqY0A61MnSiTJ/view?usp=sharing
@@ -144,9 +141,9 @@
         </div>
       </div>
     </div>
-  </form>
+  </form>  --}}
 
-  <p><b> 3. Acude a tu cita</b> con los documentos en original y copia para su cotejo:</p>
+  {{--  <p><b> 3. Acude a tu cita</b> con los documentos en original y copia para su cotejo:</p>
 
 
   <ul style="list-style-type: square">
@@ -192,7 +189,7 @@
   <p>De igual manera, las y los asesores de la Universidad Virtual CNCI portarán cubrebocas, careta y harán uso del gel
     antibacterial en todo momento.</p>
 
-  <p><b>NO se recibirán personas que no tengan cita.</b></p>
+  <p><b>NO se recibirán personas que no tengan cita.</b></p>  --}}
 
 
 </div>

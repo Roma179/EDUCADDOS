@@ -34,7 +34,7 @@ class CreatePreinscripcionTable extends Migration
            // $table->string('clave_dependencia',50);
             $table->string('calle',50);
             $table->string('numero_ext',10);
-            $table->string('numero_int',10);
+            $table->string('numero_int',10)->nullable();
             //$table->string('numero',100);
             $table->string('codigo_postal',10);
             $table->string('colonia',100);
@@ -42,6 +42,7 @@ class CreatePreinscripcionTable extends Migration
             $table->string('estado',50);
             $table->string('pais',50);
             $table->string('correo_electro',50);
+            $table->string('correo_electro_alter',50)->nullable();
             $table->string('telefono_uno',50);
             $table->string('telefono_dos',50);
             $table->string('telefono_tres',50)->nullable();

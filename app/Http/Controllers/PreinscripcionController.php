@@ -108,7 +108,7 @@ class PreinscripcionController extends Controller
             'seccion_sindical' => 'required|string',
             'calle' => 'required|string',
             'numero_ext' => 'required|string',
-            'numero_int' => 'required|string',
+            
             'codigo_postal' => 'required|numeric',
 
             'colonia' => 'required|string',
@@ -117,6 +117,7 @@ class PreinscripcionController extends Controller
             'estado' => 'required|string',
             'pais' => 'required|string',
             'correo_electro' => 'required|regex:/^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i',
+            'correo_electro_alter' => 'regex:/^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i',
 
             'telefono_uno' => 'required|numeric',
             'telefono_dos' => 'required|numeric',
@@ -171,8 +172,7 @@ class PreinscripcionController extends Controller
 
             'numero_ext.required' => 'El numero exterior es requerido',
             'numero_ext.string' => 'El numero exterior debe ser un texto',
-            'numero_int.required' => 'Su numero interior es requerido',
-            'numero_int.string' => 'Su numero interior debe ser un texto',
+            
             'codigo_postal.required' => 'Su codigo_postal es requerido',
             'codigo_postal.numeric' => 'Su codigo_postal debe ser un número',
             'colonia.required' => 'Su colonia es requerido',
@@ -187,6 +187,7 @@ class PreinscripcionController extends Controller
 
             'correo_electro.required' => 'Su email es requerido',
             'correo_electro.regex' => 'Su email no tiene el formato correcto',
+            'correo_electro_alter.regex' => 'Su email alternativo no tiene el formato correcto',
             'telefono_uno.required' => 'Su telefono Uno es requerido',
             'telefono_uno.numeric' => 'Su telefono Uno debe ser un número',
             'telefono_dos.required' => 'Su telefono Dos es requerido',
@@ -268,7 +269,7 @@ class PreinscripcionController extends Controller
 
                 if ($preinscripcionController->setDoc($array_files, $id)) {
                     DB::commit();
-                    return response()->json(['ok' => true, 'result' => 'Preinscripción con éxito', 'menor' => $request->nombre]);
+                    return response()->json(['ok' => true, 'result' => 'Preinscripción con éxito']);
                 } else {
                     return response()->json(['ok' => false, 'result' => 'Error Preinscripción', 'err_valid_docs' => true]);
                 }

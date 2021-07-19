@@ -80,20 +80,20 @@
                     <h4 style="color:#000; font-family: " Open Sans", sans-serif; ">MAESTRÍAS EN:</h4>
                     <ol>
                         <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank" 
-                            href="https://drive.google.com/file/d/1MkMrxV--WOgmZgq7XddVJkoH4bk7dqbH/view">Administración</a>. <strong>RVOE</strong> SEDU 0528163272</li>
+                            href="https://drive.google.com/file/d/105YFYTw_apCd7TS1jyRWMx9umUCfTmRX/view?usp=sharing">Administración</a>. <strong>RVOE</strong> 0528163272</li>
                         <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank" 
-                            href="https://drive.google.com/file/d/1GCmpqsmScvzba8Lgh_cSFowPJ41vqZFl/view">Administración del Capital Humano</a>. <strong>RVOE</strong> SEDU 0528163269</li>
+                            href="https://drive.google.com/file/d/1XxdHbCD7jn8VydSB5QUablAvuxXolaa3/view?usp=sharing">Administración del Capital Humano</a>. <strong>RVOE</strong> 0528163269</li>
                     </ol>
                 </div>
                 <div class="card border-light">
                     <h6 style="margin-left: 1.5rem; font-family: " Open Sans", sans-serif;"><strong>NUEVA OFERTA EDUCATIVA</strong></h6>
                     <ol>
                         <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank" 
-                            href="https://drive.google.com/file/d/1Sp9o7PceMpRkQPFqHGC8PsyHaSqRSnUZ/view">Administración y Finanzas</a>. <strong>RVOE</strong> 0528163265</li>
+                            href="https://drive.google.com/file/d/111PaQgp-lNXydfjyLSNYS94VLETb9nFC/view?usp=sharing">Administración y Finanzas</a>. <strong>RVOE</strong> 0528163265</li>
                         <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank" 
-                            href="https://drive.google.com/file/d/1DzmnOR3t2riDzgP3M35D9BBERAHVDQ0V/view">Administración y Mercadotecnia</a>. <strong>RVOE</strong> 0528163267</li>
+                            href="https://drive.google.com/file/d/1YRWOCEnPNqT2KtX7P1mNTW8cVY2ciBkZ/view">Administración y Mercadotecnia</a>. <strong>RVOE</strong> 0528163267</li>
                         <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank" 
-                            href="https://drive.google.com/file/d/1AGbZRzl4s6SBNgdrUR4V7sM-laBJJF4J/view">Educación con Acentuación en Tecnología Educativa</a>. <strong>RVOE</strong> 0528163255</li>
+                            href="https://drive.google.com/file/d/18vSDxngNm9JjxJDF34_NQx1WL56iy89X/view?usp=sharing">Educación con Acentuación en Tecnología Educativa</a>. <strong>RVOE</strong> 0528163255</li>
                         <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank" >Derecho Laboral</a>. <strong>RVOE EN TRÁMITE.</strong></li>
                     </ol>
                 </div>

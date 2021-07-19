@@ -104,19 +104,19 @@
                 <h4 style="color:#000; font-family: " Open Sans", sans-serif; ">LICENCIATURAS EN:</h4>
                     <ol>
                         <li><a style=" color:black; font-style:italic; text-decoration:underline;" target="_blank"
-                    href="https://drive.google.com/file/d/1KmpydwNr3x6G9M0b84cCVPXvbcO34eJw/view">Contador Público</a>. <strong>RVOE</strong> 528163243
+                    href="https://drive.google.com/file/d/1lG7L1cJ6yEIOr_76zqfY66vz7j9E2N3C/view?usp=sharing">Contador Público</a>. <strong>RVOE</strong> 528163243
                     </li>
                     <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank"
-                            href="https://drive.google.com/file/d/1V3o-SGLFq4pQlHNivi2dY1khAGQcprPG/view">Administración de Empresas</a>.
+                            href="https://drive.google.com/file/d/16iZMSP9tbPehlScWMY6jvG82LBkXVQrw/view?usp=sharing">Administración de Empresas</a>.
                         <strong>RVOE</strong> 0528163246</li>
                     <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank"
-                            href="https://drive.google.com/file/d/1eOtuDrUBzC3kZ1jt7pCvY2TcZ-aGsmsM/view">Derecho</a>. <strong>RVOE</strong> 0528163251
+                            href="https://drive.google.com/file/d/1FP_tvbSbGTOmddAgLR0rFSP9fqM61V5b/view?usp=sharing">Derecho</a>. <strong>RVOE</strong> 0528163251
                     </li>
                     <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank"
-                            href="https://drive.google.com/file/d/19QK74cizrUufIpcXctyc600h5z2IEJp2/view">Informática Administrativa</a>.
+                            href="https://drive.google.com/file/d/1ypBgE6v8--KTYgEnIVxXuiemJ5EaAkVC/view?usp=sharing">Informática Administrativa</a>.
                         <strong>RVOE</strong> 0528163285</li>
                     <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank"
-                            href="https://drive.google.com/file/d/1I9upeqwphKz_7NOa40fV5ubM1WtgF2jp/view">Recursos Humanos</a>. <strong>RVOE</strong>
+                            href="https://drive.google.com/file/d/1wspaRG_aRcucprhJtIv_n-Yz8jo_w8bL/view?usp=sharing">Recursos Humanos</a>. <strong>RVOE</strong>
                         0528163241</li>
                     {{--  <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank" href="{{url('uploads/licenciatura/LCE.pdf')}}">Ciencias
                     de la Educación</a>. <strong>RVOE</strong> SEDU 011721-12-18-012 [NUEVA]</li>
@@ -129,10 +129,10 @@
                 <h4 style="color:#000; font-family: " Open Sans", sans-serif; ">INGENIERÍAS EN:</h4>
                     <ol>
                         <li><a style=" color:black; font-style:italic; text-decoration:underline;" target="_blank"
-                    href="https://drive.google.com/file/d/1kH94gYXWLwPl1tiSsgN5s-tSGvQTe11o/view">Tecnologías Computacionales</a>.
+                    href="https://drive.google.com/file/d/16YPFevfJyNsQgFWVS1ND9GNoP8DLOiIm/view?usp=sharing">Tecnologías Computacionales</a>.
                     <strong>RVOE</strong> 0528163294</li>
                     <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank"
-                            href="https://drive.google.com/file/d/1JzUbiyha-HAY8PwOSOor41XsTKODitbD/view">Industrial y de Sistemas</a>.
+                            href="https://drive.google.com/file/d/1OReOZIYD6W0sc3VkWYt95s408laHk_GQ/view?usp=sharing">Industrial y de Sistemas</a>.
                         <strong>RVOE</strong> 0528163233</li>
                     {{--  <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank" href="{{url('uploads/licenciatura/IL.pdf')}}">Logística</a>.
                     <strong>RVOE</strong> SEDU 011726-17-18-017 [NUEVA]</li> --}}
@@ -144,28 +144,28 @@
                 <h4 style="color:#000; font-family: " Open Sans", sans-serif; ">NUEVOS PLANES</h4>
                     <ol>
                         <li><a style=" color:black; font-style:italic; text-decoration:underline;" target="_blank"
-                    href="https://drive.google.com/file/d/1J3pBnB6lvi_Ct86993fNPdqsSMJmPq68/view">Administración Financiera</a>.
+                    href="https://drive.google.com/file/d/1qkMsr5DWlCCL2uE0Wa-dCAdMLobdS5Fy/view?usp=sharing">Administración Financiera</a>.
                     <strong>RVOE</strong> 528163237</li>
                     <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank"
-                            href="https://drive.google.com/file/d/1LGLzNWp703Vk7hxADR3by1IJZVEEiIVt/view">Ciencias de la Educación</a>.
+                            href="https://drive.google.com/file/d/1ZSLbcEnA9r7VlXsSQzj0VB9HMrdn92ct/view?usp=sharing">Ciencias de la Educación</a>.
                         <strong>RVOE</strong> 0528163250</li>
                     <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank"
-                            href="https://drive.google.com/drive/folders/1SumFtTsecnMADz0D5QgsoErF4LA93MY1">Derecho con Acentuación en Economía.</a>.
+                            href="https://drive.google.com/file/d/1QszRR5O07YlcTC_GATm2M_oEVKelJjhe/view?usp=sharing">Derecho con Acentuación en Economía.</a>
                         <strong>RVOE</strong> 528163284</li>
                     <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank"
-                            href="https://drive.google.com/file/d/1quc6j9Woz_gFIoQ0DzQeQ7dpUKTcZs9E/view">Derecho Corporativo.</a>.
+                            href="https://drive.google.com/file/d/1eDoACiwwE8RqJypZ6KO0oqjKVED0UIvT/view?usp=sharing">Derecho Corporativo.</a>
                         <strong>RVOE</strong> 528163239</li>
                     <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank"
-                            href="https://drive.google.com/file/d/1IH7Jw9ZG9IPiZcyWTMH1q1auXQ_QoCP3/view">Derecho y Finanzas.</a>.
+                            href="https://drive.google.com/file/d/1mdMXtMYZnZbp493bIZtX5j1Y3P8-D0xS/view?usp=sharing">Derecho y Finanzas.</a>
                         <strong>RVOE</strong> 528163236</li>
                     <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank"
-                            href="https://drive.google.com/file/d/1bXe3cKUy1IYb6xCspcF4VZUXRXxb7XLx/view">Gestión Turística.</a>.
+                            href="https://drive.google.com/file/d/1EIVmXa_TmzB1LzENXLXJrN5p5bP1PXSk/view?usp=sharing">Gestión Turística.</a>
                         <strong>RVOE</strong> 528163260</li>
                     <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank"
-                            href="https://drive.google.com/file/d/1sbbKuk_-6HAoSmJqLRrAPE4N_LQWmKZg/view">Mercadotecnia.</a>.
+                            href="https://drive.google.com/file/d/1RkAaQxn4nD1snudHP6UfAAilf7-A5tVw/view?usp=sharing">Mercadotecnia.</a>
                         <strong>RVOE</strong> 0528163290</li>
                     <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank"
-                            href="https://drive.google.com/file/d/18VREFCpPaYJo06lccD3dHSJalCTNJ6DN/view">Mercadotecnia Turística.</a>.
+                            href="https://drive.google.com/file/d/15tXxzfhz7S-PnSmcBDDeeX35X1giDTY8/view?usp=sharing">Mercadotecnia Turística.</a>
                         <strong>RVOE</strong> 528163238</li>
                     <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank"
                             >Derecho Laboral.</a>
@@ -175,10 +175,10 @@
             <div class=" card border-light" style="margin-top: 2rem;">
                 <ol>
                     <li><a style=" color:black; font-style:italic; text-decoration:underline;" target="_blank"
-                            href="https://drive.google.com/file/d/1ZkDe8PBHPLBIKwHXNT9xqFiC-YJogdUm/view">Gestión Empresarial.</a>
+                            href="https://drive.google.com/file/d/1h3Vq9rhnf9wS_IoGIYp7oPUyrY6mX8vh/view?usp=sharing">Gestión Empresarial.</a>
                         <strong>RVOE</strong> 0528163242</li>
                     <li><a style="color:black; font-style:italic; text-decoration:underline;" target="_blank"
-                            href="https://drive.google.com/file/d/1SOsHt7QvJ9iYbOo1us68tBdtNOT0GipU/view">Logística</a>.
+                            href="https://drive.google.com/file/d/1I2ZNupGmZIzZn-ZxkTJ8acY07msUaFUs/view?usp=sharing">Logística</a>.
                         <strong>RVOE</strong> 0528163240</li>
                 </ol>
             </div>

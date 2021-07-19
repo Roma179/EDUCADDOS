@@ -68,18 +68,16 @@
                         <h2>EN QUÉ CONSISTE EDUCAD-DGAP</h2>
                     </div>
                     <div class="card-text">
-                        <p align="justify">EDUCAD-DGAP es un programa cuya finalidad es que las personas servidoras
-                            públicas del Gobierno de
-                            la Ciudad de México que, por diversos motivos, una vez terminada la educación secundaria
-                            no
-                            pudieron continuar con sus estudios; ya sea porque se incorporaron al mercado laboral,
-                            falta de
-                            tiempo, falta de recursos económicos, entre otros, continúen su formación académica.</p>
+                        <p align="justify">Es un Programa que tiene como finalidad que las personas servidoras públicas del Gobierno de la Ciudad de3
+                             México inicien y concluyan su formación académica. Sabemos que muchas personas, una vez concluida la educación secundaria,
+                              no pudieron continuar con sus estudios, ya sea porque se incorporaron al mercado laboral, por la falta de tiempo, por la 
+                              falta de recursos económicos, entre otros. 
+                        </p>
                         <p align="justify">Para cumplir con este propósito, el Gobierno de la Ciudad de México, a través
                             de la
                             <strong>
                             Dirección
-                            General de Administración de Personal</strong> de la Secretaría de Administración y Finanzas
+                            General de Administración de Personal y Desarrollo Administrativo</strong> de la Secretaría de Administración y Finanzas
                             ha
                             creado
                             alianzas con las Instituciones de Educación Superior (IES) del país, a fin de que
@@ -130,14 +128,14 @@
                         <h2>POBLACIÓN A LA QUE ESTÁ DIRIGIDO</h2>
                     </div>
                     <div class="card-text">
-                        Personas servidoras públicas (PSP) que:
+                        Personas servidoras públicas (PSP) mayores de 18 años que:
                         <ul>
-                            <li>Pertenezcan a la Administración Pública Centralizada y Paraestatal ya sean de base,
-                                con o sin dígito sindical, de estructura o de confianza;</li>
-                            <li>Pertenezcan al tipo de nómina: 1, 4, 5 y 8;</li>
-                            <li>Pertenezcan a los Universos A, C, C1, O, P, Q, Q1, S, T, V</li>
-                            <li>No estén de licencia sin goce de sueldo, comisión sindical, inscrito en el programa
-                                de retiro voluntario o bien, en proceso de jubilación.</li>
+                            <li>Sean trabajadoras activas en la Administración Pública Centralizada o Paraestatal de la Ciudad de México, ya sean de base o 
+                                estructura, con o sin dígito sindical
+                            </li>
+                            <li>Pertenezcan al tipo de nómina y universo que se señale  en la convocatoria de ingreso.</li>
+                            <li>No estén de licencia sin goce de sueldo, en alguna comisión sindical, inscritas en el programa de retiro voluntario o en proceso de jubilación.
+                            </li>
                         </ul>
                     </div>
                 </div>

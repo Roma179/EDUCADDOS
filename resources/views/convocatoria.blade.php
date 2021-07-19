@@ -52,9 +52,16 @@
             <p style="
             font-family: " Open Sans", sans-serif; font-size: 12pt; font-weight: 400; line-height: 1.56;">
                 <span>
-                    La presente convocatoria está dirigida específicamente a las personas servidoras públicas que, por
-                    diversos motivos no concluyeron el proceso de inscripción en los años 2017 y 2018; o bien, que
-                    cuando desearon inscribirse ya no se abrieron nuevos espacios.
+                    Personas servidoras públicas mayores de 18 años, con antigüedad de seis meses y un día en el puesto
+                    actual, de
+                    base con o sin dígito sindical o bien, de estructura que cumplan con los <a style="margin-top: 0;
+                    margin-bottom: 0;
+                    display: inline;
+                    overflow-wrap: break-word;
+                    overflow: hidden;
+                    text-decoration: underline;" href="#criterios">criterios de selección</a>
+                    señalados en la
+                    presente convocatoria.
                 </span>
             </p>
         </div>
@@ -101,27 +108,26 @@
         <div class="card border-light">
             <p>Personas servidoras públicas en activo en las Dependencias, Órganos Desconcentrados, Alcaldías y
                 Entidades que:</p>
-            <ol>
-                <li>Hayan iniciado el trámite de inscripción en las convocatorias de 2017 y 2018, sin concluirlo,</li>
-                <li>Se hayan registrado en la lista de espera en los Centros de Enlace a partir de septiembre de 2018 a
-                    la fecha; o bien,</li>
-                <li>Hayan solicitado inscribirse al programa por medio de oficio, a partir de septiembre de 2018.</li>
-                <li>Tener 18 años cumplidos,</li>
-                Además, deben:
-                <li>Pertenecer al tipo de nómina 1, 4, 5 y 8 así como a los universos A, C, C1, D, O, P, Q, Q1, S, T y
-                    V.</li>
-                <li>No estar de licencia sin goce de sueldo o de comisión sindical</li>
-                <li>No estar inscrito en el Programa de Retiro Voluntario o en trámites pre-jubilatorios.</li>
-                <li>Contar con certificado de estudios del nivel anterior al que deseen inscribirse, señalado en la
-                    sección anterior.</li>
-            </ol>
+            <ul>
+                <li>Ser mayor de 18 años.</li>
+                <li>Antigüedad de seis meses y un día en el puesto actual.</li>
+                <li>Ser personal de base con, o sin, dígito sindical.</li>
+                <li>Ser personal de estructura.</li>
+                <li>Pertenecer exclusivamente al tipo de nómina 1 (base), 4 (haberes) y 5 (lista de raya).</li>
+                <li>Pertenecer exclusivamente a los universos: A, C, C1, D, DO, G, GS, J, K, L, M, O, P, Q, Q1, S, T, V.</li>
+                <li>Estar adscrito en una Unidad Administrativa que cuente con el presupuesto para la asignación del apoyo académico.</li>
+                <li>No haber tramitado baja voluntaria del programa Universidad Laboral en Línea del Gobierno de la Ciudad de México “UNILAB”.</li>
+                <li>No tramitar ni contar con licencia sin goce de sueldo.</li>
+                <li>No tramitar ni estar de comisión sindical.</li>
+                <li>No estar inscrito en el Programa de Retiro Voluntario o en trámites de jubilación.</li>
+            </ul>
         </div>
     </div>
     <div class="row" style="margin-top: 30px;">
         <div class="card border-light" align="center">
             <strong>***CUPO LIMITADO***</strong>
             <p>LOS LUGARES SE ASIGNARÁN POR ORDEN DE PRELACIÓN CONFORME SE VERIFIQUE QUE LA PERSONA CANDIDATA CUMPLE CON
-                LOS REQUISITOS SEÑALADOS.</p>
+                LOS REQUISITOS SEÑALADOS SEGÚN EL NÚMERO DE LUGARES DISPONIBLES EN CADA UNIDAD ADMINISTRATIVA.</p>
         </div>
     </div>
 </div>

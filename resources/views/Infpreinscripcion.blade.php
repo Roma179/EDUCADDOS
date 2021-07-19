@@ -14,7 +14,7 @@
   {{--  <form id="regForm" action="{{route('guardar_reinscripcion_bd')}}" method="POST" enctype="multipart/form-data">
   --}}
 
-  <h1 style="color: #054a41;">Preinscripción a EDUCAD</h1>
+  <h1 style="color: #054a41;">Preinscripción a EDUCAD-DGAP</h1>
   <br>
   {{--  <?php 
            echo var_dump($data);
@@ -92,8 +92,15 @@
                 name="pais"></p>
             <h4 style="color: #00b140;"><b>Datos de Contacto</b> </h4>
             <p>Correo electrónico<input id="correo_electro" type="email" placeholder="E-mail" title="E-mail"
-                oninput="this.className = ''" name="correo_electro" value="{{$value['CH_mail']}}"></p>
+                oninput="this.className = ''" name="correo_electro" value="{{$value['CH_mail']}}"
+                pattern="[a-zA-Z0-9!#$%&'*_+-]([\.]?[a-zA-Z0-9!#$%&'*_+-])+@[a-zA-Z0-9]([^@&%$\/()=?¿!.,:;]|\d)+[a-zA-Z0-9][\.][a-zA-Z]{2,4}([\.][a-zA-Z]{2})?">
+            </p>
             <p>Nota: Por favor valida la cuenta de correo electronico.</p>
+            <p>Correo electrónico alternativo<input id="correo_electro_alter" type="email"
+                placeholder="E-mail Alternativo" title="E-mail Alternativo" oninput="this.className = ''"
+                name="correo_electro_alter"
+                pattern="[a-zA-Z0-9!#$%&'*_+-]([\.]?[a-zA-Z0-9!#$%&'*_+-])+@[a-zA-Z0-9]([^@&%$\/()=?¿!.,:;]|\d)+[a-zA-Z0-9][\.][a-zA-Z]{2,4}([\.][a-zA-Z]{2})?">
+            </p>
             <p>Teléfono domicilio a 10 dígitos<input id="telefono_uno" type="tel" placeholder="Teléfono o celular"
                 title="Teléfono o celular" oninput="this.className = ''" name="telefono_uno" maxlength="10"
                 pattern="[0-9]{10}" onkeypress="return solonumeros(event)" onpaste="return false"></p>
@@ -575,8 +582,8 @@ function showTab(n) {
 	Swal.fire({
     title: '<h4>Atención</u></h4>',
   html:
-    '<p align="justify">Los Datos Personales que se solicitan en el presente formulario se encuentran protegidos por la Ley de Protección de Datos Personales en Posesión de Sujetos Obligados de la Ciudad de México, por lo que su difusión se encuentra tutelada en sus artículos 3 fracciones IX, XXVIII, XXIX, XXXIV, XXXVI, 9, 16, 25, 26, 37, 41, 46, 49, 50, de dicha Ley y demás relativos y aplicables; debiendo sujetarse en su caso, a las disposiciones relativas a la creación, modificación o supresión de datos personales previstos. Asimismo, deberá estarse a lo señalado en los numerales 1, 3, 12, 18, 19, 20, 21, 23, 24, 29, 35 y demás aplicables de los Lineamientos para la Protección de Datos Personales en el Distrito Federal. En el uso de las tecnologías de la información y comunicaciones de la Ciudad de México, deberá observarse puntualmente lo dispuesto por la Ley de Gobierno Electrónico de la Ciudad de México, Ley de Operación e Innovación Digital para la Ciudad de México, Criterios para la Dictaminación de Adquisiciones y Uso de Recursos Públicos Relativos a las Tecnologías de la Información y las Comunicaciones de la Ciudad de México y demás relativas y aplicables.</p> ' +
-    '<a target="_blank" href="{{asset('img/PDF/aviso_simplificado_sitio_caci.pdf')}}"><h5 style="color: #00b140;">Ver aviso de privacidad</h5></a> ',
+    '<p align="justify">Los Datos Personales que se solicitan en el presente formulario se encuentran protegidos por la Ley de Protección de Datos Personales en Posesión de Sujetos Obligados de la Ciudad de México, por lo que su difusión se encuentra tutelada en sus artículos 3 fracciones IX, XXVIII, XXIX, XXXIV, XXXVI, 9, 16, 25, 26, 37, 41, 46, 49, 50, de dicha Ley y demás relativos y aplicables; debiendo sujetarse en su caso, a las disposiciones relativas a la creación, modificación o supresión de datos personales previstos. Asimismo, deberá estarse a lo señalado en los artículos 1, 7, 8, 10, 11, 24, 41, 62, 69 y demás aplicables de Lineamientos Generales de Protección de Datos Personales en Posesión de Sujetos Obligados de la Ciudad de México. En el uso de las tecnologías de la información y comunicaciones de la Ciudad de México, deberá observarse puntualmente lo dispuesto por la Ley de Gobierno Electrónico de la Ciudad de México, Ley de Operación e Innovación Digital para la Ciudad de México, Criterios para la Dictaminación de Adquisiciones y Uso de Recursos Públicos Relativos a las Tecnologías de la Información y las Comunicaciones de la Ciudad de México y demás relativas y aplicables.</p> ' +
+    '<a target="_blank" href="https://drive.google.com/file/d/1Oh4dUZjmtuTsb0UKWd39OuQ-4xFVoSX8/view?usp=sharing"><h5 style="color: #00b140;">Ver aviso de privacidad</h5></a> ',
   showCloseButton: true,
 //  showCancelButton: true,
 })  
@@ -751,7 +758,7 @@ function validateForm() {
   for (i = 0; i < y.length; i++) {
     // If a field is empty...
     //if (y[i].value == "" && y[i].name != 'telefono_tres' && y[i].name != 'extension') {
-      if (y[i].value == "" && y[i].name != 'telefono_tres' && y[i].name != 'extension') {
+      if (y[i].value == "" && y[i].name != 'numero_int' && y[i].name != 'telefono_tres' && y[i].name != 'extension') {
         // add an "invalid" class to the field:
         y[i].className += " invalid";
         //console.log(y[i].className);

@@ -12,6 +12,7 @@ p{
     font-weight: 500;
     letter-spacing: -0.5px;
     line-height: 1.26;">Curso de Inducción</h1>
+    <p>Esta segunda etapa del proceso de inscripción es <b>EXCLUSIVAMENTE</b> para aquellas personas servidoras públicas que recibieron por correo electrónico la notificación de que cumplían con los requisitos de ingreso.</p>    
 <p><b>Propósito</b></p>
 <p>La persona estudiante practicará habilidades académicas y tecnológicas que permitirán familiarizarse con la educación en línea 
 y la mecánica de la institución Universidad CNCI, para mantener un desarrollo óptimo en el transcurso de su plan de estudios.</p>

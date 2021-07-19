@@ -34,6 +34,7 @@ class Preinscripcion extends Model
          'estado',
          'pais',
          'correo_electro',
+         'correo_electro_alter',
          'telefono_uno',
          'telefono_dos',
          'telefono_tres',

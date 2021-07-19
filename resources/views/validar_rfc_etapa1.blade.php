@@ -76,55 +76,35 @@
   <ul style="list-style-type: square">
 
     <li>Expediente digital para <a
-        href="https://drive.google.com/file/d/12tH9gJmSCoDHFWvC2-xCqY0A61MnSiTJ/view?usp=sharing" target="_blank"><u>
+        href="https://drive.google.com/file/d/1nzsFNMfKKGZU6IuQ6Vk3FDDYKGXbA6vd/view?usp=sharing" target="_blank"><u>
           <font color="#000000"> ingreso al Bachillerato
         </u></font></a></li>
 
-    <li>Expediente digital para <a href="{{url('uploads/manuales/Manual_expediente digital-LICENCIATURA.pdf')}}"
-        target="_blank"><u>
+    <li>Expediente digital para <a
+        href="https://drive.google.com/file/d/10BoWlVVNQ_erJMkQiRWnWeEOdbgl0r1U/view?usp=sharing" target="_blank"><u>
           <font color="#000000"> ingreso a Licenciatura
         </u></font></a></li>
 
-    <li>Expediente digital para <a href="{{url('uploads/manuales/Manual_expediente digital-MAESTRIA.pdf')}}"
-        target="_blank"><u>
+    <li>Expediente digital para <a
+        href="https://drive.google.com/file/d/1RNYAHthLNMODw-To833b0i03OJRcUJ0z/view?usp=sharing" target="_blank"><u>
           <font color="#000000"> ingreso a Maestría</font>
         </u> </a></li>
   </ul>
 
   <p><b>2. Llena el siguiente formulario.</b> Te recomendamos tener a la mano el último recibo de nómina.</p>
-  <p>El propósito de este formulario es recabar información para generar su pre-inscripción en la convocatoria 2020 del
-    Programa de Educación a
-    Distancia de la Administración Pública de la Ciudad de México "EDUCAD". La información proporcionada en este
-    formulario, será
-    empleada de manera exclusiva para dicho fin.</p>
-  <p><b>
-      <font color="red">*Obligatorio</font>
-    </b></p>
-  <p style="color:#054a41; font-size: 24px; text-align: center;"><b>Aviso de privacidad</b><br>
-    <FONT SIZE=2>Los Datos Personales que se solicitan en el presente formulario se encuentran protegidos por la Ley de
-      Protección de Datos Personales en
-      Posesión de Sujetos Obligados de la Ciudad de México, por lo que su difusión se encuentra tutelada en sus
-      artículos 3 fracciones IX,
-      XXVIII, XXIX, XXXIV, XXXVI, 9, 16, 25, 26, 37, 41, 46, 49, 50, de dicha Ley y demás relativos y aplicables;
-      debiendo sujetarse en su
-      caso, a las disposiciones relativas a la creación, modificación o supresión de datos personales previstos.
-      Asimismo, deberá estarse a
-      lo señalado en los numerales 1, 3, 12, 18, 19, 20, 21, 23, 24, 29, 35 y demás aplicables de los Lineamientos para
-      la Protección de Datos
-      Personales en el Distrito Federal. En el uso de las tecnologías de la información y comunicaciones de la Ciudad de
-      México, deberá observarse
-      puntualmente lo dispuesto por la Ley de Gobierno Electrónico de la Ciudad de México, Ley de Operación e Innovación
-      Digital para la Ciudad de México,
-      Criterios para la Dictaminación de Adquisiciones y Uso de Recursos Públicos Relativos a las Tecnologías de la
-      Información y las Comunicaciones de la
-      Ciudad de México y demás relativas y aplicables.</font>
+  <p>El propósito de este formulario es recabar información para generar su pre-inscripción en la convocatoria 2021 del
+    Programa de Educación a Distancia para personas servidoras públicas del Gobierno de la Ciudad de México
+    “EDUCAD-DGAP”. La información proporcionada será empleada de manera exclusiva para dicho fin y está protegida por
+    Ley de Protección de Datos Personales en Posesión de Sujetos Obligados de la Ciudad de México, los Lineamientos
+    Generales de Protección de Datos Personales en Posesión de Sujetos Obligados de la Ciudad de México, Ley de Gobierno
+    Electrónico de la Ciudad de México, la Ley de Operación e Innovación Digital para la Ciudad de México, Criterios
+    para la Dictaminación de Adquisiciones y Uso de Recursos Públicos Relativos a las Tecnologías de la Información y
+    las Comunicaciones de la Ciudad de México y demás relativas y aplicables.
   </p>
-  <p align="justify">
-    <font size=2><b>Autorizo a la Dirección Ejecutiva de Desarrollo de Personal y Derechos Humanos así como al Prestador
-        de los Servicios Educativos,
-        el uso de mi correo electrónico y número de teléfono para el envío de información relativo al Programa </font>
-    </b>
-    <font color="red"> * </font>
+  <p>
+    Autorizo a la Dirección Ejecutiva de Desarrollo de Personal y Derechos Humanos así como al Prestador de los
+    Servicios Educativos el uso de mis datos personales, entre ellos el correo electrónico y número de teléfono para el
+    envío de información relativo al Programa “EDUCAD-DGAP” <font color="red"> * </font>
   </p>
   <div class="form-group col-md-2">
     <select id="select" name="select" class="form-control">
@@ -145,7 +125,9 @@
     </label>
     <label style="color:#777777; font-size: 25px; text-align: left;">RFC</label>
     <p><input type="text" id="rfc" placeholder="RFC de la persona trabajadora" oninput="this.className = ''"
-        maxlength="13" minlength="13" pattern="^([A-ZÑ\x26]{3,4}([0-9]{2})(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[0-1]))((-)?([A-Z\d]{3}))?$" name="RFC" required></p>
+        maxlength="13" minlength="13"
+        pattern="^([A-ZÑ\x26]{3,4}([0-9]{2})(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[0-1]))((-)?([A-Z\d]{3}))?$"
+        name="RFC" required></p>
 
     <button type="submit">Validar RFC</button>
   </form>
@@ -155,6 +137,8 @@
   <!--<button class="btn btn-primary" style="border-color:#31b700; background-color: #31b700;" >Siguiente </button>-->
 
   <p><b>3. Recibirás un correo electrónico en el que se te informará el dictamen.</b></p>
+
+  <font color="red"> * Obligatorio</font>
 
   {{--  <div class="pane-header">
         <a href="{{ url('/prueba') }}">Entrar a la entrega de documentos</a>

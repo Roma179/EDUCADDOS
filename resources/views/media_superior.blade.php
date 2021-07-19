@@ -93,7 +93,7 @@
             <p style="
             font-family: " Open Sans", sans-serif; font-size: 12pt; font-weight: 400; line-height: 1.56;">
                 <span>
-                    ¿Quieres conocer el Plan de Estudios? Haz clic aquí <a href="https://drive.google.com/file/d/1CvXVwzeuHEXItTmWZiHWriEwGTatc8l9/view" target="_blank" >Bachillerato General</a>
+                    ¿Quieres conocer el Plan de Estudios? Haz clic aquí <a href="https://drive.google.com/file/d/1NazkctH9oSAv2HCxChukPId5t3t9808V/view" target="_blank" >Bachillerato General</a>
                 </span>
             </p>
         </div>

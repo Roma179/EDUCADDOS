@@ -168,14 +168,14 @@
                                             @endcan
                                         </li>
 
-                                        <li class="kt-menu__item kt-menu__item--submenu kt-menu__item--rel ">
+                                        {{--  <li class="kt-menu__item kt-menu__item--submenu kt-menu__item--rel ">
                                             @can('view_preinscripcion')
                                             <a href="{{url('citas')}}" class="kt-menu__link">
                                                 <span class="kt-menu__link-text">Citas</span>
                                                 <i class="kt-menu__ver-arrow la la-angle-right"></i>
                                             </a>
                                             @endcan
-                                        </li>
+                                        </li>  --}}
                                         <li class="kt-menu__item kt-menu__item--submenu kt-menu__item--rel ">
                                             @can('view_preinscripcion')
                                             <a href="{{url('lista_preinscripcion')}}" class="kt-menu__link">

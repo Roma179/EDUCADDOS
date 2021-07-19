@@ -31,6 +31,7 @@ function preinscripcion(filename) {
     form_data.append("estado", $("#estado").val());
     form_data.append("pais", $("#pais").val());
     form_data.append("correo_electro", $("#correo_electro").val());
+    form_data.append("correo_electro_alter", $("#correo_electro_alter").val());
     form_data.append("telefono_uno", $("#telefono_uno").val());
     form_data.append("telefono_dos", $("#telefono_dos").val());
     form_data.append("telefono_tres", $("#telefono_tres").val());
